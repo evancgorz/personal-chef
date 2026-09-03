@@ -1,0 +1,49 @@
+version: 1
+updated_at: 2026-09-03T00:00:00-04:00
+servings:
+  default: 6
+meal_profile:
+  total_time_target_minutes: 45
+  protein_target_grams_per_serving:
+    minimum: 35
+    preferred: 45
+  vegetables:
+    priority: high
+    preferred_servings_per_meal: 2
+  carb_heavy_meals:
+    frequency: occasional
+    examples:
+      - pasta
+      - rice
+effort:
+  priority: low-prep
+  preferred_forms:
+    - pre-diced vegetables
+    - washed and trimmed vegetables
+    - broccoli florets
+    - ready-to-cook proteins
+    - jarred minced garlic
+  cleanup_preference: one-pan-or-skillet
+brands:
+  preferred:
+    - Nature's Promise
+    - Food Lion
+  national_brand_policy: choose-only-for-meaningful-quality-difference
+proteins:
+  beef:
+    grass_fed: preferred
+dietary:
+  allergies: []
+  exclusions: []
+  dislikes: []
+budget:
+  currency: USD
+  per_meal_target: null
+fulfillment:
+  compare_pickup_and_delivery: true
+  require_out_the_door_estimate: true
+  require_final_checkout_confirmation: true
+evidence:
+  source: user-confirmed
+  confirmed_at: 2026-08-26T00:00:00-04:00
+

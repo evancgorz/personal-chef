@@ -1,0 +1,29 @@
+version: 1
+updated_at: 2026-09-03T00:00:00-04:00
+observations:
+  - id: availability-2026-08-26-food-lion-pilot
+    observed_at: 2026-08-26T00:00:00-04:00
+    retailer_id: food-lion-avent-ferry
+    channel_id: food-lion-direct
+    status: stale
+    currency: USD
+    products:
+      - product: Nature's Promise Natural Boneless Skinless Chicken Tenderloins Fresh
+        package: approximately 1.3 lb
+        unit_price: 6.49
+        unit: lb
+        availability: observed
+      - product: Food Lion Broccoli Florets Frozen
+        package: 32 oz bag
+        price: 3.79
+        availability: observed
+      - product: Food Lion Green Beans
+        package: 12 oz bag
+        price: 2.79
+        availability: observed
+      - product: Nature's Promise Minced Garlic
+        package: 8 oz jar
+        price: 2.79
+        availability: observed
+    notes: Historical pilot observation. Refresh all products and prices before reuse.
+

@@ -1,0 +1,12 @@
+version: 1
+changes:
+  - id: change-2026-09-03-initial-workflow
+    changed_at: 2026-09-03T00:00:00-04:00
+    actor: agent
+    scope:
+      - repository-structure
+      - preferences-baseline
+      - retailer-baseline
+    summary: Established the repository-backed agent workflow and registers from confirmed conversation context.
+    source: user-request
+

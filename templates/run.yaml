@@ -1,0 +1,32 @@
+version: 1
+id: run-yyyy-mm-dd-slug
+created_at: null
+updated_at: null
+status: draft
+request:
+  meal_count: 1
+  servings: 6
+  budget: null
+  fulfillment_preference: compare
+  run_overrides: []
+context_snapshot:
+  preference_version: 1
+  pantry_checked_at: null
+menu:
+  candidate_recipe_ids: []
+  selected_recipe_ids: []
+requirements: []
+carts: []
+approval:
+  requested_at: null
+  approved_at: null
+  approved_total: null
+order:
+  placed: false
+  placed_at: null
+  confirmation_reference: null
+closeout:
+  blocker: null
+  notes: null
+  follow_up_needed: false
+

@@ -1,0 +1,11 @@
+version: 1
+id: menu-yyyy-mm-dd-slug
+created_at: null
+run_id: null
+servings: 6
+candidates: []
+selection:
+  selected_recipe_ids: []
+  selected_at: null
+  selected_by: null
+

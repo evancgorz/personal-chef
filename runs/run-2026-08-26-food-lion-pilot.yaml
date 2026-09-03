@@ -1,0 +1,52 @@
+version: 1
+id: run-2026-08-26-food-lion-pilot
+created_at: 2026-08-26T00:00:00-04:00
+updated_at: 2026-09-03T00:00:00-04:00
+status: blocked
+request:
+  meal_count: 1
+  servings: 6
+  budget: null
+  fulfillment_preference: compare
+  run_overrides: []
+context_snapshot:
+  preference_version: 1
+  pantry_checked_at: null
+menu:
+  candidate_recipe_ids:
+    - garlic-herb-chicken
+  selected_recipe_ids:
+    - garlic-herb-chicken
+requirements: []
+carts:
+  - channel_id: food-lion-direct
+    fulfillment: pickup
+    currency: USD
+    item_subtotal: 40.49
+    fees: 1.99
+    tip: 0
+    tax: 0
+    estimated_total: 42.48
+    observed_at: 2026-08-26T00:00:00-04:00
+  - channel_id: food-lion-direct
+    fulfillment: delivery
+    currency: USD
+    item_subtotal: 40.49
+    fees: 7.95
+    tip: 2.83
+    tax: 0
+    estimated_total: 51.27
+    observed_at: 2026-08-26T00:00:00-04:00
+approval:
+  requested_at: null
+  approved_at: null
+  approved_total: null
+order:
+  placed: false
+  placed_at: null
+  confirmation_reference: null
+closeout:
+  blocker: Instacart checkout totals were unavailable.
+  notes: Direct Food Lion cart was corrected and no order was placed.
+  follow_up_needed: true
+

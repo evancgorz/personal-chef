@@ -1,0 +1,23 @@
+version: 1
+updated_at: 2026-09-03T00:00:00-04:00
+retailers:
+  - id: food-lion-avent-ferry
+    retailer: Food Lion
+    public_store_address: 3415 Avent Ferry Rd, Raleigh, NC
+    preferred: true
+    capabilities:
+      pickup: true
+      delivery: true
+    channels:
+      - id: food-lion-direct
+        type: retailer-direct
+        preferred_for_price_baseline: true
+      - id: instacart-food-lion
+        type: marketplace
+        preferred_for_price_baseline: false
+    brand_priority:
+      - Nature's Promise
+      - Food Lion
+    last_verified_at: 2026-08-26T00:00:00-04:00
+    confidence: verified
+

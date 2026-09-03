@@ -1,0 +1,16 @@
+version: 1
+addresses:
+  home:
+    street: replace-locally
+    city: replace-locally
+    state: replace-locally
+    postal_code: replace-locally
+delivery_notes: null
+contact:
+  name: null
+  email: null
+  phone: null
+accounts:
+  food_lion: null
+  instacart: null
+

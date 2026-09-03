@@ -1,32 +1,36 @@
 # Personal Chef
 
-A personal meal-kit delivery assistant for planning easy, high-protein, vegetable-forward meals and turning selected recipes into a six-serving grocery cart.
+Personal Chef is a repository-backed workflow for an AI meal-planning and grocery-shopping agent. It turns preferences into a recipe menu, scales selected meals to six servings, builds comparable Food Lion and Instacart carts, pauses for approval, and records what happened so future runs improve.
 
-## Product brief
+## Start here
 
-- Offer a menu of recipes, with most meals ready in 45 minutes or less.
-- Scale selected recipes to six servings and consolidate ingredients across meals.
-- Favor low-effort groceries: pre-diced vegetables, trimmed produce, florets, tenderloins, and similar ready-to-cook options.
-- Prefer Nature's Promise and Food Lion store brands; use national brands only when they materially improve quality.
-- Prefer grass-fed beef when beef is selected.
-- Keep meals protein- and vegetable-forward; use pasta, rice, and other carb-heavy bases occasionally.
-- Build carts for both pickup and delivery, then show an out-the-door comparison before checkout.
+1. Read [`AGENTS.md`](AGENTS.md) for the authoritative operating contract.
+2. Update [`registers/preferences.yaml`](registers/preferences.yaml) when durable tastes or constraints change.
+3. Copy [`local/private.example.yaml`](local/private.example.yaml) to `local/private.yaml` for private delivery details. The real file is ignored by Git.
+4. Start a run from [`templates/run.yaml`](templates/run.yaml) and save it under `runs/YYYY-MM-DD-slug.yaml`.
+5. Validate changes with `python scripts/validate.py`.
 
-## Pilot meal
+## Repository map
 
-The initial pilot is garlic-herb chicken tenderloins with broccoli florets and green beans, designed for six servings and approximately 35 minutes of active and total preparation.
+| Path | Purpose |
+| --- | --- |
+| `AGENTS.md` | Agent rules, workflow, safety gates, and write-back policy |
+| `docs/` | Detailed operating and data-model guidance |
+| `registers/` | Durable preferences, retailer facts, availability, substitutions, outcomes, issues, and change history |
+| `recipes/` | Versioned recipe records with scaling and nutrition metadata |
+| `runs/` | One auditable record per menu/cart/order cycle |
+| `templates/` | Copyable YAML records for new recipes, menus, and runs |
+| `local/` | Private machine-local configuration; real values are not committed |
+| `scripts/validate.py` | Structural and cross-reference validation |
 
-### Pilot cart rules
+## Current baseline
 
-- Nature's Promise chicken tenderloins and minced garlic.
-- Food Lion broccoli florets, green beans, olive oil, Italian seasoning, and lemons.
-- Pickup and delivery should use the same basket wherever package sizes allow.
+- Six servings per selected meal.
+- Most recipes under 45 minutes.
+- High protein and vegetable-forward.
+- Carb-heavy bases only occasionally.
+- Prefer low-prep ingredients, Nature's Promise, and Food Lion brands.
+- Prefer grass-fed beef.
+- Compare pickup and delivery totals before checkout.
 
-## Verified Food Lion direct estimates
-
-| Fulfillment | Grocery subtotal | Fees | Tip | Estimated total |
-| --- | ---: | ---: | ---: | ---: |
-| Pickup | $40.49 | $1.99 | — | $42.48 |
-| Delivery | $40.49 | $7.95 | $2.83 | $51.27 |
-
-Prices and availability are point-in-time estimates and must be refreshed before an order is submitted.
+The first recorded recipe is [`recipes/garlic-herb-chicken.yaml`](recipes/garlic-herb-chicken.yaml). Historical pilot pricing is retained in the outcomes register and should never be treated as current availability or price.

@@ -1,0 +1,19 @@
+version: 1
+updated_at: 2026-09-03T00:00:00-04:00
+rules:
+  - id: broccoli-crown-to-florets
+    ingredient: broccoli
+    preferred_product_form: florets
+    avoid_product_form: crown
+    status: approved
+    reason: lower preparation effort
+    evidence: user-confirmed
+  - id: whole-to-pre-diced-vegetables
+    ingredient: vegetables
+    preferred_product_form: pre-diced-or-trimmed
+    avoid_product_form: whole-when-convenient-alternative-exists
+    status: approved
+    reason: lower preparation effort
+    evidence: user-confirmed
+history: []
+

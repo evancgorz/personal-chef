@@ -1,0 +1,22 @@
+version: 1
+updated_at: 2026-09-03T00:00:00-04:00
+issues:
+  - id: issue-2026-08-26-cart-button-retargeting
+    opened_at: 2026-08-26T00:00:00-04:00
+    status: open
+    severity: medium
+    category: cart-automation
+    summary: Repeated generic Add-to-cart clicks selected adjacent products after the first button changed.
+    impact: Unintended products were temporarily added to the direct Food Lion cart.
+    mitigation: Scope every cart action to the named product card and re-read cart state after each mutation.
+    recoverability: Unintended items were removed before checkout.
+  - id: issue-2026-08-26-instacart-total-visibility
+    opened_at: 2026-08-26T00:00:00-04:00
+    status: open
+    severity: medium
+    category: price-comparison
+    summary: Instacart cart integration exposed item identities but not checkout totals.
+    impact: Four-way pickup and delivery comparison could not be completed.
+    mitigation: Use an authenticated checkout-review surface and stop before purchase.
+    recoverability: No order was placed.
+
