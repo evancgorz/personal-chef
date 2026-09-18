@@ -1,7 +1,7 @@
 version: 1
 id: replace-with-kebab-case-id
 name: Replace with recipe name
-status: candidate
+status: validated
 canonical_yield: 6
 time:
   prep_minutes: null
@@ -18,7 +18,11 @@ nutrition_estimate_per_serving:
   vegetable_servings: null
   carb_profile: null
 tags: []
+validation:
+  validated_at: null
+  run_id: null
+  outcome_id: null
+  evidence: user-feedback
 source:
   type: null
   created_at: null
-

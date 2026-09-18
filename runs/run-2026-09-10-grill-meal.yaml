@@ -1,0 +1,146 @@
+version: 1
+id: run-2026-09-10-grill-meal
+created_at: 2026-09-10T00:00:00-04:00
+updated_at: 2026-09-11T08:24:34-04:00
+status: blocked
+request:
+  meal_count: 1
+  servings: 6
+  budget: null
+  fulfillment_preference: compare
+  run_overrides:
+    - mostly-cooked-on-grill
+    - rotate-away-from-lemon-forward-flavors
+context_snapshot:
+  preference_version: 1
+  pantry_checked_at: null
+menu:
+  candidate_recipe_ids:
+    - grilled-chicken-thighs-with-roasted-red-pepper-feta-sauce
+    - grilled-steak-with-creamy-peppercorn-sauce
+    - gochujang-glazed-grilled-chicken-thighs
+  selected_recipe_ids: []
+  selected_candidate_ids:
+    - grilled-chicken-thighs-with-roasted-red-pepper-feta-sauce
+  scores:
+    - recipe_id: grilled-chicken-thighs-with-roasted-red-pepper-feta-sauce
+      score: 94
+      availability_confidence: stale-or-unknown
+    - recipe_id: grilled-steak-with-creamy-peppercorn-sauce
+      score: 90
+      availability_confidence: stale-or-unknown
+    - recipe_id: gochujang-glazed-grilled-chicken-thighs
+      score: 89
+      availability_confidence: stale-or-unknown
+  sources:
+    - recipe_id: grilled-chicken-thighs-with-roasted-red-pepper-feta-sauce
+      title: For juicier Turkish grilled chicken skewers, think strips not chunks
+      publisher: Associated Press, adapted from Christopher Kimball's Milk Street
+      url: https://apnews.com/article/fc243d61d4d3968120e68004db80f1e7
+      accessed_at: 2026-09-10T08:10:20-04:00
+      adaptation: Keep the tested roasted-pepper grilled-chicken technique, use boneless thighs rather than skewers, and add a separate feta-yogurt sauce to meet the request for abundant sauce.
+    - recipe_id: grilled-steak-with-creamy-peppercorn-sauce
+      title: Steak with Creamy Peppercorn Sauce
+      publisher: RecipeTin Eats
+      url: https://www.recipetineats.com/peppercorn-sauce/
+      accessed_at: 2026-09-10T08:10:20-04:00
+      adaptation: Use the source's documented barbecue variation so the steak stays on the grill while the sauce is prepared separately.
+    - recipe_id: gochujang-glazed-grilled-chicken-thighs
+      title: Grilled Pork Ribs with Gochujang Barbecue Sauce
+      publisher: Bon Appetit
+      url: https://www.bonappetit.com/recipe/grilled-pork-spareribs-with-gochujang-barbecue-sauce
+      accessed_at: 2026-09-10T08:10:20-04:00
+      adaptation: Follow the publisher's explicit suggestion to use the glaze on boneless chicken thighs and adjust the grill timing and heat level for chicken.
+  macro_estimates:
+    - recipe_id: grilled-chicken-thighs-with-roasted-red-pepper-feta-sauce
+      basis: planning-estimate-per-serving
+      calories_kcal: 610
+      protein_g: 49
+      carbohydrates_g: 20
+      fat_g: 36
+    - recipe_id: grilled-steak-with-creamy-peppercorn-sauce
+      basis: planning-estimate-per-serving
+      calories_kcal: 610
+      protein_g: 47
+      carbohydrates_g: 14
+      fat_g: 40
+    - recipe_id: gochujang-glazed-grilled-chicken-thighs
+      basis: planning-estimate-per-serving
+      calories_kcal: 520
+      protein_g: 45
+      carbohydrates_g: 24
+      fat_g: 26
+  selected_recipe_plan:
+    recipe_id: grilled-chicken-thighs-with-roasted-red-pepper-feta-sauce
+    servings: 6
+    total_time_minutes: 45
+    equipment:
+      - outdoor grill
+      - blender or food processor
+    ingredients:
+      - ingredient: boneless skinless chicken thighs
+        recipe_quantity: 3 lb
+      - ingredient: jarred roasted red peppers, drained
+        recipe_quantity: 16 oz
+      - ingredient: plain Greek yogurt
+        recipe_quantity: 3/4 cup
+      - ingredient: feta cheese
+        recipe_quantity: 6 oz
+      - ingredient: garlic
+        recipe_quantity: 5 cloves
+      - ingredient: extra-virgin olive oil
+        recipe_quantity: 7 tbsp
+      - ingredient: tomato paste
+        recipe_quantity: 2 tbsp
+      - ingredient: smoked paprika
+        recipe_quantity: 2 tsp
+      - ingredient: dried oregano
+        recipe_quantity: 1 tsp
+      - ingredient: Aleppo pepper or red-pepper flakes
+        recipe_quantity: 1 tsp
+      - ingredient: fresh dill
+        recipe_quantity: 2 tbsp chopped
+      - ingredient: zucchini
+        recipe_quantity: 3 medium
+      - ingredient: sweet onions
+        recipe_quantity: 2 large
+      - ingredient: kosher salt
+        recipe_quantity: 2 tsp plus to taste
+      - ingredient: black pepper
+        recipe_quantity: 1 tsp plus to taste
+    method_summary: Season and grill the chicken thighs; grill sliced zucchini and onions alongside them; blend the drained roasted peppers, yogurt, feta, garlic, olive oil, and dill into a generous sauce; serve the chicken and vegetables with the sauce.
+    source_cross_check:
+      title: Roasted Pepper Feta Yogurt Sauce
+      publisher: Cookin Canuck
+      url: https://www.cookincanuck.com/roasted-pepper-feta-yogurt-sauce/
+      accessed_at: 2026-09-11T08:17:53-04:00
+requirements:
+  - Most cooking should happen on the grill.
+  - The meal should include a generous sauce.
+  - Preferred proteins are steak or chicken thighs.
+  - Lemon is allowed occasionally but should not be the default flavor profile.
+shopping_review:
+  presented_at: 2026-09-11T08:17:53-04:00
+  pantry_exclusions:
+    - garlic
+    - olive oil
+    - smoked paprika
+    - dried oregano
+    - red pepper flakes
+    - kosher salt
+    - black pepper
+  additional_items: []
+  confirmed_at: 2026-09-11T08:22:00-04:00
+carts: []
+approval:
+  requested_at: null
+  approved_at: null
+  approved_total: null
+order:
+  placed: false
+  placed_at: null
+  confirmation_reference: null
+closeout:
+  blocker: Codex in-app browser unavailable; no live Food Lion surface can be opened to build or price the cart.
+  notes: Shopping review is confirmed with pantry exclusions. Resume at Food Lion cart construction and target pickup near 4:00 PM on 2026-09-11.
+  follow_up_needed: true

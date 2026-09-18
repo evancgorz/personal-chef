@@ -1,22 +1,290 @@
 version: 1
-updated_at: 2026-09-03T00:00:00-04:00
+updated_at: 2026-09-18T09:31:36-04:00
 issues:
-  - id: issue-2026-08-26-cart-button-retargeting
-    opened_at: 2026-08-26T00:00:00-04:00
+  - id: issue-2026-09-07-browser-surface-unavailable
+    opened_at: 2026-09-07T00:00:00-04:00
+    status: resolved
+    severity: high
+    category: cart-automation
+    summary: No controllable browser or in-app browser was available when live Food Lion cart construction was requested.
+    impact: Product availability, cart totals, and pickup or delivery windows could not be inspected.
+    mitigation: Enable a controllable browser session, preferably an authenticated Chrome tab on Food Lion, and resume the blocked run.
+    recoverability: No retailer order was placed; the run resumed once the Codex in-app browser became available.
+    resolved_at: 2026-09-07T18:10:12-04:00
+    resolution: Resumed the run in the Codex in-app browser and completed live Food Lion cart and fulfillment-window inspection.
+  - id: issue-2026-09-07-pickup-mirepoix-unavailable
+    opened_at: 2026-09-07T18:19:40-04:00
+    status: resolved
+    severity: medium
+    category: product-availability
+    summary: Food Lion pickup catalog had no in-stock frozen onion, pepper, and celery blend for the selected stew.
+    impact: Pickup cart is $1.50 lower but incomplete for the recipe.
+    mitigation: Offer fresh onion, celery, and pepper components or use delivery, where the frozen blend is available.
+    recoverability: No order was placed; cart was changed before checkout.
+    resolved_at: 2026-09-07T18:53:27-04:00
+    resolution: User approved Food Lion Diced Celery and Fresh Cut Fajita Blend as fresh pickup substitutes.
+  - id: issue-2026-09-07-food-lion-session-payment-block
+    opened_at: 2026-09-07T19:02:23-04:00
+    status: resolved
+    severity: high
+    category: checkout
+    summary: Food Lion checkout reported the account was logged in on another device and required a payment method selection.
+    impact: The pickup slot could not be reserved and the order could not be placed.
+    mitigation: User must restore an active Food Lion session and select or add a payment method in the checkout page; do not enter credentials or payment details through the agent.
+    recoverability: Cart remains saved with the edited $34.69 pickup estimate; no order was placed.
+    resolved_at: 2026-09-07T20:09:14-04:00
+    resolution: User session and saved payment method became available; the user-authorized Food Lion delivery order was placed successfully.
+  - id: issue-2026-09-07-missed-celery-substitution
+    opened_at: 2026-09-07T20:15:00-04:00
+    status: resolved
+    severity: medium
+    category: substitution
+    summary: Agent accepted a missing celery item instead of selecting the next-best pre-washed or partially cut celery equivalent for a hands-off delivery order.
+    impact: Initial stew delivery order omitted celery even though a reasonable convenient substitute was available.
+    mitigation: Apply the durable ordinary-ingredient auto-substitution policy; search adjacent forms and cuts of the same ingredient before accepting an omission.
+    recoverability: Order was still editable; the user authorized an amendment before preparation began.
+    resolved_at: 2026-09-07T20:16:17-04:00
+    resolution: Added Jean's Classy Fresh Celery Sticks 8 oz bag to the scheduled delivery order; amended estimated total is $43.50.
+  - id: issue-2026-09-07-delivery-window-change-ui
+    opened_at: 2026-09-07T20:38:55-04:00
     status: open
     severity: medium
     category: cart-automation
-    summary: Repeated generic Add-to-cart clicks selected adjacent products after the first button changed.
-    impact: Unintended products were temporarily added to the direct Food Lion cart.
-    mitigation: Scope every cart action to the named product card and re-read cart state after each mutation.
-    recoverability: Unintended items were removed before checkout.
-  - id: issue-2026-08-26-instacart-total-visibility
-    opened_at: 2026-08-26T00:00:00-04:00
+    summary: Food Lion displayed a Change Time control for the scheduled delivery, but the rescheduling selector did not open in the active browser session.
+    impact: The delivery could not be moved from Tuesday 4:00-5:00 PM to the requested one-hour-earlier window.
+    mitigation: Retry from an authenticated Food Lion order-management session or use Food Lion customer support if the order enters preparation.
+    recoverability: Existing order remains scheduled for Tuesday, September 8, 4:00-5:00 PM; no order cancellation or destructive change was made.
+  - id: issue-2026-09-08-delivery-instructions-auth-surface
+    opened_at: 2026-09-08T07:46:32-04:00
     status: open
     severity: medium
-    category: price-comparison
-    summary: Instacart cart integration exposed item identities but not checkout totals.
-    impact: Four-way pickup and delivery comparison could not be completed.
-    mitigation: Use an authenticated checkout-review surface and stop before purchase.
-    recoverability: No order was placed.
-
+    category: checkout
+    summary: Food Lion's current scheduled-order cart does not expose delivery-instruction editing, and the authenticated order-details surface is unavailable in the active session.
+    impact: Requested instructions to leave the order at the side door and ring the bell were not added.
+    mitigation: Restore the Food Lion or Instacart authenticated order session and update Delivery Details before the shopper begins work; otherwise contact the shopper through the order screen.
+    recoverability: Order remains scheduled for Tuesday, September 8, 4:00-5:00 PM; no order cancellation or other destructive change was made.
+  - id: issue-2026-09-08-onepager-ingredient-clarity
+    opened_at: 2026-09-08T16:59:04-04:00
+    status: resolved
+    severity: high
+    category: recipe-artifact
+    summary: The printable Instant Pot method did not make the cannellini-bean loading instruction clear enough during active cooking.
+    impact: The user had to interrupt cooking to ask where the beans belonged.
+    mitigation: Require a discreet two-way ingredient-to-method check, specific ingredient names, matching quantities in method steps, and visual inspection before exporting any one-page recipe.
+    recoverability: The beans can be added before pressure cooking or warmed after pressure cooking if already omitted.
+    resolved_at: 2026-09-08T16:59:04-04:00
+    resolution: Added the one-pager validation gate to the agent contract and operations guide and revised the current artifact workflow.
+  - id: issue-2026-09-10-repetitive-lemon-profile
+    opened_at: 2026-09-10T08:04:43-04:00
+    status: resolved
+    severity: medium
+    category: menu-construction
+    summary: Agent over-weighted one successful lemon-forward meal and again made lemon the lead flavor in a chicken recommendation.
+    impact: The menu felt repetitive and less creative despite the user not asking for lemon.
+    mitigation: Rotate dominant flavor families and penalize repetition of recent signature flavors unless the user requests them.
+    recoverability: The meal had not been selected and no cart had been built.
+    resolved_at: 2026-09-10T08:04:43-04:00
+    resolution: Replaced the grill-meal candidates with distinct non-lemon sauce profiles and added a durable variety check.
+  - id: issue-2026-09-10-unsourced-menu-concepts
+    opened_at: 2026-09-10T08:10:20-04:00
+    status: resolved
+    severity: medium
+    category: menu-construction
+    summary: Agent presented new recipe concepts from general culinary knowledge without first grounding each one in a published recipe.
+    impact: The recommendations lacked external recipe-testing provenance and gave the user less confidence in their reliability.
+    mitigation: Require source metadata and review of a complete published recipe before every new candidate is presented.
+    recoverability: No recipe was selected and no cart was built.
+    resolved_at: 2026-09-10T08:10:20-04:00
+    resolution: Researched all three active candidates, recorded their sources and adaptations, and added an executable source gate.
+  - id: issue-2026-09-11-in-app-browser-unavailable
+    opened_at: 2026-09-11T08:24:34-04:00
+    status: resolved
+    severity: high
+    category: cart-automation
+    summary: No Codex in-app browser surface was available when the confirmed Food Lion pickup cart was ready to build.
+    impact: Live products, pricing, and the requested 4:00 PM pickup window could not be inspected or reserved.
+    mitigation: Create a fresh Chrome task tab at Food Lion when no suitable retailer tab exists, verify that it is controllable, and independently verify any state inherited from the shared Chrome profile.
+    recoverability: No retailer cart mutation or order submission occurred; the confirmed shopping list and pantry exclusions are saved.
+    resolved_at: 2026-09-12T08:17:33-04:00
+    resolution: User authenticated Food Lion in Chrome; the cart was completed and the pickup order was placed successfully. A later Luna xhigh test independently created and controlled a new Food Lion Chrome task tab without reusing the existing retailer tab.
+  - id: issue-2026-09-12-inconvenient-rice-and-ginger-forms
+    opened_at: 2026-09-12T11:04:07-04:00
+    status: resolved
+    severity: medium
+    category: product-selection
+    summary: The cart used microwave-ready basmati rice and fresh ginger root even though dry rice with Instant Pot cooking and ground ginger would have been equally functional and more convenient for the user.
+    impact: The order cost included an unnecessary convenience-rice format while the fresh ginger root created avoidable preparation and leftover-management work.
+    mitigation: "Apply durable ingredient-form preferences before SKU search: buy dry rice and provide Instant Pot directions; prefer ground ginger whenever the recipe does not materially depend on fresh ginger."
+    recoverability: The current products can still be used; future runs will select the preferred forms by default.
+    resolved_at: 2026-09-12T11:04:07-04:00
+    resolution: Added the then-confirmed rice and ginger defaults to preferences, product-selection workflow, and quality acceptance criteria. The rice portion was superseded on 2026-09-13 after the user tried and strongly preferred the convenience of 90-second microwave rice; the ground-ginger preference remains active.
+  - id: issue-2026-09-12-food-lion-fulfillment-carryover
+    opened_at: 2026-09-12T08:12:00-04:00
+    status: resolved
+    severity: high
+    category: checkout
+    summary: Food Lion's authenticated Chrome session carried a delivery shopping method into a pickup order flow.
+    impact: The cart temporarily showed delivery fees and a driver tip and could have been submitted through the wrong fulfillment channel if the user had not corrected it.
+    mitigation: Default to authenticated Chrome, but verify the requested fulfillment method at cart review, time selection, and final order summary; reselect the window after any method change.
+    recoverability: The method was changed to pickup before submission, the earliest pickup window was reselected, and the order was placed correctly.
+    resolved_at: 2026-09-12T08:17:33-04:00
+    resolution: The final order was verified as pickup. Food Lion's mode-carryover and post-order vehicle-preference behavior are now documented and included in checkout acceptance criteria.
+  - id: issue-2026-09-13-roasted-pepper-duplicate-package
+    opened_at: 2026-09-13T00:00:00-04:00
+    status: resolved
+    severity: medium
+    category: quantity-reconciliation
+    summary: The roasted red pepper feta chicken required one 16-ounce jar of roasted peppers, but the Food Lion order delivered two 16-ounce jars.
+    impact: The order purchased one unnecessary full jar and created an undisclosed 16-ounce remainder.
+    mitigation: Reconcile recipe need against cart package count and net contents before approval, and investigate every multi-unit line or full-package remainder.
+    recoverability: The extra jar is shelf-stable if unopened, but pantry availability is not recorded until the user reports that it remains on hand.
+    resolved_at: 2026-09-13T00:00:00-04:00
+    resolution: Added mandatory package-count arithmetic and duplicate/full-package-excess checks to the workflow, quality contract, run template, and repository validator.
+  - id: issue-2026-09-13-curry-spinach-omission
+    opened_at: 2026-09-13T00:00:00-04:00
+    status: resolved
+    severity: high
+    category: cart-completeness
+    summary: Baby spinach required by the coconut chicken curry was absent from the completed Food Lion order, with no equivalent leafy-green substitution.
+    impact: The printed recipe called for 5 ounces of baby spinach that the order did not supply.
+    mitigation: Reconcile every final recipe ingredient bidirectionally against the itemized cart or receipt before approval, including explicit pantry exclusions and substitutions.
+    recoverability: The curry can be cooked without spinach or with another tender leafy green on hand, but the planned vegetable is missing.
+    resolved_at: 2026-09-13T00:00:00-04:00
+    resolution: Verified the omission against Food Lion's Last Order list and recorded it in the run; the existing ingredient-to-cart completeness gate now has concrete failure evidence.
+  - id: issue-2026-09-13-shared-onion-form-tradeoff
+    opened_at: 2026-09-13T00:00:00-04:00
+    status: resolved
+    severity: low
+    category: product-selection
+    summary: Whole Vidalia onions were appropriate for the grilled onion slices in meal one but left avoidable chopping for the curry, and that shared-product convenience tradeoff was not disclosed.
+    impact: Consolidating the onion purchase reduced duplicate products but made the curry less hands-off than the user expected.
+    mitigation: Evaluate ingredient form by recipe allocation before consolidation and disclose when one shared product sacrifices convenience for another meal; add a separate convenient form when the effort reduction justifies the cost and remainder.
+    recoverability: The whole onions work in both recipes and no ingredient is unusable.
+    resolved_at: 2026-09-13T00:00:00-04:00
+    resolution: Recorded the tradeoff so future shopping reviews can distinguish culinary form requirements from convenience preferences.
+  - id: issue-2026-09-13-missing-itemized-receipt
+    opened_at: 2026-09-13T00:00:00-04:00
+    status: open
+    severity: high
+    category: receipt-retention
+    summary: The completed two-meal Food Lion order did not preserve an authoritative itemized receipt at checkout.
+    impact: Final package counts, fulfilled weights, item charges, substitutions, refunds, and the charged total cannot be fully audited from the run record.
+    mitigation: Capture and sanitize retailer order details immediately after every checkout; use the user's authorized confirmation email as fallback and retain private originals only under ignored local/receipts/.
+    recoverability: Food Lion Order History may expose the receipt after a fresh user sign-in; Gmail and Past Purchases did not provide sufficient receipt evidence during the recovery attempt.
+  - id: issue-2026-09-13-extra-chicken-package
+    opened_at: 2026-09-13T00:00:00-04:00
+    status: resolved
+    severity: high
+    category: quantity-reconciliation
+    summary: Three packages of chicken thighs were ordered for two recipes requiring 3 lb and 2.25 lb, leaving one unallocated package.
+    impact: The user received and paid for a third package that neither recipe required.
+    mitigation: Preserve separate recipe-level purchase lines, assign every package unit to exactly one recipe before checkout, and reconcile the final cart SKU count to the sum of named allocations.
+    recoverability: The user reported one extra package and wants it used for the next meal; exact weight and storage state remain unknown.
+    resolved_at: 2026-09-13T00:00:00-04:00
+    resolution: Added the reported package to pantry memory and made recipe-specific package allocation and unallocated-unit detection mandatory.
+  - id: issue-2026-09-13-convenience-form-consolidation
+    opened_at: 2026-09-13T00:00:00-04:00
+    status: resolved
+    severity: high
+    category: product-selection
+    summary: Ingredient consolidation caused the curry's diced-onion allocation to rely on whole onions selected for grilling, creating avoidable chopping.
+    impact: The curry was less meal-kit-like and required preparation the user explicitly does not want.
+    mitigation: Select the easiest suitable preparation form independently for every recipe, even when that means separate products for a shared ingredient.
+    recoverability: Whole onion remains usable; future orders will not trade preparation effort for consolidation.
+    resolved_at: 2026-09-13T00:00:00-04:00
+    resolution: Added a durable per-recipe convenience rule and corresponding product and quality checks.
+  - id: issue-2026-09-13-preferred-chicken-brand-unverified
+    opened_at: 2026-09-13T00:00:00-04:00
+    status: resolved
+    severity: high
+    category: product-selection
+    summary: Food Lion-brand chicken thighs were ordered without evidence that the preferred Nature's Promise equivalent had been checked in the active pickup channel.
+    impact: The order may have bypassed the user's preferred higher-priority brand.
+    mitigation: Search and record Nature's Promise availability before every Food Lion-brand fallback in the active store and fulfillment channel.
+    recoverability: Nature's Promise availability at the original checkout time is unknown and will not be reconstructed from current catalog state.
+    resolved_at: 2026-09-13T00:00:00-04:00
+    resolution: Made Nature's Promise the explicit first-priority brand and added evidence requirements for Food Lion fallback selections.
+  - id: issue-2026-09-13-curry-chicken-cut-missing
+    opened_at: 2026-09-13T00:00:00-04:00
+    status: resolved
+    severity: high
+    category: recipe-artifact
+    summary: The coconut chicken curry card did not state how to cut the chicken thighs.
+    impact: The cook could not reliably reproduce the intended browning and simmer timing from the printed instructions.
+    mitigation: Require explicit preparation form and cut size in both the ingredient list and relevant method step.
+    recoverability: Cut the chicken into 1-inch pieces before browning.
+    resolved_at: 2026-09-13T00:00:00-04:00
+    resolution: Updated the curry card source and printable-recipe acceptance criteria.
+  - id: issue-2026-09-13-curry-sequencing-and-oil
+    opened_at: 2026-09-13T00:00:00-04:00
+    status: resolved
+    severity: high
+    category: recipe-artifact
+    summary: The curry card began active cooking before completing mise en place and specified olive oil for a medium-high saute.
+    impact: The cook would alternate between preparation and cooking, and the oil choice did not match the user's high-heat preference.
+    mitigation: Front-load practical preparation into the first one or two steps and default to avocado oil for high-temperature sauteing, searing, and grilling.
+    recoverability: The recipe remains usable with the corrected sequence and oil.
+    resolved_at: 2026-09-13T00:00:00-04:00
+    resolution: Revised the curry card and added durable cooking-sequence and oil-selection acceptance checks.
+  - id: issue-2026-09-14-shopping-review-handoff-friction
+    opened_at: 2026-09-14T15:51:54-04:00
+    status: resolved
+    severity: medium
+    category: interaction-flow
+    summary: The agent presented a detailed shopping review but did not end with the single on-hand and additional-grocery question needed to hand off directly to cart construction.
+    impact: The user had to restate the expected workflow before cart construction could continue.
+    mitigation: End the shopping review with one concise question covering pantry exclusions and unrelated groceries; after a clear response, record the two lists separately and proceed directly to cart construction. Ask pickup or delivery only after the draft cart or comparison is ready when the preference is not already chosen. Preserve the final exact-cart purchase confirmation.
+    recoverability: No cart or order was created; the active run remains at the review-ready gate.
+    resolved_at: 2026-09-14T15:58:35-04:00
+    resolution: Updated the design, workflow, quality contract, run template, validator, change log, and active run handoff prompt.
+  - id: issue-2026-09-15-food-lion-cart-quantity-and-result-ordering
+    opened_at: 2026-09-15T08:35:00-04:00
+    status: resolved
+    severity: medium
+    category: cart-automation
+    summary: Food Lion search-result ordering selected a larger black-pepper bottle during a quantity-selector interaction, and direct quantity-field edits for tomatoes and cheddar did not persist to the cart state.
+    impact: The draft cart briefly contained the wrong pepper product and showed one package instead of the required two-package quantities for tomatoes and cheddar.
+    mitigation: Re-read the live accessibility tree after each mutation, remove accidental products, use the product tile's increment control for package counts, and re-open the cart to verify every quantity and subtotal before presenting it.
+    recoverability: No order was placed; the wrong pepper item was removed, the preferred Nature's Promise jar was added, and the tomato and cheddar quantities were corrected.
+    resolved_at: 2026-09-15T08:37:22-04:00
+    resolution: Final pickup draft cart contains the intended pepper SKU and the corrected two-can/two-bag quantities; the verified subtotal is $53.97 before fees and tax.
+  - id: issue-2026-09-18-food-lion-session-expired-on-reconnect
+    opened_at: 2026-09-18T08:57:09-04:00
+    status: resolved
+    severity: medium
+    category: cart-automation
+    summary: Food Lion reported that the authenticated session had expired while reconnecting to the saved cart for a user-requested milk replacement.
+    impact: The cart edit was briefly interrupted and the refreshed home page initially showed an empty cart until the saved cart was reopened.
+    mitigation: Refresh the Food Lion session, reopen the cart, and re-read all products and totals before making the requested mutation.
+    recoverability: No order was placed and the saved cart reappeared after the session refresh.
+    resolved_at: 2026-09-18T08:57:09-04:00
+    resolution: Session refresh restored the saved cart; the Nature's Promise milk was replaced with regular Food Lion milk and checkout was re-verified.
+  - id: issue-2026-09-18-food-lion-order-confirmation-not-itemized
+    opened_at: 2026-09-18T09:31:36-04:00
+    status: open
+    severity: high
+    category: receipt-retention
+    summary: Food Lion accepted the pickup order but its confirmation page exposed only the confirmation reference, item count, and estimated total rather than an authoritative itemized receipt.
+    impact: Final charged line prices, fulfilled quantities, substitutions, refunds, and the charged total cannot yet be reconciled against the approved cart.
+    mitigation: Retrieve Food Lion order details or an authorized confirmation email after placement and preserve only sanitized receipt facts in the run.
+    recoverability: The order confirmation reference m786363675 and sanitized pickup facts are recorded; no further order mutation was made.
+  - id: issue-2026-09-18-recipe-card-print-scaling
+    opened_at: 2026-09-18T17:37:40-04:00
+    status: open
+    severity: medium
+    category: recipe-printing
+    summary: Recipe-card printouts appeared undersized because the printer job did not apply Fit to page scaling.
+    impact: The corrected full-page PDFs still printed with too much white space and looked smaller than intended on paper.
+    mitigation: Set printer scaling to Fit to page for future recipe-card print jobs; do not regenerate the PDFs for this issue.
+    recoverability: Existing full-page PDFs remain correct; the user did not request another print job.
+  - id: issue-2026-09-18-run-state-and-artifact-drift
+    opened_at: 2026-09-18T18:17:46-04:00
+    status: resolved
+    severity: high
+    category: workflow-state-integrity
+    summary: Meal selection, ingredient coverage, cart contents, recipe-card targets, and print targets drifted apart during one run; additive selection language was treated as replacement, an unshopped chicken recipe was printed, and an unrelated broccoli side was added to satisfy a vegetable target.
+    impact: The user could not rely on the order or printed cards as a coherent meal-kit package, and missing chicken ingredients were discovered only after checkout and printing.
+    mitigation: Use one revisioned canonical selection, deterministic add/replace semantics, fail-closed phase gates, bidirectional meal-to-ingredient-to-cart-to-card reconciliation, exact print-target confirmation in chat, and Fit-to-page printer verification.
+    recoverability: The historical order and cards remain evidence of the failed run; future runs use the version 2 template and deterministic gates without rewriting history.
+    resolved_at: 2026-09-18T18:17:46-04:00
+    resolution: Updated design, workflow, quality criteria, the run template, and executable template validation to enforce revision-bound state and artifact reconciliation.

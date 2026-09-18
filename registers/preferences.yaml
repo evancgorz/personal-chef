@@ -1,5 +1,5 @@
 version: 1
-updated_at: 2026-09-03T00:00:00-04:00
+updated_at: 2026-09-18T16:41:58-04:00
 servings:
   default: 6
 meal_profile:
@@ -15,6 +15,12 @@ meal_profile:
     examples:
       - pasta
       - rice
+  variety:
+    rotate_primary_flavor_profiles: true
+    avoid_recent_flavor_repetition: true
+    ingredients_not_to_default_to:
+      - lemon
+    note: Lemon is welcome occasionally but should not be the default brightener or repeated merely because a prior lemon recipe succeeded.
 effort:
   priority: low-prep
   preferred_forms:
@@ -24,11 +30,62 @@ effort:
     - ready-to-cook proteins
     - jarred minced garlic
   cleanup_preference: one-pan-or-skillet
+  per_recipe_form_rule: Select the easiest suitable preparation form for each recipe independently; never sacrifice pre-diced, washed, trimmed, or ready-to-cook convenience merely to consolidate ingredients across recipes.
+  cooking_sequence: Front-load mise en place in the first one or two method steps, then cook without alternating back to cutting, measuring, or other preparation unless a genuinely long cooking interval makes later prep advantageous.
+ingredient_forms:
+  cooking_oil:
+    high_heat_default: avocado oil
+    use_for:
+      - high-temperature sauteing
+      - searing
+      - grilling
+    olive_oil_use: Reserve olive oil for lower-temperature cooking or uncooked flavor applications when appropriate.
+  rice:
+    preferred_purchase_form: microwave-ready 90-second pouches
+    preferred_cooking_method: microwave
+    fallback_form: dry rice
+    fallback_cooking_method: Instant Pot
+    convenience_rule: Default to microwave-ready 90-second rice when a suitable variety is available; use dry rice with Instant Pot directions only when requested or when no suitable pouch is available.
+  ginger:
+    preferred_default_form: ground ginger
+    choose_fresh_root_only_when:
+      - the recipe's flavor or texture materially depends on fresh ginger
+      - the user explicitly requests fresh ginger
+    convenience_rule: Prefer ground ginger when it preserves the recipe's function; recalculate the recipe quantity for the form selected.
+pantry_defaults:
+  garlic:
+    treated_as_pantry_item: true
+    quantity: unknown
+    form: unknown
+    rule: Treat garlic as a pantry item by default; do not assume its quantity or preparation form, and adapt or verify the recipe use when needed.
+substitutions:
+  ordinary_ingredient_gaps: auto_select_best_comparable
+  selection_order:
+    - same ingredient in a convenient equivalent cut or preparation
+    - same ingredient in a standard fresh or frozen form
+    - closest functional culinary equivalent that preserves the recipe's role
+  hands_off_constraints:
+    - preserve the recipe's flavor and function where practical
+    - prefer pre-washed or partially cut forms when consistent with low-prep preference
+    - stay within the same general price range unless the difference is immaterial
+  ask_before_substituting:
+    - allergens or dietary exclusions
+    - a different protein
+    - a material recipe change
+    - a material price increase
 brands:
-  preferred:
+  priority_order:
     - Nature's Promise
     - Food Lion
+  fallback_evidence_required: Before selecting Food Lion brand, verify and record whether a suitable Nature's Promise equivalent is available for the active store and fulfillment channel.
   national_brand_policy: choose-only-for-meaningful-quality-difference
+  item_specific_rules:
+    milk:
+      default_brand: Food Lion
+      default_product: regular 2% milk
+      avoid_unless_explicitly_requested:
+        - Nature's Promise
+      rule: Use regular Food Lion milk by default; do not select Nature's Promise milk unless the user explicitly specifies it.
 proteins:
   beef:
     grass_fed: preferred
@@ -43,7 +100,22 @@ fulfillment:
   compare_pickup_and_delivery: true
   require_out_the_door_estimate: true
   require_final_checkout_confirmation: true
+  pickup_identification:
+    vehicle_type: truck
+    vehicle_color: white
+    display_label: white truck
+    source: user-confirmed
+    rule: Use the white truck detail for future pickup identification unless the user gives a different instruction; do not modify an already placed order unless explicitly asked.
+interaction:
+  primary_interface: mobile_app
+  desktop_browser_visible_to_user: false
+  chat_updates_required: true
+  communication_rule: Summarize all decision-relevant retailer state, material cart changes, substitutions, fulfillment options, fees, blockers, and approval requests in chat; do not ask the user to inspect the desktop browser.
+shopping_review:
+  required_before_cart: true
+  collect_on_hand_ingredients: true
+  collect_additional_groceries: true
+  additional_items_excluded_from_recipe_cost: true
 evidence:
   source: user-confirmed
-  confirmed_at: 2026-08-26T00:00:00-04:00
-
+  confirmed_at: 2026-09-15T08:18:49-04:00

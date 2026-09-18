@@ -1,5 +1,5 @@
 version: 1
-updated_at: 2026-09-03T00:00:00-04:00
+updated_at: 2026-09-12T11:09:29-04:00
 retailers:
   - id: food-lion-avent-ferry
     retailer: Food Lion
@@ -12,12 +12,29 @@ retailers:
       - id: food-lion-direct
         type: retailer-direct
         preferred_for_price_baseline: true
+        default_browser: Chrome
+        session_requirement: use-authenticated-user-session
+        browser_bootstrap:
+          existing_retailer_tab_required: false
+          fresh_task_tab_supported: true
+          start_url: https://foodlion.com/
+          shares_normal_chrome_profile: true
+          clean_or_incognito_profile_available: false
+          tested_at: 2026-09-12T11:09:29-04:00
+          confidence: verified
       - id: instacart-food-lion
         type: marketplace
         preferred_for_price_baseline: false
+    checkout_behavior:
+      fulfillment_mode_can_persist_from_prior_session: true
+      verify_fulfillment_mode_at:
+        - cart review
+        - time selection
+        - final order summary
+      method_change_can_clear_window: true
+      pickup_preferences_surface: post-order-confirmation
     brand_priority:
       - Nature's Promise
       - Food Lion
-    last_verified_at: 2026-08-26T00:00:00-04:00
+    last_verified_at: 2026-09-12T08:17:33-04:00
     confidence: verified
-

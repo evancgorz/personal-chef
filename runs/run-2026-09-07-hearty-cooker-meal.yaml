@@ -1,0 +1,84 @@
+version: 1
+id: run-2026-09-07-hearty-cooker-meal
+created_at: 2026-09-07T00:00:00-04:00
+updated_at: 2026-09-08T18:35:40-04:00
+status: completed
+request:
+  meal_count: 1
+  servings: 6
+  budget: null
+  fulfillment_preference: compare
+  run_overrides:
+    - hearty
+    - healthy
+    - easy
+    - instant-pot-or-slow-cooker
+context_snapshot:
+  preference_version: 1
+  pantry_checked_at: null
+menu:
+  candidate_recipe_ids:
+    - instant-pot-lemon-chicken-white-bean-kale-stew
+  selected_recipe_ids:
+    - instant-pot-lemon-chicken-white-bean-kale-stew
+  scores:
+    - recipe_id: instant-pot-lemon-chicken-white-bean-kale-stew
+      score: 79
+      availability_confidence: stale-or-unknown
+requirements:
+  - Delivery cart uses a 2.3 lb variable-weight chicken-thigh package against the 2.5 lb recipe quantity.
+  - Frozen mirepoix was unavailable for pickup; user approved fresh diced celery plus fresh-cut peppers and onions as the pickup substitute.
+  - User-selected pickup window: 2026-09-08 16:00-17:00 local time.
+  - Optional Parmesan was not added.
+  - User removed pantry items already on hand before checkout; the edited pickup cart now contains one can of cannellini beans and one lemon.
+  - After checkout, user authorized an order amendment; Food Lion added Jean's Classy Fresh Celery Sticks 8 oz bag as the celery substitute.
+carts:
+  - channel_id: food-lion-direct
+    retailer_id: food-lion-avent-ferry
+    fulfillment: delivery
+    currency: USD
+    item_subtotal: 33.40
+    fees: 7.95
+    tip: 2.15
+    tax: 0
+    estimated_total: 43.50
+    estimated_savings: 0.79
+    slot_options:
+      - 2026-09-08 10:00-11:00
+      - 2026-09-08 14:00-15:00
+      - 2026-09-08 18:00-19:00
+    slot_availability_note: 12 delivery slots shown for 2026-09-08; 14 slots shown for each of 2026-09-09 through 2026-09-12.
+    observed_at: 2026-09-07T20:16:17-04:00
+    notes: User-authorized amendment added Jean's Classy Fresh Celery Sticks 8 oz bag ($2.69) after Food Lion marked the diced celery unavailable. Amended quote is $33.40 subtotal + $7.95 fees + $2.15 tip = $43.50 estimated total. Delivery remains Tuesday, September 8, 4:00-5:00 PM.
+  - channel_id: food-lion-direct
+    retailer_id: food-lion-avent-ferry
+    fulfillment: pickup
+    currency: USD
+    item_subtotal: 32.70
+    fees: 1.99
+    tip: 0
+    tax: 0
+    estimated_total: 34.69
+    slot_options:
+      - 2026-09-08 10:00-11:00
+      - 2026-09-08 14:00-15:00
+      - 2026-09-08 18:00-19:00
+    slot_availability_note: 12 pickup slots shown for 2026-09-08; 14 slots shown for each day through 2026-09-20.
+    selected_slot: 2026-09-08 16:00-17:00
+    observed_at: 2026-09-07T19:02:23-04:00
+    notes: User removed pantry items already on hand. Current pickup cart uses Food Lion Diced Celery 5 oz tub ($1.99) plus Food Lion Fresh Cut Fajita Blend (Peppers & Onions) 16 oz bag ($3.99) in place of the unavailable frozen blend. Food Lion displays the selected Tuesday, September 8, 4:00-5:00 PM slot; it is not reserved until checkout. Checkout reached payment selection but reported the account logged in on another device and no payment method was selected.
+approval:
+  requested_at: 2026-09-07T18:19:40-04:00
+  approved_at: 2026-09-07T18:53:27-04:00
+  approved_total: 34.69
+  amended_at: 2026-09-07T20:16:17-04:00
+  amended_total: 43.50
+order:
+  placed: true
+  placed_at: 2026-09-07T20:09:14-04:00
+  confirmation_reference: m785745266
+  amended_at: 2026-09-07T20:16:17-04:00
+closeout:
+  blocker: null
+  notes: User requested delivery and then authorized an amendment. Food Lion added Jean's Classy Fresh Celery Sticks 8 oz bag as the celery substitute. The order was delivered for the Instant Pot stew. After cooking, the user reported that the recipe was good; the final cooked version is saved as the repository's first validated recipe.
+  follow_up_needed: false

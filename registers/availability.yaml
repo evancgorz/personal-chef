@@ -1,29 +1,246 @@
 version: 1
-updated_at: 2026-09-03T00:00:00-04:00
+updated_at: 2026-09-18T08:57:09-04:00
 observations:
-  - id: availability-2026-08-26-food-lion-pilot
-    observed_at: 2026-08-26T00:00:00-04:00
+  - id: availability-2026-09-07-food-lion-stew-delivery
+    observed_at: 2026-09-07T18:10:12-04:00
     retailer_id: food-lion-avent-ferry
     channel_id: food-lion-direct
-    status: stale
+    fulfillment: delivery
+    status: verified
     currency: USD
     products:
-      - product: Nature's Promise Natural Boneless Skinless Chicken Tenderloins Fresh
-        package: approximately 1.3 lb
-        unit_price: 6.49
+      - product: Nature's Promise Natural Boneless Skinless Chicken Thighs Fresh
+        package: approximately 2.3 lb
+        price: 10.79
+        unit_price: 4.69
         unit: lb
         availability: observed
-      - product: Food Lion Broccoli Florets Frozen
-        package: 32 oz bag
-        price: 3.79
-        availability: observed
-      - product: Food Lion Green Beans
+      - product: Hanover Seasoning Blend Onions Peppers & Celery Frozen
         package: 12 oz bag
-        price: 2.79
+        price: 1.50
+        availability: observed
+      - product: Food Lion Cannellini Beans
+        package: 15.5 oz can
+        price: 0.96
+        quantity: 2
+        availability: observed
+      - product: Food Lion No Salt Added Diced Tomatoes
+        package: 14.5 oz can
+        price: 0.98
+        availability: observed
+      - product: Food Lion Fat Free Reduced Sodium Chicken Broth
+        package: 32 oz carton
+        price: 1.59
+        availability: observed
+      - product: Kale
+        package: 1 lb bag
+        price: 3.49
         availability: observed
       - product: Nature's Promise Minced Garlic
         package: 8 oz jar
         price: 2.79
         availability: observed
-    notes: Historical pilot observation. Refresh all products and prices before reuse.
-
+      - product: Food Lion Italian Seasoning
+        package: 0.75 oz bottle
+        price: 3.18
+        availability: observed
+      - product: Food Lion Crushed Red Pepper
+        package: 1.5 oz bottle
+        price: 2.69
+        availability: observed
+      - product: Food Lion Iodized Salt
+        package: 26 oz can
+        price: 0.89
+        availability: observed
+      - product: Food Lion Ground Black Pepper
+        package: 1.5 oz tin
+        price: 2.69
+        availability: observed
+      - product: Lemons
+        package: 1 each
+        price: 0.99
+        quantity: 2
+        availability: observed
+    notes: Complete delivery ingredient set observed in the live cart. Prices are item prices before fees and tax.
+  - id: availability-2026-09-07-food-lion-stew-pickup
+    observed_at: 2026-09-07T18:10:12-04:00
+    retailer_id: food-lion-avent-ferry
+    channel_id: food-lion-direct
+    fulfillment: pickup
+    status: verified
+    currency: USD
+    products:
+      - product: Hanover Seasoning Blend Onions Peppers & Celery Frozen
+        package: 12 oz bag
+        price: 1.50
+        availability: unavailable
+    notes: Pickup mode reported the frozen seasoning blend unavailable and found no comparable frozen item currently in stock; fresh substitutions were subsequently observed and approved in the run.
+  - id: availability-2026-09-07-food-lion-stew-pickup-substitutes
+    observed_at: 2026-09-07T18:53:27-04:00
+    retailer_id: food-lion-avent-ferry
+    channel_id: food-lion-direct
+    fulfillment: pickup
+    status: verified
+    currency: USD
+    products:
+      - product: Food Lion Diced Celery
+        package: 5 oz tub
+        price: 1.99
+        availability: observed
+      - product: Food Lion Fresh Cut Fajita Blend (Peppers & Onions)
+        package: 16 oz bag
+        price: 3.99
+        availability: observed
+    notes: Fresh pickup substitutes added after user approval for the unavailable frozen seasoning blend.
+  - id: availability-2026-09-07-food-lion-stew-delivery-edited
+    observed_at: 2026-09-07T19:12:00-04:00
+    retailer_id: food-lion-avent-ferry
+    channel_id: food-lion-direct
+    fulfillment: delivery
+    status: verified
+    currency: USD
+    products:
+      - product: Food Lion Diced Celery
+        package: 5 oz tub
+        availability: unavailable
+    notes: Delivery mode marked the previously selected diced celery unavailable and removed it from the active basket. Current edited delivery quote is recorded in the active run.
+  - id: availability-2026-09-07-food-lion-stew-delivery-celery-substitute
+    observed_at: 2026-09-07T20:16:17-04:00
+    retailer_id: food-lion-avent-ferry
+    channel_id: food-lion-direct
+    fulfillment: delivery
+    status: verified
+    currency: USD
+    products:
+      - product: Jean's Classy Fresh Celery Sticks
+        package: 8 oz bag
+        price: 2.69
+        availability: observed
+    notes: Added to the already placed delivery order as the user-authorized replacement for unavailable diced celery.
+  - id: availability-2026-09-15-food-lion-cheeseburger-casserole-pickup
+    observed_at: 2026-09-15T08:37:22-04:00
+    retailer_id: food-lion-avent-ferry
+    channel_id: food-lion-direct
+    fulfillment: pickup
+    status: verified
+    currency: USD
+    products:
+      - product: Nature's Promise Organic Rotini Pasta
+        sku: "257124"
+        package: 16 oz box
+        price: 1.79
+        quantity: 1
+        availability: observed
+      - product: Steakhouse Naturals Grass-fed 90% Lean 10% Fat Angus Ground Beef Fresh
+        sku: "343408"
+        package: 16 oz package
+        price: 9.49
+        quantity: 2
+        availability: observed
+      - product: Food Lion Yellow Onions Diced
+        sku: "310230"
+        package: 5 oz package
+        price: 1.99
+        quantity: 2
+        availability: observed
+      - product: Nature's Promise Organic No Salt Added Diced Tomatoes
+        sku: "222397"
+        package: 14.5 oz can
+        price: 1.39
+        quantity: 2
+        availability: observed
+      - product: Nature's Promise Organic Tomato Paste
+        sku: "147651"
+        package: 6 oz can
+        price: 1.19
+        quantity: 1
+        availability: observed
+      - product: Nature's Promise Organic Dijon Mustard
+        sku: "204684"
+        package: 12 oz squeeze bottle
+        price: 2.29
+        quantity: 1
+        availability: observed
+      - product: Food Lion Natural Reduced Fat Fancy Shredded Sharp Cheddar Cheese
+        sku: "296689"
+        package: 7 oz bag
+        price: 2.00
+        quantity: 2
+        availability: observed
+      - product: Food Lion Broccoli Florets Frozen
+        sku: "390108"
+        package: 12 oz bag
+        price: 1.79
+        quantity: 1
+        availability: observed
+      - product: Food Lion 100% Pure Avocado Oil
+        sku: "328270"
+        package: 17 oz bottle
+        price: 11.29
+        quantity: 1
+        availability: observed
+      - product: Food Lion Coarse Kosher Salt
+        sku: "298649"
+        package: 16 oz can
+        price: 1.69
+        quantity: 1
+        availability: observed
+      - product: Nature's Promise Organic Ground Black Pepper
+        sku: "222535"
+        package: 1.9 oz jar
+        price: 4.19
+        quantity: 1
+        availability: observed
+    notes: Live Food Lion pickup draft cart re-read in Chrome. Prices are per package before fees and tax; no delivery comparison or fulfillment window was selected. Nature's Promise checks and Food Lion fallback reasons are recorded in the active run.
+  - id: availability-2026-09-15-food-lion-additional-groceries-pickup
+    observed_at: 2026-09-15T08:42:33-04:00
+    retailer_id: food-lion-avent-ferry
+    channel_id: food-lion-direct
+    fulfillment: pickup
+    status: verified
+    currency: USD
+    products:
+      - product: Nature's Promise Organic 2% Reduced Fat Milk
+        sku: "148456"
+        package: 1 gallon
+        price: 8.29
+        quantity: 2
+        availability: observed
+      - product: Food Lion Whole Milk Plain Greek Yogurt
+        sku: "296747"
+        package: 32 oz tub
+        price: 3.99
+        availability: unavailable
+      - product: Cabot Creamery Whole Milk Plain Greek Yogurt
+        sku: "163751"
+        package: 32 oz tub
+        price: 5.29
+        quantity: 1
+        availability: observed
+    notes: Live Food Lion pickup search and cart observation. No suitable Nature's Promise whole-milk Greek yogurt was visible; the Food Lion plain whole-milk item was out of stock, so Cabot was selected as the closest in-stock plain whole-milk option. Prices are per package before fees and tax.
+  - id: availability-2026-09-18-food-lion-milk-reconnect-pickup
+    observed_at: 2026-09-18T08:57:09-04:00
+    retailer_id: food-lion-avent-ferry
+    channel_id: food-lion-direct
+    fulfillment: pickup
+    status: verified
+    currency: USD
+    products:
+      - product: Food Lion 2% Reduced Fat Milk
+        sku: "296837"
+        package: 1 gallon
+        price: 2.79
+        quantity: 2
+        availability: observed
+      - product: Nature's Promise Organic 2% Reduced Fat Milk
+        sku: "148456"
+        package: 1 gallon
+        price: 8.29
+        availability: observed
+      - product: Cabot Creamery Whole Milk Plain Greek Yogurt
+        sku: "163751"
+        package: 32 oz tub
+        price: 3.99
+        quantity: 1
+        availability: observed
+    notes: Live Food Lion pickup cart and checkout observation after session reconnection. User requested regular Food Lion milk, so the two Nature's Promise milk gallons were removed and two Food Lion gallons were selected. Prices are per package before fees and tax.

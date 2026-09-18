@@ -9,4 +9,238 @@ changes:
       - retailer-baseline
     summary: Established the repository-backed agent workflow and registers from confirmed conversation context.
     source: user-request
-
+  - id: change-2026-09-07-hands-off-substitutions
+    changed_at: 2026-09-07T20:15:00-04:00
+    actor: user
+    scope:
+      - substitution-policy
+      - workflow-preference
+    summary: User wants ordinary ingredient gaps handled hands-off by selecting the best comparable convenient substitute, while still asking before allergens, protein changes, material recipe changes, or material price increases.
+    source: user-feedback
+  - id: change-2026-09-08-onepager-validation
+    changed_at: 2026-09-08T16:59:04-04:00
+    actor: user
+    scope:
+      - recipe-artifact-validation
+      - purchased-quantity-labeling
+      - visual-quality
+    summary: Printable recipes now require a discreet ingredient-to-method reconciliation, quantities beside every method ingredient, evidence-based full-package labels, and full-page visual inspection before delivery.
+    source: user-feedback
+  - id: change-2026-09-08-design-doc-system
+    changed_at: 2026-09-08T17:10:07-04:00
+    actor: user
+    scope:
+      - repository-instructions
+      - design-documents
+      - quality-gates
+      - skill-policy
+    summary: Replaced the monolithic agent contract with a short document map, made versioned design and quality documents the source of truth, and reserved skills for narrow specialized procedures rather than project-wide policy.
+    source: user-request
+  - id: change-2026-09-08-validated-recipe-library
+    changed_at: 2026-09-08T18:35:40-04:00
+    actor: user
+    scope:
+      - recipe-retention-policy
+      - repository-baseline
+      - outcome-history
+    summary: The recipe library now retains only meals that were cooked and positively evaluated. The Instant Pot lemon chicken, white bean, and kale stew is the first validated recipe and the earlier pilot and untested candidates were removed.
+    source: user-feedback
+  - id: change-2026-09-08-shopping-review-gate
+    changed_at: 2026-09-08T18:41:37-04:00
+    actor: user
+    scope:
+      - pre-cart-review
+      - pantry-input
+      - additional-groceries
+      - cost-allocation
+    summary: Every future run now pauses after recipe selection for one consolidated shopping review where the user can identify on-hand ingredients and request additional groceries before cart building begins; unrelated items remain separate from recipe cost.
+    source: user-feedback
+  - id: change-2026-09-10-flavor-variety
+    changed_at: 2026-09-10T08:04:43-04:00
+    actor: user
+    scope:
+      - menu-variety
+      - flavor-rotation
+    summary: Lemon remains welcome occasionally, but it must not become the default chicken flavor or be repeated merely because one lemon-forward recipe succeeded.
+    source: user-feedback
+  - id: change-2026-09-10-recipe-research-provenance
+    changed_at: 2026-09-10T08:10:20-04:00
+    actor: user
+    scope:
+      - menu-research
+      - recipe-provenance
+      - quality-gates
+    summary: Every new recipe candidate must be inspired by a complete recipe reviewed on a real recipe website, with its source and adaptation recorded before presentation.
+    source: user-feedback
+  - id: change-2026-09-10-menu-macros
+    changed_at: 2026-09-10T08:16:11-04:00
+    actor: user
+    scope:
+      - menu-presentation
+      - nutrition-estimates
+    summary: Restaurant-style menu entries now include small per-serving bullets for estimated calories, protein, carbohydrates, and fat, recalculated after recipe selection.
+    source: user-feedback
+  - id: change-2026-09-12-chrome-checkout
+    changed_at: 2026-09-12T08:14:37-04:00
+    actor: user
+    scope:
+      - retailer-browser
+      - checkout-authentication
+    summary: Use the user's authenticated Chrome session by default for retailer checkout; if a retailer requests an authentication code, use the user's authorized Gmail retrieval path without exposing or retaining the code.
+    source: user-request
+  - id: change-2026-09-12-convenient-rice-and-ginger
+    changed_at: 2026-09-12T11:04:07-04:00
+    actor: user
+    scope:
+      - ingredient-form-preferences
+      - product-selection
+      - cooking-equipment
+    summary: Prefer dry rice with Instant Pot cooking instead of microwave-ready rice, and prefer ground ginger when fresh ginger root provides no material recipe benefit. Quantity conversions must be recalculated for the selected form.
+    source: post-order-user-feedback
+  - id: change-2026-09-12-food-lion-checkout-verification
+    changed_at: 2026-09-12T11:04:07-04:00
+    actor: user
+    scope:
+      - retailer-browser
+      - fulfillment-verification
+      - pickup-preferences
+      - checkout-quality
+    summary: The successful Food Lion workflow now defaults to authenticated Chrome, distrusts carried-over pickup or delivery state, re-verifies fulfillment through checkout, and completes pickup-identification details when Food Lion exposes them after submission.
+    source: post-order-user-feedback
+  - id: change-2026-09-12-fresh-chrome-bootstrap
+    changed_at: 2026-09-12T11:09:29-04:00
+    actor: user
+    scope:
+      - retailer-browser
+      - workflow-bootstrap
+      - capability-verification
+    summary: Food Lion ordering no longer depends on an existing retailer tab. The agent may create and control a fresh Chrome task tab, while separately verifying any authentication, store, fulfillment, window, or cart state inherited from the shared Chrome profile.
+    source: user-request-and-luna-xhigh-test
+  - id: change-2026-09-13-package-count-reconciliation
+    changed_at: 2026-09-13T00:00:00-04:00
+    actor: user
+    scope:
+      - quantity-reconciliation
+      - cart-validation
+      - leftover-disclosure
+    summary: Cart review must multiply package count by package net quantity and reconcile it to recipe allocation; duplicate units and a full package of excess require correction or explicit justification before approval.
+    source: post-order-user-feedback
+  - id: change-2026-09-13-itemized-receipt-retention
+    changed_at: 2026-09-13T00:00:00-04:00
+    actor: user
+    scope:
+      - receipt-retention
+      - order-reconciliation
+      - private-data-boundary
+    summary: Every completed order must preserve an authoritative itemized receipt from retailer order details or authorized email, store sanitized receipt facts in the run, keep private originals ignored, and reconcile the receipt against the approved cart.
+    source: user-request
+  - id: change-2026-09-13-recipe-specific-package-allocation
+    changed_at: 2026-09-13T00:00:00-04:00
+    actor: user
+    scope:
+      - recipe-ingredient-separation
+      - package-allocation
+      - pantry-carryforward
+    summary: Keep each recipe's ingredients and purchased packages separate through checkout; every cart unit must be assigned to one named recipe or additional-grocery request, and unallocated units must be removed before approval.
+    source: post-order-user-feedback
+  - id: change-2026-09-13-convenience-brand-and-prep-validation
+    changed_at: 2026-09-13T00:00:00-04:00
+    actor: user
+    scope:
+      - per-recipe-preparation-form
+      - brand-priority-evidence
+      - recipe-preparation-completeness
+    summary: Select the easiest suitable ingredient form for each recipe without consolidation-driven chopping, verify Nature's Promise availability before Food Lion-brand fallback, and state required cut sizes explicitly on recipe cards.
+    source: post-order-user-feedback
+  - id: change-2026-09-13-mise-en-place-and-high-heat-oil
+    changed_at: 2026-09-13T00:00:00-04:00
+    actor: user
+    scope:
+      - recipe-method-sequencing
+      - cooking-oil-selection
+      - printable-recipe-quality
+    summary: Recipe methods should complete mise en place before active cooking and use avocado oil by default for high-temperature sauteing, searing, and grilling, reserving olive oil for lower-heat or uncooked uses.
+    source: user-feedback
+  - id: change-2026-09-13-microwave-rice-default
+    changed_at: 2026-09-13T00:00:00-04:00
+    actor: user
+    scope:
+      - ingredient-form-preferences
+      - rice-convenience
+      - cooking-method
+    summary: Superseded the dry-rice default after cooking feedback; choose microwave-ready 90-second rice by default when a suitable variety is available, with dry rice and Instant Pot directions as the fallback.
+    source: cooked-product-feedback
+  - id: change-2026-09-14-new-chat-menu-intent
+    changed_at: 2026-09-14T00:00:00-04:00
+    actor: user
+    scope:
+      - new-chat-routing
+      - run-lifecycle
+      - menu-construction
+    summary: An open-ended menu request in a new chat now starts a fresh meal-planning run and fresh recipe set by default; historical runs are used for context only unless explicitly requested.
+    source: user-request
+  - id: change-2026-09-14-shopping-review-handoff
+    changed_at: 2026-09-14T15:58:35-04:00
+    actor: user
+    scope:
+      - shopping-review
+      - cart-construction-handoff
+      - fulfillment-preference
+    summary: After meal selection, ask one concise question covering on-hand ingredients and unrelated groceries; a clear response confirms the shopping list and starts cart construction immediately, with pickup or delivery asked afterward when needed.
+    source: user-feedback
+  - id: change-2026-09-15-chat-first-retailer-visibility
+    changed_at: 2026-09-15T08:18:49-04:00
+    actor: user
+    scope:
+      - mobile-interface
+      - retailer-visibility
+      - chat-approval
+    summary: The user primarily operates through the mobile app and cannot see the desktop browser, so all decision-relevant retailer state, cart changes, fulfillment details, blockers, and approval requests must be communicated in chat.
+    source: user-confirmed
+  - id: change-2026-09-15-garlic-pantry-default
+    changed_at: 2026-09-15T08:27:04-04:00
+    actor: user
+    scope:
+      - pantry-defaults
+      - garlic
+      - shopping-review
+    summary: Treat garlic as a pantry item by default, while keeping its quantity and preparation form unknown until verified or adapted for the recipe.
+    source: user-confirmed
+  - id: change-2026-09-18-food-lion-milk-default
+    changed_at: 2026-09-18T08:57:09-04:00
+    actor: user
+    scope:
+      - milk-product-selection
+      - brand-preference
+      - shopping-review
+    summary: User wants regular Food Lion milk by default and does not want Nature's Promise milk selected unless explicitly specified.
+    source: user-confirmed
+  - id: change-2026-09-18-pickup-vehicle-correction
+    changed_at: 2026-09-18T16:41:58-04:00
+    actor: user
+    scope:
+      - pickup-identification
+      - durable-preference
+    summary: Correct the pickup vehicle detail from blue truck to white truck for future pickup identification; do not change an already placed order unless explicitly requested.
+    source: user-confirmed
+  - id: change-2026-09-18-deterministic-run-gates
+    changed_at: 2026-09-18T18:17:46-04:00
+    actor: user
+    scope:
+      - canonical-meal-selection
+      - phase-gates
+      - ingredient-cart-reconciliation
+      - recipe-card-targeting
+      - physical-printing
+    summary: Future runs use one revisioned canonical meal selection, deterministic add and replace semantics, fail-closed transition gates, bidirectional ingredient/cart/card reconciliation, explicit print targets, and Fit-to-page physical printing.
+    source: workflow-retrospective-and-user-request
+  - id: change-2026-09-18-session-ledger
+    changed_at: 2026-09-18T18:17:46-04:00
+    actor: user
+    scope:
+      - chat-session-history
+      - repository-memory
+      - cross-reference-integrity
+      - continuous-improvement
+    summary: Keep one concise repository session record for each practical new-chat request, linking runs, issues, changes, outcomes, artifacts, lessons, and follow-up without storing raw transcripts or private data.
+    source: user-request

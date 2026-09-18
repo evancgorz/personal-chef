@@ -1,0 +1,872 @@
+version: 1
+id: run-2026-09-14-menu
+created_at: 2026-09-14T09:18:16-04:00
+updated_at: 2026-09-18T09:31:36-04:00
+status: ordered
+request:
+  meal_count: 1
+  servings: 6
+  budget: null
+  fulfillment_preference: compare
+  run_overrides:
+    - low-prep
+    - rotate-away-from-recent-lemon-coconut-curry-roasted-pepper-and-marsala-profiles
+    - kid-friendly-mild-adjustable-and-interactive-serving
+    - selected-beef-meal; keep-the-reported-chicken-thigh-package-unallocated
+context_snapshot:
+  preference_version: 1
+  pantry_checked_at: 2026-09-13T00:00:00-04:00
+  interface_constraints:
+    primary_interface: mobile_app
+    desktop_browser_visible_to_user: false
+    chat_updates_required: true
+  pantry_evidence:
+    - item: boneless skinless chicken thighs
+      quantity: 1 package
+      exact_weight: null
+      confidence: reported
+      checked_at: 2026-09-13T00:00:00-04:00
+      note: User wants the extra package from run-2026-09-12-two-meal-order used for the next meal.
+menu:
+  candidate_recipe_ids:
+    - miso-mayo-chicken-bowls
+    - sheet-pan-pomegranate-chicken-walnut-relish
+    - sheet-pan-hot-honey-chicken-peaches
+    - black-vinegar-chicken-radish-green-bean-stir-fry
+    - crispy-dijon-panko-chicken
+    - lemongrass-chicken-thighs-cucumber-dressing
+    - crispy-chicken-quesadillas
+    - easy-chicken-al-pastor-tacos
+    - teriyaki-chicken-rice-plates
+    - kid-friendly-cheeseburger-casserole
+    - spiced-beef-refried-bean-tostadas
+    - gyudon-beef-rice-bowls
+  selected_candidate_ids:
+    - kid-friendly-cheeseburger-casserole
+  selected_recipe_ids: []
+  selection_notes:
+    - User selected cheeseburger casserole; the previously selected Magic Crispy Chicken was replaced before shopping review.
+    - The reported extra chicken-thigh package remains pantry evidence but is not allocated to this beef meal.
+  selection_history:
+    - recipe_id: crispy-dijon-panko-chicken
+      selected_at: 2026-09-14T15:18:22-04:00
+      disposition: replaced-by-user
+    - recipe_id: kid-friendly-cheeseburger-casserole
+      selected_at: 2026-09-14T15:51:54-04:00
+      disposition: current-selection
+  selected_recipe_plans:
+    - recipe_id: kid-friendly-cheeseburger-casserole
+      source_canonical_yield: 9
+      servings: 6
+      source_scale_factor: 0.667
+      total_time_minutes: 35
+      equipment:
+        - large pot
+        - large skillet
+        - 9 x 13-inch baking dish
+        - microwave or sheet pan for broccoli
+      ingredients:
+        - ingredient: 95% lean ground beef
+          recipe_quantity: 1.25 lb
+          preparation_form: lean ground beef
+          note: Increased above pure source scaling to keep the six dinner portions near the protein target; grass-fed preferred when available.
+        - ingredient: rotini pasta
+          recipe_quantity: 8 oz dry
+          preparation_form: dry pasta, cooked al dente
+        - ingredient: onion
+          recipe_quantity: 1.5 cups
+          preparation_form: pre-diced
+        - ingredient: minced garlic
+          recipe_quantity: 1 tsp
+          preparation_form: jarred
+        - ingredient: diced tomatoes
+          recipe_quantity: 28 oz
+          preparation_form: canned, preferably no-salt-added
+        - ingredient: tomato paste
+          recipe_quantity: 1.5 tbsp
+          preparation_form: canned or tube
+        - ingredient: Dijon mustard
+          recipe_quantity: 3 tbsp
+          preparation_form: prepared mustard
+        - ingredient: reduced-fat cheddar cheese
+          recipe_quantity: 2.5 cups
+          preparation_form: shredded
+        - ingredient: dill pickles
+          recipe_quantity: 1/3 cup
+          preparation_form: chopped
+          note: Serve on top or on the side for the kiddo.
+        - ingredient: broccoli florets
+          recipe_quantity: 12 oz
+          preparation_form: washed and trimmed
+          note: Separate vegetable side; steam or roast while the casserole bakes.
+        - ingredient: avocado oil
+          recipe_quantity: 2 tsp
+          preparation_form: cooking oil
+        - ingredient: kosher salt
+          recipe_quantity: 1 tsp
+          preparation_form: pantry candidate
+        - ingredient: black pepper
+          recipe_quantity: 1/2 tsp
+          preparation_form: pantry candidate
+      method_summary: Complete mise en place, cook the rotini just to al dente, soften the onion and garlic, brown the ground beef, simmer it briefly with tomato paste, diced tomatoes, and Dijon, combine with pasta, top with cheddar, and bake at 350 F for about 15 minutes. Steam or roast the broccoli during the bake and offer pickles separately.
+      adaptation_note: The source yields nine smaller one-cup servings. This run uses a six-serving dinner adaptation with more lean beef and pasta while keeping the source's cheeseburger flavor and 35-minute casserole workflow.
+      macro_estimate:
+        basis: planning-estimate-per-serving
+        calories_kcal: 620
+        protein_g: 38
+        carbohydrates_g: 55
+        fat_g: 27
+  scores:
+    - recipe_id: miso-mayo-chicken-bowls
+      score: 87
+      dimensions:
+        preference_and_dietary_fit: 22
+        protein_quality_and_amount: 18
+        vegetable_quantity_and_variety: 14
+        total_time: 15
+        preparation_effort: 8
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 4
+        availability_confidence: 4
+      availability_confidence: stale-or-unknown
+      reason: Savory umami profile, one sheet pan, and roasted Brussels sprouts and leeks give the meal two substantial vegetables.
+    - recipe_id: sheet-pan-pomegranate-chicken-walnut-relish
+      score: 89
+      dimensions:
+        preference_and_dietary_fit: 23
+        protein_quality_and_amount: 18
+        vegetable_quantity_and_variety: 14
+        total_time: 15
+        preparation_effort: 8
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 5
+        availability_confidence: 4
+      availability_confidence: stale-or-unknown
+      reason: Sweet-tart Persian-inspired flavor is clearly different from recent meals; the chicken technique is fast and pairs well with a low-prep green-vegetable side.
+    - recipe_id: sheet-pan-hot-honey-chicken-peaches
+      score: 86
+      dimensions:
+        preference_and_dietary_fit: 21
+        protein_quality_and_amount: 18
+        vegetable_quantity_and_variety: 14
+        total_time: 15
+        preparation_effort: 9
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 3
+        availability_confidence: 4
+      availability_confidence: stale-or-unknown
+      reason: A low-cleanup broiler meal with sweet-spicy sauce, onions, peaches, and a planned green-vegetable side.
+    - recipe_id: black-vinegar-chicken-radish-green-bean-stir-fry
+      score: 89
+      dimensions:
+        preference_and_dietary_fit: 23
+        protein_quality_and_amount: 18
+        vegetable_quantity_and_variety: 14
+        total_time: 15
+        preparation_effort: 9
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 4
+        availability_confidence: 4
+      availability_confidence: stale-or-unknown
+      reason: Fast one-skillet Chinese takeout profile with boneless thighs, blistered radishes, and an added green-vegetable side; fresh ginger is retained because it is central to the source's flavor.
+    - recipe_id: crispy-dijon-panko-chicken
+      score: 80
+      dimensions:
+        preference_and_dietary_fit: 19
+        protein_quality_and_amount: 18
+        vegetable_quantity_and_variety: 14
+        total_time: 13
+        preparation_effort: 6
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 4
+        availability_confidence: 4
+      availability_confidence: stale-or-unknown
+      total_time_exception: About 45-50 minutes; the source describes the method as under an hour, and the coating step is more hands-on than the user's preferred low-prep baseline.
+      reason: Crispy oven-baked chicken with a tangy honey-Dijon dip and roasted broccoli; a comfort-food option with a different texture and flavor family.
+    - recipe_id: lemongrass-chicken-thighs-cucumber-dressing
+      score: 87
+      dimensions:
+        preference_and_dietary_fit: 22
+        protein_quality_and_amount: 19
+        vegetable_quantity_and_variety: 14
+        total_time: 15
+        preparation_effort: 8
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 3
+        availability_confidence: 4
+      availability_confidence: stale-or-unknown
+      reason: Vietnamese-style lemongrass, fish sauce, lime, cucumber, and cilantro bring a fresh herbaceous profile; the chicken can use the broiler if avoiding another grill meal.
+    - recipe_id: crispy-chicken-quesadillas
+      score: 85
+      dimensions:
+        preference_and_dietary_fit: 23
+        protein_quality_and_amount: 17
+        vegetable_quantity_and_variety: 13
+        total_time: 15
+        preparation_effort: 7
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 4
+        availability_confidence: 4
+      availability_confidence: stale-or-unknown
+      reason: Handheld, cheesy, and buildable at the table; use mild seasoning and keep salsa or jalapeño separate for the kiddo.
+    - recipe_id: easy-chicken-al-pastor-tacos
+      score: 88
+      dimensions:
+        preference_and_dietary_fit: 22
+        protein_quality_and_amount: 19
+        vegetable_quantity_and_variety: 14
+        total_time: 15
+        preparation_effort: 8
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 4
+        availability_confidence: 4
+      availability_confidence: stale-or-unknown
+      reason: Taco-night format with pineapple and customizable toppings; heat can be lowered by using a very small amount of chipotle.
+    - recipe_id: teriyaki-chicken-rice-plates
+      score: 88
+      dimensions:
+        preference_and_dietary_fit: 23
+        protein_quality_and_amount: 18
+        vegetable_quantity_and_variety: 14
+        total_time: 15
+        preparation_effort: 8
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 4
+        availability_confidence: stale-or-unknown
+      availability_confidence: stale-or-unknown
+      reason: Familiar sweet-savory glaze, microwave rice, and colorful crunchy vegetables that can be served separately for a low-conflict plate.
+    - recipe_id: kid-friendly-cheeseburger-casserole
+      score: 84
+      dimensions:
+        preference_and_dietary_fit: 24
+        protein_quality_and_amount: 16
+        vegetable_quantity_and_variety: 12
+        total_time: 15
+        preparation_effort: 8
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 3
+        availability_confidence: 4
+      availability_confidence: stale-or-unknown
+      reason: Cheeseburger flavors in a scoopable pasta bake with tomatoes, cheddar, and optional pickles; broccoli or peas can stay on the side.
+    - recipe_id: spiced-beef-refried-bean-tostadas
+      score: 85
+      dimensions:
+        preference_and_dietary_fit: 23
+        protein_quality_and_amount: 17
+        vegetable_quantity_and_variety: 13
+        total_time: 15
+        preparation_effort: 7
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 4
+        availability_confidence: 4
+      availability_confidence: stale-or-unknown
+      reason: Crunchy, assemble-your-own dinner with beef, beans, pico, avocado, and cheese; omit jalapeño or cayenne for a mild kid plate.
+    - recipe_id: gyudon-beef-rice-bowls
+      score: 85
+      dimensions:
+        preference_and_dietary_fit: 22
+        protein_quality_and_amount: 18
+        vegetable_quantity_and_variety: 12
+        total_time: 15
+        preparation_effort: 8
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 4
+        availability_confidence: 4
+      availability_confidence: stale-or-unknown
+      reason: Twenty-minute sweet-savory beef bowls with tender onions, rice, and a simple edamame or broccoli side.
+  sources:
+    - recipe_id: miso-mayo-chicken-bowls
+      title: Miso-Mayo Chicken Bowl
+      publisher: Bon Appétit
+      url: "https://www.bonappetit.com/bon-appetit/recipe/miso-mayo-chicken-bowl"
+      accessed_at: 2026-09-14T09:18:16-04:00
+      adaptation: Scale the 4-serving recipe to 6 using the reported boneless skinless chicken-thigh package, keep the sheet-pan chicken and Brussels sprouts technique, use sliced leeks, and serve with the user's preferred microwave-ready rice form. Final rice and sauce quantities will be recalculated after selection.
+    - recipe_id: sheet-pan-pomegranate-chicken-walnut-relish
+      title: Sheet-Pan Pomegranate Chicken With Walnut Relish
+      publisher: Bon Appétit
+      url: "https://www.bonappetit.com/recipe/sheet-pan-pomegranate-chicken-with-walnut-relish"
+      accessed_at: 2026-09-14T09:18:16-04:00
+      adaptation: Scale the 4-serving boneless-thigh recipe to 6, use the reported chicken-thigh package, preserve the pomegranate-balsamic glaze and walnut relish, and add a low-prep roasted green-vegetable side to meet the vegetable target. Final side and relish quantities will be recalculated after selection.
+    - recipe_id: sheet-pan-hot-honey-chicken-peaches
+      title: Sheet-Pan Hot Honey Chicken and Peaches
+      publisher: Bon Appétit
+      url: "https://www.bonappetit.com/recipe/sheet-pan-hot-honey-chicken-peaches"
+      accessed_at: 2026-09-14T09:18:16-04:00
+      adaptation: Scale the 4-serving boneless-thigh recipe to 6 using the reported chicken-thigh package, keep the broiler method, and add a low-prep green-vegetable side alongside the onions and peaches. Use avocado oil for any high-temperature cooking; final quantities and side choice will be recalculated after selection.
+    - recipe_id: black-vinegar-chicken-radish-green-bean-stir-fry
+      title: Black Vinegar Chicken With Radishes
+      publisher: Bon Appétit
+      url: "https://www.bonappetit.com/recipe/black-vinegar-chicken-radishes"
+      accessed_at: 2026-09-14T09:35:07-04:00
+      adaptation: Scale the 4-serving boneless-thigh stir-fry to 6 using the reported chicken-thigh package, preserve the black-vinegar and ginger sauce, add trimmed green beans for a second substantial vegetable, and use the preferred microwave-ready rice form if a starch is selected. Fresh ginger remains intentional because the published recipe makes it a signature flavor.
+    - recipe_id: crispy-dijon-panko-chicken
+      title: Magic Crispy Chicken
+      publisher: Bon Appétit
+      url: "https://www.bonappetit.com/recipe/magic-crispy-chicken"
+      accessed_at: 2026-09-14T09:35:07-04:00
+      adaptation: Scale the 4-serving boneless-thigh recipe to 6 using the reported chicken-thigh package, keep the toasted-panko rack-baking technique and honey-Dijon sauce, and add washed broccoli florets roasted on the same sheet. Use avocado oil for the high-temperature panko step; the extra coating work is disclosed as a time-and-effort exception.
+    - recipe_id: lemongrass-chicken-thighs-cucumber-dressing
+      title: Grilled Lemongrass Chicken Thighs
+      publisher: Bon Appétit
+      url: "https://www.bonappetit.com/recipe/grilled-lemongrass-chicken-thighs"
+      accessed_at: 2026-09-14T09:35:07-04:00
+      adaptation: Use the source's 6-serving quantity of boneless skinless chicken thighs, keep the blended lemongrass-fish-sauce marinade and cucumber-cilantro dressing, use the broiler when a grill is not preferred, and add a low-prep green vegetable alongside the cucumber. Lime is part of the recipe's dressing but lemon is not made the dominant profile.
+    - recipe_id: crispy-chicken-quesadillas
+      title: Crispy Chicken Quesadillas
+      publisher: Bon Appétit
+      url: "https://www.bonappetit.com/recipe/chicken-quesadillas"
+      accessed_at: 2026-09-14T15:18:22-04:00
+      adaptation: Use boneless skinless chicken thighs instead of the source's thin-sliced breasts, cut into small pieces after cooking; keep the pepper, onion, cheese, and tortilla format, use mild paprika-cumin seasoning, and leave jalapeño and salsa optional or on the side.
+    - recipe_id: easy-chicken-al-pastor-tacos
+      title: Easy Chicken Al Pastor
+      publisher: Bon Appétit
+      url: "https://www.bonappetit.com/recipe/easy-chicken-al-pastor"
+      accessed_at: 2026-09-14T15:18:22-04:00
+      adaptation: Preserve the source's boneless-thigh, pineapple, and broiler method, reduce chipotle to a mild level for the kiddo, and serve tacos with corn, cucumber, or avocado offered separately.
+    - recipe_id: teriyaki-chicken-rice-plates
+      title: Teriyaki Chicken
+      publisher: RecipeTin Japan
+      url: "https://japan.recipetineats.com/teriyaki-chicken/"
+      accessed_at: 2026-09-14T15:18:22-04:00
+      adaptation: Use boneless skinless chicken thighs, preserve the source's five-ingredient sweet-savory sauce, default to microwave-ready rice, and serve pre-shredded cabbage, carrot, and bell pepper separately for an easy kid plate.
+    - recipe_id: kid-friendly-cheeseburger-casserole
+      title: Cheeseburger Casserole
+      publisher: Skinnytaste
+      url: "https://www.skinnytaste.com/cheeseburger-casserole/"
+      accessed_at: 2026-09-14T15:18:22-04:00
+      adaptation: Scale the ground-beef pasta bake to six generous servings, use lean ground beef, keep the tomato-cheddar-pickle cheeseburger profile, and add peas or broccoli separately rather than hiding extra vegetables in the casserole.
+    - recipe_id: spiced-beef-refried-bean-tostadas
+      title: Spiced Beef and Refried Bean Tostadas
+      publisher: Bon Appétit
+      url: "https://www.bonappetit.com/recipe/beef-tostadas-recipe"
+      accessed_at: 2026-09-14T15:18:22-04:00
+      adaptation: Scale the 4-to-6-serving ground-beef recipe for six, keep the crisp tostada and refried-bean base, omit or separate the jalapeño and cayenne, and let the kiddo assemble toppings from pico, avocado, cheese, and lettuce.
+    - recipe_id: gyudon-beef-rice-bowls
+      title: Gyudon (Japanese Beef Rice Bowl)
+      publisher: Just One Cookbook
+      url: "https://www.justonecookbook.com/gyudon/"
+      accessed_at: 2026-09-14T15:18:22-04:00
+      adaptation: Scale the thin-sliced-beef and onion bowl to six, use microwave-ready rice, and add a simple steamed edamame or broccoli side; keep the sweet-savory sauce mild and serve pickled ginger separately.
+  macro_estimates:
+    - recipe_id: miso-mayo-chicken-bowls
+      basis: planning-estimate-per-serving
+      calories_kcal: 560
+      protein_g: 42
+      carbohydrates_g: 42
+      fat_g: 27
+    - recipe_id: sheet-pan-pomegranate-chicken-walnut-relish
+      basis: planning-estimate-per-serving
+      calories_kcal: 520
+      protein_g: 43
+      carbohydrates_g: 24
+      fat_g: 29
+    - recipe_id: sheet-pan-hot-honey-chicken-peaches
+      basis: planning-estimate-per-serving
+      calories_kcal: 505
+      protein_g: 42
+      carbohydrates_g: 34
+      fat_g: 23
+    - recipe_id: black-vinegar-chicken-radish-green-bean-stir-fry
+      basis: planning-estimate-per-serving
+      calories_kcal: 470
+      protein_g: 42
+      carbohydrates_g: 39
+      fat_g: 18
+    - recipe_id: crispy-dijon-panko-chicken
+      basis: planning-estimate-per-serving
+      calories_kcal: 560
+      protein_g: 41
+      carbohydrates_g: 35
+      fat_g: 29
+    - recipe_id: lemongrass-chicken-thighs-cucumber-dressing
+      basis: planning-estimate-per-serving
+      calories_kcal: 430
+      protein_g: 43
+      carbohydrates_g: 31
+      fat_g: 15
+    - recipe_id: crispy-chicken-quesadillas
+      basis: planning-estimate-per-serving
+      calories_kcal: 640
+      protein_g: 43
+      carbohydrates_g: 45
+      fat_g: 32
+    - recipe_id: easy-chicken-al-pastor-tacos
+      basis: planning-estimate-per-serving
+      calories_kcal: 470
+      protein_g: 40
+      carbohydrates_g: 44
+      fat_g: 18
+    - recipe_id: teriyaki-chicken-rice-plates
+      basis: planning-estimate-per-serving
+      calories_kcal: 500
+      protein_g: 42
+      carbohydrates_g: 42
+      fat_g: 20
+    - recipe_id: kid-friendly-cheeseburger-casserole
+      basis: planning-estimate-per-serving
+      note: Recalculated from the selected six-serving adaptation.
+      calories_kcal: 620
+      protein_g: 38
+      carbohydrates_g: 55
+      fat_g: 27
+    - recipe_id: spiced-beef-refried-bean-tostadas
+      basis: planning-estimate-per-serving
+      calories_kcal: 560
+      protein_g: 36
+      carbohydrates_g: 58
+      fat_g: 22
+    - recipe_id: gyudon-beef-rice-bowls
+      basis: planning-estimate-per-serving
+      calories_kcal: 520
+      protein_g: 38
+      carbohydrates_g: 55
+      fat_g: 17
+  planning_notes:
+    - These are planning-stage per-serving estimates, not finalized nutrition facts.
+    - The exact pantry package weight is unknown; the shopping review will verify its usable weight before any purchase plan is built.
+    - No current product, price, or availability observation has been used as durable evidence; live retailer checks wait until a meal is selected.
+    - The six candidates intentionally span savory umami, sweet-tart, sweet-spicy, black-vinegar tang, crispy Dijon, and herbaceous lemongrass profiles.
+    - Kid-friendly adaptations keep heat optional, separate toppings where practical, and favor recognizable handheld or bowl formats.
+requirements:
+  - The selected meal is beef; do not allocate the reported extra package of boneless skinless chicken thighs to this run.
+  - Prefer grass-fed ground beef when available and ask before substituting conventional beef.
+  - Keep the selected meal within the 45-minute target where practical.
+  - Keep the selected meal low-prep with at least two substantial vegetable servings, using broccoli as a separate kid-friendly side.
+  - Rotate away from the recent lemon, coconut-curry, roasted-red-pepper, and Marsala flavor profiles.
+shopping_review:
+  presented_at: 2026-09-14T15:51:54-04:00
+  response_received_at: 2026-09-15T08:27:04-04:00
+  cart_build_authorized: true
+  selected_recipe_ids:
+    - kid-friendly-cheeseburger-casserole
+  summary: Six servings of a 35-minute cheeseburger pasta casserole with a separate broccoli side. This is a planning-stage ingredient list, not a retailer cart.
+  recipe_use_quantities:
+    - ingredient: 95% lean ground beef
+      recipe_quantity: 1.25 lb
+    - ingredient: rotini pasta
+      recipe_quantity: 8 oz dry
+    - ingredient: pre-diced onion
+      recipe_quantity: 1.5 cups
+    - ingredient: jarred minced garlic
+      recipe_quantity: 1 tsp
+    - ingredient: canned diced tomatoes
+      recipe_quantity: 28 oz
+    - ingredient: tomato paste
+      recipe_quantity: 1.5 tbsp
+    - ingredient: Dijon mustard
+      recipe_quantity: 3 tbsp
+    - ingredient: shredded reduced-fat cheddar
+      recipe_quantity: 2.5 cups
+    - ingredient: dill pickles
+      recipe_quantity: 1/3 cup chopped
+    - ingredient: broccoli florets
+      recipe_quantity: 12 oz
+  expected_items_to_purchase:
+    - 95% lean ground beef, 1.25 lb or the smallest package covering the recipe quantity
+    - rotini pasta, 8 oz dry
+    - pre-diced onion, enough for 1.5 cups
+    - jarred minced garlic, if not already on hand
+    - no-salt-added diced tomatoes, 28 oz
+    - tomato paste, at least 1.5 tbsp
+    - Dijon mustard, at least 3 tbsp
+    - shredded reduced-fat cheddar, at least 2.5 cups
+    - dill pickles, at least 1/3 cup
+    - washed broccoli florets, 12 oz
+  pantry_candidates:
+    - avocado oil
+    - kosher salt
+    - black pepper
+  user_action_requested: Which listed ingredients are already on hand, and what other groceries or household items should I add?
+  response_summary: User has garlic and dill pickles; garlic is now a durable pantry default. The user later added two gallons of 2% milk and one whole-milk Greek yogurt as unrelated groceries; these remain separate from recipe cost and allocation.
+  pantry_exclusions:
+    - garlic
+    - dill pickles
+  additional_items:
+    - item: 2% reduced-fat milk
+      requested_quantity: 2 gallons
+      received_at: 2026-09-15T08:42:33-04:00
+    - item: whole-milk Greek yogurt
+      requested_quantity: 1 tub
+      received_at: 2026-09-15T08:42:33-04:00
+  confirmed_at: 2026-09-15T08:27:04-04:00
+ingredient_plan:
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: 95% lean ground beef
+    recipe_quantity: 1.25 lb
+    preparation_form: lean ground beef
+    pantry_quantity: null
+    sku: "343408"
+    brand: Steakhouse Naturals
+    preferred_brand_check: Nature's Promise ground beef was checked; the visible suitable Nature's Promise option was 90/10, while the selected grass-fed Steakhouse Naturals option was also 90/10. Grass-fed is the durable preference and no exact 95% lean match was visible.
+    package_count: 2
+    net_quantity_per_package: 16 oz
+    purchase_quantity: 2 x 16 oz packages (32 oz / 2 lb total)
+    allocation: 1.25 lb to kid-friendly-cheeseburger-casserole
+    expected_remainder: 0.75 lb
+    full_package_excess: true
+    quantity_review: Two 16 oz packages are required by the retailer package size to cover the 1.25 lb recipe use; the planned remainder is 0.75 lb and must be accepted or changed before approval.
+    observed_unit_price: 9.49
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: rotini pasta
+    recipe_quantity: 8 oz dry
+    preparation_form: dry pasta, cooked al dente
+    pantry_quantity: null
+    sku: "257124"
+    brand: Nature's Promise
+    preferred_brand_check: Nature's Promise selected.
+    package_count: 1
+    net_quantity_per_package: 16 oz
+    purchase_quantity: 1 x 16 oz box (16 oz total)
+    allocation: 8 oz dry to kid-friendly-cheeseburger-casserole
+    expected_remainder: 8 oz dry
+    observed_unit_price: 1.79
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: onion
+    recipe_quantity: 1.5 cups
+    preparation_form: pre-diced
+    pantry_quantity: null
+    sku: "310230"
+    brand: Food Lion
+    preferred_brand_check: Nature's Promise pre-diced onion was checked; no suitable equivalent was visible, so Food Lion pre-diced yellow onion was selected for lower effort.
+    package_count: 2
+    net_quantity_per_package: 5 oz
+    purchase_quantity: 2 x 5 oz packages (10 oz total; weight-to-volume equivalence not verified)
+    allocation: 1.5 cups pre-diced onion to kid-friendly-cheeseburger-casserole
+    expected_remainder: null
+    full_package_excess: true
+    quantity_review: Two 5 oz packages were the smallest observed package combination covering the planned 1.5 cups; the exact cup remainder cannot be inferred from the package weight alone.
+    observed_unit_price: 1.99
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: minced garlic
+    recipe_quantity: 1 tsp
+    preparation_form: garlic, form unknown; mince as needed
+    pantry_quantity: user-reported pantry item; quantity unknown
+    sku: pantry
+    brand: pantry
+    preferred_brand_check: Not applicable; garlic is now a durable pantry default based on the user's explicit instruction.
+    package_count: 0
+    net_quantity_per_package: null
+    purchase_quantity: none
+    allocation: 1 tsp minced garlic to kid-friendly-cheeseburger-casserole
+    expected_remainder: null
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: diced tomatoes
+    recipe_quantity: 28 oz
+    preparation_form: canned, no-salt-added
+    pantry_quantity: null
+    sku: "222397"
+    brand: Nature's Promise
+    preferred_brand_check: Nature's Promise selected after an active pickup-channel search.
+    package_count: 2
+    net_quantity_per_package: 14.5 oz
+    purchase_quantity: 2 x 14.5 oz cans (29 oz total)
+    allocation: 28 oz canned tomatoes to kid-friendly-cheeseburger-casserole
+    expected_remainder: 1 oz
+    full_package_excess: true
+    quantity_review: Two cans are required to cover the 28 oz recipe use; the package remainder is 1 oz.
+    observed_unit_price: 1.39
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: tomato paste
+    recipe_quantity: 1.5 tbsp
+    preparation_form: canned tomato paste
+    pantry_quantity: null
+    sku: "147651"
+    brand: Nature's Promise
+    preferred_brand_check: Nature's Promise selected.
+    package_count: 1
+    net_quantity_per_package: 6 oz
+    purchase_quantity: 1 x 6 oz can
+    allocation: 1.5 tbsp tomato paste to kid-friendly-cheeseburger-casserole
+    expected_remainder: null
+    observed_unit_price: 1.19
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: Dijon mustard
+    recipe_quantity: 3 tbsp
+    preparation_form: prepared mustard
+    pantry_quantity: null
+    sku: "204684"
+    brand: Nature's Promise
+    preferred_brand_check: Nature's Promise selected.
+    package_count: 1
+    net_quantity_per_package: 12 oz
+    purchase_quantity: 1 x 12 oz squeeze bottle
+    allocation: 3 tbsp Dijon mustard to kid-friendly-cheeseburger-casserole
+    expected_remainder: null
+    observed_unit_price: 2.29
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: reduced-fat cheddar cheese
+    recipe_quantity: 2.5 cups
+    preparation_form: shredded
+    pantry_quantity: null
+    sku: "296689"
+    brand: Food Lion
+    preferred_brand_check: Nature's Promise reduced-fat shredded cheddar was checked; no suitable equivalent was visible, so Food Lion Natural Reduced Fat Fancy Shredded Sharp Cheddar was selected.
+    package_count: 2
+    net_quantity_per_package: 7 oz
+    purchase_quantity: 2 x 7 oz bags (14 oz total; cup equivalence not verified)
+    allocation: 2.5 cups shredded cheddar to kid-friendly-cheeseburger-casserole
+    expected_remainder: null
+    full_package_excess: true
+    quantity_review: Two 7 oz bags are required to cover the planned 2.5 cups; the remaining amount in cups cannot be inferred from package weight alone.
+    observed_unit_price: 2.00
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: dill pickles
+    recipe_quantity: 1/3 cup
+    preparation_form: chopped; serve on top or on the side
+    pantry_quantity: user-reported pantry item; quantity unknown
+    sku: pantry
+    brand: pantry
+    preferred_brand_check: Not applicable; user reported pickles on hand for this run.
+    package_count: 0
+    net_quantity_per_package: null
+    purchase_quantity: none
+    allocation: 1/3 cup chopped dill pickles to kid-friendly-cheeseburger-casserole
+    expected_remainder: null
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: broccoli florets
+    recipe_quantity: 12 oz
+    preparation_form: washed and trimmed; frozen florets
+    pantry_quantity: null
+    sku: "390108"
+    brand: Food Lion
+    preferred_brand_check: Nature's Promise washed broccoli was checked; its visible 10 oz package was $3.99, while the selected Food Lion frozen 12 oz bag was an exact-size, lower-cost match at $1.79.
+    package_count: 1
+    net_quantity_per_package: 12 oz
+    purchase_quantity: 1 x 12 oz bag
+    allocation: 12 oz broccoli florets to kid-friendly-cheeseburger-casserole
+    expected_remainder: 0 oz
+    observed_unit_price: 1.79
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: avocado oil
+    recipe_quantity: 2 tsp
+    preparation_form: cooking oil
+    pantry_quantity: null
+    sku: "328270"
+    brand: Food Lion
+    preferred_brand_check: No suitable Nature's Promise avocado oil was visible in the active pickup channel; Food Lion 100% Pure Avocado Oil was selected as the smallest suitable observed bottle.
+    package_count: 0
+    net_quantity_per_package: 17 oz
+    purchase_quantity: none (user removed from cart; on-hand status unconfirmed)
+    allocation: 2 tsp avocado oil to kid-friendly-cheeseburger-casserole; not covered by the current cart after user removal
+    cart_status: removed-by-user
+    expected_remainder: null
+    observed_unit_price: 11.29
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: kosher salt
+    recipe_quantity: 1 tsp
+    preparation_form: coarse kosher salt
+    pantry_quantity: null
+    sku: "298649"
+    brand: Food Lion
+    preferred_brand_check: No suitable Nature's Promise kosher salt was visible; Food Lion coarse kosher salt was selected.
+    package_count: 0
+    net_quantity_per_package: 16 oz
+    purchase_quantity: none (user removed from cart; on-hand status unconfirmed)
+    allocation: 1 tsp kosher salt to kid-friendly-cheeseburger-casserole; not covered by the current cart after user removal
+    cart_status: removed-by-user
+    expected_remainder: null
+    observed_unit_price: 1.69
+  - recipe_id: kid-friendly-cheeseburger-casserole
+    ingredient: black pepper
+    recipe_quantity: 1/2 tsp
+    preparation_form: ground black pepper
+    pantry_quantity: null
+    sku: "222535"
+    brand: Nature's Promise
+    preferred_brand_check: Nature's Promise selected after correcting an initial larger-bottle result; the live cart contains the 1.9 oz jar.
+    package_count: 0
+    net_quantity_per_package: 1.9 oz
+    purchase_quantity: none (user removed from cart; on-hand status unconfirmed)
+    allocation: 1/2 tsp ground black pepper to kid-friendly-cheeseburger-casserole; not covered by the current cart after user removal
+    cart_status: removed-by-user
+    expected_remainder: null
+    observed_unit_price: 4.19
+carts:
+  - retailer: Food Lion
+    retailer_id: food-lion-avent-ferry
+    channel_id: food-lion-direct
+    fulfillment: pickup
+    location_label: saved Food Lion pickup location
+    observed_at: 2026-09-18T09:20:25-04:00
+    selected_window: 2026-09-18T15:00:00-04:00/2026-09-18T16:00:00-04:00
+    reservation_status: order-placed
+    substitutions: best-comparable-enabled
+    currency: USD
+    merchandise_subtotal: 46.17
+    promotions: 0.00
+    fees: 1.99
+    estimated_tax: 0.00
+    tip: 0.00
+    estimated_total: 48.16
+    item_count: 10
+    total_package_units: 15
+    recipe_merchandise_subtotal: 36.60
+    additional_grocery_subtotal: 9.57
+    line_items:
+      - product: Nature's Promise Organic Rotini Pasta
+        sku: "257124"
+        package_count: 1
+        unit_price: 1.59
+      - product: Steakhouse Naturals Grass-fed 90% Lean 10% Fat Angus Ground Beef Fresh
+        sku: "343408"
+        package_count: 2
+        unit_price: 9.49
+      - product: Food Lion Yellow Onions Diced
+        sku: "310230"
+        package_count: 2
+        unit_price: 1.99
+      - product: Nature's Promise Organic No Salt Added Diced Tomatoes
+        sku: "222397"
+        package_count: 2
+        unit_price: 1.39
+      - product: Nature's Promise Organic Tomato Paste
+        sku: "147651"
+        package_count: 1
+        unit_price: 1.19
+      - product: Nature's Promise Organic Dijon Mustard
+        sku: "204684"
+        package_count: 1
+        unit_price: 2.29
+      - product: Food Lion Natural Reduced Fat Fancy Shredded Sharp Cheddar Cheese
+        sku: "296689"
+        package_count: 2
+        unit_price: 2.00
+      - product: Food Lion Broccoli Florets Frozen
+        sku: "390108"
+        package_count: 1
+        unit_price: 1.79
+      - product: Food Lion 2% Reduced Fat Milk
+        sku: "296837"
+        package_count: 2
+        unit_price: 2.79
+        allocation: additional grocery
+      - product: Cabot Creamery Whole Milk Plain Greek Yogurt
+        sku: "163751"
+        package_count: 1
+        unit_price: 3.99
+        allocation: additional grocery
+    quantity_review:
+      - Ground beef is 2 x 16 oz packages for a 1.25 lb recipe use; planned remainder is 0.75 lb.
+      - Diced onion is 2 x 5 oz packages for 1.5 cups; exact cup remainder is not inferred.
+      - Diced tomatoes are 2 x 14.5 oz cans for 28 oz; remainder is 1 oz.
+      - Cheddar is 2 x 7 oz bags for 2.5 cups; exact cup remainder is not inferred.
+      - User removed avocado oil, kosher salt, and black pepper from the cart; pantry/on-hand quantities remain unconfirmed, so these three recipe inputs are not covered by the current cart.
+    additional_items:
+      - item: 2% reduced-fat milk
+        product: Food Lion 2% Reduced Fat Milk
+        sku: "296837"
+        package_count: 2
+        net_quantity_per_package: 1 gallon
+        requested_quantity: 2 gallons
+        unit_price: 2.79
+        selection_note: User requested regular Food Lion milk; do not select Nature's Promise milk unless the user explicitly specifies it.
+      - item: whole-milk Greek yogurt
+        product: Cabot Creamery Whole Milk Plain Greek Yogurt
+        sku: "163751"
+        package_count: 1
+        net_quantity_per_package: 32 oz tub
+        requested_quantity: 1 tub
+        unit_price: 3.99
+        selection_note: Food Lion whole-milk plain Greek yogurt was out of stock; no suitable Nature's Promise equivalent was visible, so Cabot was selected as the closest in-stock plain whole-milk option.
+    checkout_summary:
+      status: order-placed
+      address_label: saved Food Lion pickup location
+      payment_method: saved payment method present; details omitted
+      place_order_available: false
+      place_order_executed: true
+    notes: Food Lion order confirmation page re-read in Chrome after the user confirmed the revised cart. Pickup is Friday, September 18, 3:00 PM-4:00 PM; confirmation reference is m786363675; the confirmation page reports 15 items and an estimated total of $48.16. The page did not expose a full itemized receipt.
+approval:
+  requested_at: 2026-09-18T09:20:25-04:00
+  approved_at: 2026-09-18T09:31:36-04:00
+  approved_total: 48.16
+order:
+  placed: true
+  placed_at: 2026-09-18T09:31:36-04:00
+  confirmation_reference: m786363675
+receipt:
+  status: unavailable
+  captured_at: null
+  source: Food Lion order confirmation page
+  private_artifact: null
+  line_items: []
+  totals:
+    merchandise: null
+    promotions: null
+    fees: null
+    tax: null
+    tip: null
+    charged_total: null
+    currency: USD
+  reconciled_against_approved_cart: false
+  discrepancies: []
+  retrieval_attempts:
+    - source: Food Lion order confirmation page
+      checked_at: 2026-09-18T09:31:36-04:00
+      result: Confirmation reference m786363675, pickup window, 15-item count, and estimated total of $48.16 were visible; the confirmation page did not provide authoritative itemized line charges or a final charged receipt.
+  blocker: Authoritative itemized receipt is not currently accessible from the Food Lion confirmation page; follow-up is needed if a full receipt is required.
+phase_history:
+  - phase: draft
+    at: 2026-09-14T09:18:16-04:00
+    note: New meal-planning run created from the open-ended menu request.
+  - phase: menu-presented
+    at: 2026-09-14T09:18:16-04:00
+    note: Three source-backed candidates prepared; awaiting meal selection.
+  - phase: menu-expanded
+    at: 2026-09-14T09:35:07-04:00
+    note: Three additional source-backed candidates added at the user's request; awaiting meal selection.
+  - phase: meals-selected
+    at: 2026-09-14T15:18:22-04:00
+    note: User selected Magic Crispy Chicken; six additional kid-friendly chicken-or-beef candidates added before shopping review.
+  - phase: selection-changed
+    at: 2026-09-14T15:51:54-04:00
+    note: User replaced Magic Crispy Chicken with cheeseburger casserole; the chicken-thigh pantry package is not allocated to this run.
+  - phase: review-ready
+    at: 2026-09-14T15:51:54-04:00
+    note: Scaled recipe-use quantities and expected purchase items presented; awaiting pantry exclusions and additional grocery requests before cart construction.
+  - phase: shopping-list-confirmed
+    at: 2026-09-15T08:27:04-04:00
+    note: User reported garlic and dill pickles on hand; garlic is now a durable pantry default. No additional groceries were named.
+  - phase: cart-building
+    at: 2026-09-15T08:27:04-04:00
+    note: Cart construction started with garlic and dill pickles excluded from recipe purchases; retailer state will be summarized in chat.
+  - phase: comparison-ready
+    at: 2026-09-15T08:37:22-04:00
+    note: Live Food Lion pickup draft cart was built and re-read. Exact package counts, subtotal, fee, and estimated total are recorded; fulfillment choice remains pending before window selection.
+  - phase: cart-updated
+    at: 2026-09-15T08:42:33-04:00
+    note: User added two gallons of 2% milk and one whole-milk Greek yogurt; both were added as additional groceries and the live draft cart was re-read. Fulfillment choice and window remain pending.
+  - phase: awaiting-approval
+    at: 2026-09-15T09:46:32-04:00
+    note: User selected pickup. The earliest available Tuesday, September 15, 12:00 PM-1:00 PM slot is selected in the Food Lion checkout summary; exact cart and totals are ready for chat confirmation, and Place Order has not been used.
+  - phase: cart-reconnected
+    at: 2026-09-18T08:57:09-04:00
+    note: Food Lion session expired during reconnection; the session was refreshed and the saved cart reappeared. The live cart was re-read before making the requested milk change.
+  - phase: cart-updated
+    at: 2026-09-18T08:57:09-04:00
+    note: Replaced two Nature's Promise Organic 2% milk gallons with two regular Food Lion 2% gallons at the live observed price of $2.79 each; the cart was re-read and the subtotal changed to $63.34.
+  - phase: awaiting-approval
+    at: 2026-09-18T08:57:09-04:00
+    note: User selected pickup. The earliest available Friday, September 18, 10:00 AM-11:00 AM slot is selected in the Food Lion checkout summary; exact cart and totals are ready for chat confirmation, and Place Order has not been used.
+  - phase: pickup-window-expired
+    at: 2026-09-18T09:07:06-04:00
+    note: Food Lion reported that the 10:00 AM-11:00 AM selection was lost at the cutoff. The live selector now shows ten Friday, September 18 windows from 12:00 PM-1:00 PM through 9:00 PM-10:00 PM; no new window was selected.
+  - phase: awaiting-approval
+    at: 2026-09-18T09:17:07-04:00
+    note: User selected the Friday, September 18, 3:00 PM-4:00 PM pickup window. The checkout summary was re-read with the exact cart and current $65.33 estimated total; Place Order remains unused pending explicit final confirmation.
+  - phase: cart-updated
+    at: 2026-09-18T09:20:25-04:00
+    note: User removed Food Lion avocado oil, Food Lion coarse kosher salt, and Nature's Promise ground black pepper. The live cart was re-read at 10 line items and 15 package units with a $46.17 subtotal.
+  - phase: awaiting-approval
+    at: 2026-09-18T09:20:25-04:00
+    note: Revised Food Lion pickup checkout summary is ready for final chat confirmation for Friday, September 18, 3:00 PM-4:00 PM. Estimated total is $48.16; the three removed recipe inputs remain pantry-unconfirmed and Place Order has not been used.
+  - phase: order-placed
+    at: 2026-09-18T09:31:36-04:00
+    note: User confirmed the revised cart. Food Lion accepted the order for Friday, September 18, 3:00 PM-4:00 PM under confirmation m786363675; the confirmation page reports 15 items and an estimated total of $48.16.
+post_order_feedback:
+  reported_at: null
+  product_form_feedback: []
+  general_feedback: null
+closeout:
+  blocker: null
+  notes: Cheeseburger casserole selected and the Food Lion pickup order was placed for Friday, September 18, 3:00 PM-4:00 PM under confirmation m786363675 with an estimated total of $48.16. The order confirmation page did not expose a full itemized receipt; the three removed recipe inputs remain pantry-unconfirmed.
+  follow_up_needed: true

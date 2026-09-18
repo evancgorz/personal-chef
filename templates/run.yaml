@@ -1,5 +1,6 @@
-version: 1
+version: 2
 id: run-yyyy-mm-dd-slug
+session_id: session-yyyy-mm-dd-slug
 created_at: null
 updated_at: null
 status: draft
@@ -12,21 +13,68 @@ request:
 context_snapshot:
   preference_version: 1
   pantry_checked_at: null
+  interface_constraints:
+    primary_interface: null
+    desktop_browser_visible_to_user: null
+    chat_updates_required: null
 menu:
   candidate_recipe_ids: []
-  selected_recipe_ids: []
+  sources: []
+  macro_estimates: []
+selection:
+  revision: 0
+  status: pending
+  active_meal_ids: []
+  updated_at: null
+  history: [] # Each event records revision, timestamp, user_language, operation (add/remove/replace), before, and after.
 requirements: []
+shopping_review:
+  selection_revision: null
+  presented_at: null
+  response_received_at: null
+  cart_build_authorized: false
+  pantry_exclusions: []
+  additional_items: []
+  confirmed_at: null
+ingredient_plan_revision: 0
+ingredient_plan_selection_revision: null
+ingredient_plan: [] # Separate row per active meal and ingredient. Each finalized line also records coverage_status: covered-by-pantry, covered-by-cart, approved-substitution, approved-omission, or unresolved.
 carts: []
 approval:
+  selection_revision: null
+  cart_snapshot_id: null
   requested_at: null
   approved_at: null
   approved_total: null
+artifacts:
+  recipe_cards: [] # Each card records meal_id, title, selection_revision, ingredient_plan_revision, coverage_status, generated_at, printed_at, copies, printer, and scaling_mode.
 order:
   placed: false
   placed_at: null
   confirmation_reference: null
+receipt:
+  status: not-applicable
+  captured_at: null
+  source: null
+  private_artifact: null
+  line_items: []
+  totals:
+    merchandise: null
+    promotions: null
+    fees: null
+    tax: null
+    tip: null
+    charged_total: null
+    currency: USD
+  reconciled_against_approved_cart: false
+  discrepancies: []
+  retrieval_attempts: []
+  blocker: null
+post_order_feedback:
+  reported_at: null
+  product_form_feedback: []
+  general_feedback: null
 closeout:
   blocker: null
   notes: null
   follow_up_needed: false
-

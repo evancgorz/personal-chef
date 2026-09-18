@@ -1,16 +1,11 @@
 version: 1
-updated_at: 2026-09-03T00:00:00-04:00
+updated_at: 2026-09-08T18:35:40-04:00
 outcomes:
-  - id: outcome-2026-08-26-shopping-pilot
-    run_id: run-2026-08-26-food-lion-pilot
-    recipe_id: garlic-herb-chicken
-    stage: cart-only
-    cooked: false
-    overall_rating: null
-    repeat: null
-    observed_totals:
-      currency: USD
-      food_lion_direct_pickup: 42.48
-      food_lion_direct_delivery: 51.27
-    notes: Cart workflow tested; this is not evidence that the recipe was cooked or enjoyed.
-
+  - id: outcome-2026-09-08-instant-pot-lemon-chicken-stew
+    run_id: run-2026-09-07-hearty-cooker-meal
+    recipe_id: instant-pot-lemon-chicken-white-bean-kale-stew
+    stage: cooked
+    cooked: true
+    overall_rating: good
+    repeat: true
+    notes: User reported that the finished stew was a good recipe and asked that good recipes be saved for future recommendations.

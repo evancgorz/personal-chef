@@ -1,0 +1,48 @@
+version: 1
+id: session-2026-09-14-menu-shopping-workflow
+started_at: 2026-09-14T09:18:16-04:00
+closed_at: null
+status: active
+request_summary: Plan kid-friendly meals, build and place a Food Lion pickup order, print the selected recipe cards, and improve the workflow based on observed failures.
+result_summary: A Food Lion pickup order was placed for the cheeseburger-casserole shopping plan and additional dairy items; recipe-card and workflow failures were reviewed, and deterministic version 2 run gates plus a durable session ledger were introduced.
+run_ids:
+  - run-2026-09-14-menu
+issue_ids:
+  - issue-2026-09-14-shopping-review-handoff-friction
+  - issue-2026-09-15-food-lion-cart-quantity-and-result-ordering
+  - issue-2026-09-18-food-lion-session-expired-on-reconnect
+  - issue-2026-09-18-food-lion-order-confirmation-not-itemized
+  - issue-2026-09-18-recipe-card-print-scaling
+  - issue-2026-09-18-run-state-and-artifact-drift
+change_ids:
+  - change-2026-09-14-shopping-review-handoff
+  - change-2026-09-15-chat-first-retailer-visibility
+  - change-2026-09-15-garlic-pantry-default
+  - change-2026-09-18-food-lion-milk-default
+  - change-2026-09-18-pickup-vehicle-correction
+  - change-2026-09-18-deterministic-run-gates
+  - change-2026-09-18-session-ledger
+outcome_ids: []
+artifact_paths:
+  - output/pdf/magic-crispy-chicken.pdf
+  - output/pdf/cheeseburger-casserole.pdf
+timeline:
+  - timestamp: 2026-09-14T09:18:16-04:00
+    event: Meal-planning run opened from a new-chat menu request.
+    linked_id: run-2026-09-14-menu
+  - timestamp: 2026-09-18T09:31:36-04:00
+    event: Food Lion pickup order placed; authoritative itemized receipt remained unavailable.
+    linked_id: issue-2026-09-18-food-lion-order-confirmation-not-itemized
+  - timestamp: 2026-09-18T18:17:46-04:00
+    event: Deterministic selection, reconciliation, approval, and printing gates added after retrospective.
+    linked_id: change-2026-09-18-deterministic-run-gates
+lessons:
+  - Keep one revisioned canonical meal selection and invalidate stale downstream work.
+  - Reconcile selected meals, ingredients, pantry evidence, cart units, recipe cards, and print targets bidirectionally.
+  - Treat chat as the visible interface and retailer browsers as transient execution surfaces.
+  - Integrate toddler-friendly vegetables intentionally rather than adding nutritionally convenient but disconnected sides.
+  - Diagnose printer scaling before modifying a validated PDF.
+follow_up:
+  - Retrieve and reconcile the authoritative itemized Food Lion receipt.
+  - Collect cooked-meal feedback before validating either recipe for reuse.
+privacy_reviewed: true

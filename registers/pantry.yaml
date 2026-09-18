@@ -1,4 +1,12 @@
 version: 1
-updated_at: 2026-09-03T00:00:00-04:00
-items: []
-
+updated_at: 2026-09-13T00:00:00-04:00
+items:
+  - id: boneless-skinless-chicken-thighs-extra-package
+    item: boneless skinless chicken thighs
+    quantity: 1
+    unit: package
+    exact_weight: null
+    storage_state: unknown
+    confidence: reported
+    checked_at: 2026-09-13T00:00:00-04:00
+    note: Extra third package from run-2026-09-12-two-meal-order; user wants it used for the next meal.

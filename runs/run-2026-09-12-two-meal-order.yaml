@@ -1,0 +1,277 @@
+version: 1
+id: run-2026-09-12-two-meal-order
+created_at: 2026-09-12T00:00:00-04:00
+updated_at: 2026-09-18T16:41:58-04:00
+status: ordered
+request:
+  meal_count: 2
+  servings: 6
+  budget: null
+  fulfillment_preference: compare
+  run_overrides: []
+context_snapshot:
+  preference_version: 1
+  pantry_checked_at: null
+menu:
+  selected_candidate_ids:
+    - grilled-chicken-thighs-with-roasted-red-pepper-feta-sauce
+  candidate_recipe_ids:
+    - chicken-marsala-meatballs
+    - everyday-coconut-chicken-curry
+    - chicken-marbella
+  selected_recipe_ids: []
+  scores:
+    - recipe_id: chicken-marsala-meatballs
+      score: 93
+      availability_confidence: stale-or-unknown
+    - recipe_id: everyday-coconut-chicken-curry
+      score: 91
+      availability_confidence: stale-or-unknown
+    - recipe_id: chicken-marbella
+      score: 84
+      availability_confidence: stale-or-unknown
+  sources:
+    - recipe_id: chicken-marsala-meatballs
+      title: Chicken Marsala Meatballs
+      publisher: Skinnytaste
+      url: https://www.skinnytaste.com/chicken-marsala-meatballs/
+      accessed_at: 2026-09-12T00:00:00-04:00
+      adaptation: Scale the ground chicken for six and pair the mushroom-Marsala sauce with cauliflower puree and roasted green beans to meet the protein and vegetable targets.
+    - recipe_id: everyday-coconut-chicken-curry
+      title: Chicken Curry
+      publisher: RecipeTin Eats
+      url: https://www.recipetineats.com/chicken-curry/
+      accessed_at: 2026-09-12T00:00:00-04:00
+      adaptation: Scale the chicken for six, add spinach alongside the peas, and serve with a modest portion of basmati rice while preserving the mild coconut curry sauce.
+    - recipe_id: chicken-marbella
+      title: Chicken Marbella
+      publisher: Skinnytaste
+      url: https://www.skinnytaste.com/chicken-marbella/
+      accessed_at: 2026-09-12T00:00:00-04:00
+      adaptation: Keep the tested prune, olive, and caper pan sauce, scale for six, and add roasted green beans as the vegetable side.
+  macro_estimates:
+    - recipe_id: chicken-marsala-meatballs
+      basis: planning-estimate-per-serving
+      calories_kcal: 430
+      protein_g: 38
+      carbohydrates_g: 24
+      fat_g: 17
+    - recipe_id: everyday-coconut-chicken-curry
+      basis: planning-estimate-per-serving
+      calories_kcal: 560
+      protein_g: 42
+      carbohydrates_g: 38
+      fat_g: 27
+    - recipe_id: chicken-marbella
+      basis: planning-estimate-per-serving
+      calories_kcal: 410
+      protein_g: 40
+      carbohydrates_g: 26
+      fat_g: 15
+  selected_recipe_plans:
+    - recipe_id: grilled-chicken-thighs-with-roasted-red-pepper-feta-sauce
+      servings: 6
+      total_time_minutes: 45
+      equipment:
+        - outdoor grill
+        - blender or food processor
+      ingredients:
+        - ingredient: boneless skinless chicken thighs
+          recipe_quantity: 3 lb
+        - ingredient: jarred roasted red peppers, drained
+          recipe_quantity: 16 oz
+        - ingredient: plain Greek yogurt
+          recipe_quantity: 3/4 cup
+        - ingredient: feta cheese
+          recipe_quantity: 6 oz
+        - ingredient: garlic
+          recipe_quantity: 5 cloves
+        - ingredient: extra-virgin olive oil
+          recipe_quantity: 7 tbsp
+        - ingredient: tomato paste
+          recipe_quantity: 2 tbsp
+        - ingredient: smoked paprika
+          recipe_quantity: 2 tsp
+        - ingredient: dried oregano
+          recipe_quantity: 1 tsp
+        - ingredient: Aleppo pepper or red-pepper flakes
+          recipe_quantity: 1 tsp
+        - ingredient: fresh dill
+          recipe_quantity: 2 tbsp chopped
+        - ingredient: zucchini
+          recipe_quantity: 3 medium
+        - ingredient: sweet onions
+          recipe_quantity: 2 large
+        - ingredient: kosher salt
+          recipe_quantity: 2 tsp plus to taste
+        - ingredient: black pepper
+          recipe_quantity: 1 tsp plus to taste
+      method_summary: Grill the seasoned chicken thighs, zucchini, and onions; blend the roasted peppers, yogurt, feta, garlic, olive oil, and dill into a generous sauce; serve together.
+    - recipe_id: everyday-coconut-chicken-curry
+      servings: 6
+      total_time_minutes: 30
+      equipment:
+        - large deep skillet or Dutch oven
+        - saucepan or rice cooker
+      ingredients:
+        - ingredient: boneless skinless chicken thighs
+          recipe_quantity: 2.25 lb
+        - ingredient: vegetable or canola oil
+          recipe_quantity: 2 1/4 tbsp
+        - ingredient: garlic
+          recipe_quantity: 3 cloves
+        - ingredient: fresh ginger
+          recipe_quantity: 1 tbsp grated
+        - ingredient: onion
+          recipe_quantity: 3/4 medium
+        - ingredient: mild curry powder
+          recipe_quantity: 3 3/4 tbsp
+        - ingredient: full-fat coconut milk
+          recipe_quantity: 1 7/8 cups
+        - ingredient: low-sodium chicken stock
+          recipe_quantity: 2 1/4 cups
+        - ingredient: frozen peas
+          recipe_quantity: 1 1/8 cups
+        - ingredient: baby spinach
+          recipe_quantity: 5 oz
+        - ingredient: cilantro
+          recipe_quantity: 3/8 cup chopped
+        - ingredient: basmati rice
+          recipe_quantity: 2 cups dry
+        - ingredient: kosher salt
+          recipe_quantity: 3/4 tsp plus to taste
+      method_summary: Cook the rice; soften the aromatics, brown the chicken, bloom the curry powder, then simmer with coconut milk and stock; finish with peas and spinach and serve over rice.
+requirements:
+  - Meal one is grilled chicken thighs with roasted red pepper feta sauce.
+  - Meal two should come from a fresh menu choice.
+  - Meal two should be chicken, but use a different cooking method and flavor profile from meal one.
+shopping_review:
+  presented_at: 2026-09-12T07:54:15-04:00
+  pantry_exclusions:
+    - garlic
+    - olive oil
+    - smoked paprika
+    - dried oregano
+    - red pepper flakes
+    - kosher salt
+    - black pepper
+  additional_items:
+    - item: bananas
+      requested_quantity: 5
+    - item: strawberries
+      requested_quantity: 1 package
+    - item: Nature's Promise granola
+      requested_quantity: 1 package
+    - item: KIND Soft Baked Peanut Butter Chocolate granola
+      requested_quantity: 1 package
+    - item: kids squeezable prune puree pouch
+      requested_quantity: 2 pouches
+  confirmed_at: 2026-09-12T07:58:00-04:00
+carts:
+  - retailer: Food Lion
+    store: 3415 Avent Ferry Rd
+    channel: pickup
+    observed_at: 2026-09-12T08:14:37-04:00
+    selected_window: 2026-09-12T10:00:00-04:00/2026-09-12T11:00:00-04:00
+    reservation_status: checkout-ready-awaiting-approval
+    substitutions: best-comparable-enabled
+    merchandise_subtotal: 76.28
+    fees: 1.99
+    estimated_tax: 0.00
+    estimated_savings: 5.10
+    estimated_total: 78.27
+    weighted_item_assumptions:
+      - 6.5 lb boneless skinless chicken thighs
+      - 2.5 lb yellow bananas, approximately 5 bananas
+      - 2 lb Vidalia sweet onions
+      - 1.5 lb zucchini
+      - 0.25 lb ginger root
+    vehicle: white truck
+approval:
+  requested_at: 2026-09-12T08:14:37-04:00
+  approved_at: 2026-09-12T08:17:33-04:00
+  approved_total: 78.27
+order:
+  placed: true
+  placed_at: 2026-09-12T08:17:33-04:00
+  confirmation_reference: m785980549
+receipt:
+  status: unavailable
+  captured_at: null
+  source: null
+  private_artifact: null
+  line_items: []
+  totals:
+    merchandise: null
+    promotions: null
+    fees: null
+    tax: null
+    tip: null
+    charged_total: null
+    currency: USD
+  reconciled_against_approved_cart: false
+  discrepancies: []
+  retrieval_attempts:
+    - source: Food Lion Past Purchases
+      checked_at: 2026-09-13T00:00:00-04:00
+      result: Product list visible, but authoritative purchased quantities and final charges were absent; not accepted as a receipt.
+    - source: Gmail
+      checked_at: 2026-09-13T00:00:00-04:00
+      result: No message matched Food Lion, Instacart, or confirmation reference m785980549 for the order date.
+    - source: Food Lion Order History
+      checked_at: 2026-09-13T00:00:00-04:00
+      result: Fresh Food Lion sign-in required before order details could be accessed.
+  blocker: Authoritative itemized receipt is not currently accessible.
+post_order_feedback:
+  reported_at: 2026-09-13T00:00:00-04:00
+  product_form_feedback:
+    - item: basmati rice
+      ordered_form: microwave-ready pouches
+      initial_feedback: User initially preferred dry rice cooked in the Instant Pot.
+      superseded_feedback: User later reported that the 90-second microwave rice was excellent and very easy.
+      future_preference: microwave-ready 90-second rice by default
+    - item: ginger
+      ordered_form: fresh root
+      future_preference: ground ginger when functionally equivalent
+  general_feedback: Everything else in the order looks good so far; this is not cooked-meal outcome evidence.
+  quantity_discrepancies:
+    - item: jarred roasted red peppers
+      recipe_quantity: 16 oz
+      delivered_quantity: 2 jars x 16 oz
+      excess_quantity: 16 oz
+      confidence: reported
+      note: User reported that the order contained two 16-ounce jars although the recipe required one.
+    - item: boneless skinless chicken thighs
+      recipe_quantity: 5.25 lb total
+      delivered_quantity: 3 packages
+      excess_quantity: 1 package, exact weight unknown
+      confidence: reported
+      note: User reported receiving a third package although the two recipes required 3 lb and 2.25 lb respectively; the cart estimate had assumed 6.5 lb total.
+  missing_items:
+    - item: baby spinach
+      recipe_quantity: 5 oz
+      final_order_status: omitted
+      confidence: verified
+      verified_at: 2026-09-13T00:00:00-04:00
+      note: Food Lion Last Order showed no baby spinach or equivalent leafy-green substitution.
+  convenience_feedback:
+    - item: onion
+      ordered_form: whole Vidalia sweet onions
+      assessment: Whole onions were required for grilled onion slices in the first meal, but the curry allocation still required chopping; the shared-form convenience tradeoff was not disclosed.
+  brand_feedback:
+    - item: boneless skinless chicken thighs
+      ordered_brand: Food Lion
+      preferred_brand: Nature's Promise
+      availability_at_order_time: unknown
+      assessment: The run contains no evidence that a suitable Nature's Promise product was checked before the Food Lion fallback was selected.
+  recipe_artifact_feedback:
+    - recipe_id: everyday-coconut-chicken-curry
+      issue: The ingredient list and method did not specify how to cut the chicken thighs.
+      correction: Cut the chicken into 1-inch pieces before browning.
+    - recipe_id: everyday-coconut-chicken-curry
+      issue: The method began cooking before completing mise en place and used olive oil for a medium-high saute.
+      correction: Complete cutting and measuring first, then use avocado oil for the medium-high saute.
+closeout:
+  blocker: Authoritative itemized receipt remains to be captured and reconciled.
+  notes: Order placed in Chrome. Confirmation page shows pickup Saturday, Sep 12, 10:00-11:00 AM at 3415 Avent Ferry Rd. The pickup vehicle detail is corrected to the user's white truck; this repository correction does not change the historical order.
+  follow_up_needed: true

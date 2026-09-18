@@ -1,109 +1,42 @@
 # Personal Chef Agent Contract
 
-This file is authoritative for every agent working in this repository. The objective is to make meal planning and ordering easy while preserving user control, privacy, price transparency, and a reliable history of what worked.
+Personal Chef should feel like a meal-kit service operated through chat: low effort for the user, dependable execution, transparent cost, and explicit control at consequential moments.
 
-## Required context load
+This file is the entry point, not the encyclopedia. Follow the linked design documents as the source of truth.
 
-Before proposing a menu or changing a cart, read:
+## Read map
 
-1. `registers/preferences.yaml`
-2. `registers/retailers.yaml`
-3. `registers/pantry.yaml`
-4. `registers/substitutions.yaml`
-5. `registers/outcomes.yaml`
-6. `registers/issues.yaml`
-7. `registers/availability.yaml`, treating stale entries as hints only
-8. Relevant records in `recipes/`
-9. The active run in `runs/`, if one exists
-10. `local/private.yaml`, if present, only when delivery or account details are needed
+Read only the context needed for the active phase, in this order:
 
-Never commit the contents of `local/private.yaml` or expose private fields in logs, run records, screenshots, commit messages, or responses.
+1. [`docs/DESIGN.md`](docs/DESIGN.md) for product intent, authority boundaries, and design decisions.
+2. [`docs/WORKFLOW.md`](docs/WORKFLOW.md) for the active meal-planning, shopping, ordering, or learning phase.
+3. [`docs/QUALITY.md`](docs/QUALITY.md) for the acceptance criteria and evidence required before presenting a result.
+4. [`docs/REGISTER_REFERENCE.md`](docs/REGISTER_REFERENCE.md) before reading or changing durable records.
+5. Relevant registers, recipes, and the active run. Load `local/private.yaml`, if present, only when delivery or account details are needed.
 
-## Default operating loop
+## Non-negotiable boundaries
 
-Follow these phases in order. Record phase transitions in the run file.
+- Never expose or commit passwords, payment credentials, authentication codes, full addresses, or private fields from `local/private.yaml`.
+- Stop before the final purchase action and show the exact cart, substitutions, fulfillment window, address label, fees, tip, and total. Require explicit confirmation.
+- Require confirmation for material cart changes after approval. Ordinary low-risk substitutions may follow the documented hands-off policy.
+- Treat prices and availability as time-stamped observations, not durable facts.
+- Do not infer pantry quantities, meal success, or durable preferences. Record only observed or user-reported facts.
+- Keep recipe-use quantities distinct from purchased quantities and leftovers, especially when meals share ingredients.
 
-### 1. Intake
+## Execution contract
 
-- Resolve meal count, serving count, schedule, budget, allergies, dislikes, equipment limits, and fulfillment preference.
-- Use defaults from the preferences register when the user does not override them.
-- A run-specific instruction overrides a preference for that run only. Do not persist it unless the user states or confirms that it is durable.
+- Treat an open-ended menu request in a new chat (for example, "What's on the menu?" or a close equivalent) as the start of a new meal-planning run by default. Create a fresh run and propose a fresh set of recipes using current preferences, pantry evidence, and recent outcomes; do not summarize or resume an older run unless the user explicitly refers to it.
+- Create or resume one run record for each meal-to-order cycle and record phase transitions.
+- Create one concise session record for each practical new-chat request and link any runs, issues, changes, outcomes, and artifacts produced by it; do not store raw transcripts or private fields.
+- Follow the phases and decision rules in [`docs/WORKFLOW.md`](docs/WORKFLOW.md).
+- Satisfy the stage-specific acceptance criteria in [`docs/QUALITY.md`](docs/QUALITY.md) before presenting menus, carts, checkout summaries, or printable recipes.
+- Run `python scripts/validate.py` after tracked changes and before committing.
+- If authentication, CAPTCHA, or payment entry requires the user, hand off cleanly and resume after completion.
 
-### 2. Menu construction
+## Learning and maintenance
 
-- Build a varied menu with recipe IDs and concise reasons for each recommendation.
-- Score candidates against time, protein, vegetables, carb frequency, effort, preference fit, prior outcomes, ingredient overlap, and current availability confidence.
-- Most offered meals must meet the target total time. Exceptions must be labeled.
-- Do not repeatedly recommend a failed or paused recipe unless the failure has a documented mitigation.
-- Present choices before building a cart unless the user explicitly delegates selection.
-
-### 3. Scaling and consolidation
-
-- Scale every selected recipe from its canonical yield to the run's serving count.
-- Preserve units and distinguish count, weight, and volume.
-- Round purchasing quantities up to purchasable package sizes, but keep recipe-use quantities separate from purchased quantities.
-- Consolidate shared ingredients across recipes before product selection.
-- Subtract trusted pantry quantities only when `checked_at` is recent enough for the ingredient's confidence level.
-
-### 4. Product selection
-
-- Prefer the lowest-effort form that still cooks well: pre-diced, trimmed, washed, florets, tenderloins, jarred garlic, or frozen vegetables where quality remains acceptable.
-- Prefer Nature's Promise and Food Lion brands. Choose a national brand only when the quality difference is meaningful, and record the reason.
-- Choose grass-fed beef when available. If unavailable, ask before substituting conventional beef unless the run explicitly allows it.
-- Match the same SKU and package quantity across channels when comparing prices. If exact matching is impossible, normalize totals and state the mismatch.
-- Never treat an availability observation as permanent. Timestamp it and include retailer, store, channel, price, package size, and confidence.
-
-### 5. Cart comparison
-
-- Build draft carts only for selected meals.
-- Compare merchandise subtotal, promotions, taxes, service fees, pickup fees, delivery fees, bag fees, tip, and estimated final total.
-- Report both total order cost and cost per serving.
-- Distinguish one-time pantry purchases from ingredients consumed by the meal.
-- Never claim two channels are price-equivalent without matching package sizes and quantities.
-
-### 6. Approval and checkout
-
-- Stop before the final purchase action and show the exact cart, substitutions, fulfillment window, address label, fees, tip, and total.
-- Require explicit user confirmation for the final order and for any material cart change after approval.
-- Never store payment credentials, passwords, authentication codes, or full private addresses in tracked files.
-- If authentication, CAPTCHA, or payment requires the user, hand off cleanly and resume after they finish.
-
-### 7. Closeout and learning
-
-- Save the final run record even if no order was placed.
-- Update availability with observed facts and timestamps.
-- Add outcomes only after cooking or user feedback; do not infer meal success from purchase completion.
-- Create an issue for workflow failures, mismatched products, unavailable items, incorrect quantities, fee surprises, or automation problems.
-- Propose preference changes from repeated evidence, but do not silently convert a single outcome into a durable preference.
-- Append every durable register change to `registers/change-log.yaml`.
-
-## Register ownership and write-back rules
-
-| Register | Write when | Do not write when |
-| --- | --- | --- |
-| `preferences.yaml` | User states a durable preference or approves a proposed change | A single recipe succeeds or an item is temporarily unavailable |
-| `retailers.yaml` | Store/channel facts or selection policy changes | A transient price changes |
-| `pantry.yaml` | Quantity is explicitly reported or verified | Quantity is merely assumed |
-| `availability.yaml` | A product/price/package is directly observed | A product is only suggested or remembered |
-| `substitutions.yaml` | A substitution is approved, rejected, or evaluated | The agent merely considers an alternative |
-| `outcomes.yaml` | The meal is cooked or the user supplies feedback | The cart is built but the meal is not evaluated |
-| `issues.yaml` | A failure or recurring friction is observed | A normal approval gate is reached |
-| `change-log.yaml` | Any durable tracked register changes | Volatile run-file updates only |
-
-## Data integrity
-
-- IDs are lowercase kebab-case and stable after creation.
-- Dates and timestamps use ISO 8601.
-- Money uses numeric decimal values plus an explicit three-letter currency.
-- Unknown values are `null`, never invented.
-- Preserve source and observation time for price and availability facts.
-- Run `python scripts/validate.py` before committing.
-- Never rewrite historical runs to match current preferences; append corrections or superseding records.
-
-## Git discipline
-
-- Keep user-specific secrets and precise addresses out of Git.
-- Commit coherent workflow or data changes with a descriptive message.
-- Avoid mixing recipe changes, preference changes, and tooling refactors without documenting all three.
-- Do not delete historical outcomes or issues merely because they are resolved; update their status and resolution.
-
+- Record workflow failures and friction in `registers/issues.yaml`; keep resolved issues rather than deleting history.
+- Record cooked-meal feedback in `registers/outcomes.yaml`; purchase completion is not evidence that a meal succeeded.
+- Append durable policy, preference, or design changes to `registers/change-log.yaml`.
+- Update the relevant design document when a correction changes how future runs should work. Avoid accumulating ad hoc rules here.
+- Use a reusable skill only for narrow, specialized procedures or tool operation. Do not duplicate project policy in a skill; project behavior belongs in these versioned design documents and executable checks.

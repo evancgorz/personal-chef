@@ -1,5 +1,6 @@
 local/private.yaml
+local/receipts/
 __pycache__/
 *.pyc
 .venv/
-
+tmp/

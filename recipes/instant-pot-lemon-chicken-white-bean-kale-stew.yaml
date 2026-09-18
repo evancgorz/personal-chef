@@ -1,0 +1,118 @@
+version: 1
+id: instant-pot-lemon-chicken-white-bean-kale-stew
+name: Instant Pot Lemony Chicken, White Bean, and Kale Stew
+status: validated
+canonical_yield: 6
+time:
+  prep_minutes: 10
+  cook_minutes: 45
+  total_minutes: 55
+effort:
+  level: low
+  cleanup: one-pot
+equipment:
+  - Instant Pot
+  - two forks
+ingredients:
+  - id: boneless-skinless-chicken-thighs
+    name: boneless skinless chicken thighs
+    quantity: 2.3
+    unit: lb
+    preferred_brand: Nature's Promise
+    preferred_form: trimmed-ready-to-cook
+  - id: celery-sticks
+    name: celery sticks
+    quantity: 8
+    unit: oz
+    preferred_form: washed-and-trimmed
+    preparation: sliced
+  - id: fresh-cut-peppers-and-onions
+    name: fresh-cut peppers and onions
+    quantity: 16
+    unit: oz
+    preferred_form: pre-cut
+  - id: cannellini-beans
+    name: no-salt-added cannellini beans
+    quantity: 31
+    unit: oz
+    preferred_brand: Food Lion
+    preparation: drained-and-rinsed
+  - id: diced-tomatoes
+    name: no-salt-added diced tomatoes
+    quantity: 14.5
+    unit: oz
+    preferred_brand: Food Lion
+  - id: low-sodium-chicken-broth
+    name: low-sodium chicken broth
+    quantity: 4
+    unit: cup
+    preferred_brand: Food Lion
+  - id: chopped-kale
+    name: chopped kale
+    quantity: 8
+    unit: oz
+    preferred_form: washed-and-chopped
+  - id: minced-garlic
+    name: minced garlic
+    quantity: 1
+    unit: tbsp
+    preferred_brand: Nature's Promise
+    preferred_form: jarred
+  - id: italian-seasoning
+    name: Italian seasoning
+    quantity: 2
+    unit: tsp
+    preferred_brand: Food Lion
+    pantry_candidate: true
+  - id: crushed-red-pepper
+    name: crushed red pepper
+    quantity: 0.25
+    unit: tsp
+    pantry_candidate: true
+    optional: true
+  - id: salt
+    name: salt
+    quantity: 0.5
+    unit: tsp
+    pantry_candidate: true
+  - id: black-pepper
+    name: black pepper
+    quantity: 0.5
+    unit: tsp
+    pantry_candidate: true
+  - id: lemon
+    name: lemon
+    quantity: 2
+    unit: each
+  - id: parmesan-cheese
+    name: shredded Parmesan cheese
+    quantity: 3
+    unit: oz
+    optional: true
+instructions:
+  - Pour the broth into the Instant Pot. Add the chicken thighs, sliced celery, peppers and onions, drained cannellini beans, garlic, Italian seasoning, crushed red pepper, salt, and black pepper. Layer the diced tomatoes on top without stirring.
+  - Lock the lid and cook on high pressure for 12 minutes. Allow a 10-minute natural release, then vent the remaining pressure. Confirm the chicken reaches 165 F.
+  - Transfer the chicken to a plate, shred it with two forks, and return it to the pot.
+  - Stir in the kale. Use saute for 2 to 3 minutes, stirring, until tender, then turn off the pot.
+  - Stir in the lemon zest and juice. Taste and adjust salt and pepper. Serve with Parmesan if desired.
+nutrition_estimate_per_serving:
+  protein_grams: 46
+  vegetable_servings: 2
+  carb_profile: moderate
+tags:
+  - validated
+  - repeat-eligible
+  - high-protein
+  - vegetable-forward
+  - low-prep
+  - one-pot
+  - instant-pot
+  - freezer-friendly
+validation:
+  validated_at: 2026-09-08T18:35:40-04:00
+  run_id: run-2026-09-07-hearty-cooker-meal
+  outcome_id: outcome-2026-09-08-instant-pot-lemon-chicken-stew
+  evidence: user-reported-good-after-cooking
+source:
+  type: agent-developed-and-user-validated
+  created_at: 2026-09-07T00:00:00-04:00
