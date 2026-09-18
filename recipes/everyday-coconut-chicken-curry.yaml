@@ -1,0 +1,108 @@
+version: 1
+id: everyday-coconut-chicken-curry
+name: Everyday Coconut Chicken Curry
+status: validated
+canonical_yield: 6
+time:
+  prep_minutes: 10
+  cook_minutes: 20
+  total_minutes: 30
+effort:
+  level: low
+  cleanup: one-skillet-plus-rice
+equipment:
+  - large deep skillet or Dutch oven
+  - microwave
+ingredients:
+  - id: boneless-skinless-chicken-thighs
+    name: boneless skinless chicken thighs
+    quantity: 2.25
+    unit: lb
+    preparation: cut-into-1-inch-pieces
+    preferred_brand: Nature's Promise
+  - id: avocado-oil
+    name: avocado oil
+    quantity: 2.25
+    unit: tbsp
+  - id: diced-onion
+    name: pre-diced onion
+    quantity: 0.75
+    unit: medium-onion-equivalent
+    preferred_form: pre-diced
+  - id: minced-garlic
+    name: minced garlic
+    quantity: 3
+    unit: cloves-equivalent
+    preferred_form: jarred
+  - id: ginger
+    name: ginger
+    quantity: 1
+    unit: tbsp-fresh-grated-equivalent
+    preferred_form: ground-when-functionally-equivalent
+  - id: mild-curry-powder
+    name: mild curry powder
+    quantity: 3.75
+    unit: tbsp
+  - id: coconut-milk
+    name: full-fat coconut milk
+    quantity: 1.875
+    unit: cup
+  - id: chicken-stock
+    name: low-sodium chicken stock
+    quantity: 2.25
+    unit: cup
+  - id: kosher-salt
+    name: kosher salt
+    quantity: 0.75
+    unit: tsp
+  - id: frozen-peas
+    name: frozen peas
+    quantity: 1.125
+    unit: cup
+  - id: baby-spinach
+    name: baby spinach
+    quantity: 5
+    unit: oz
+    cooked-use-status: unknown
+  - id: cilantro
+    name: fresh cilantro
+    quantity: 0.375
+    unit: cup
+    preparation: chopped
+  - id: microwave-basmati-rice
+    name: microwave-ready 90-second basmati rice
+    quantity: 6
+    unit: servings
+instructions:
+  - Complete mise en place: cut the chicken into 1-inch pieces and measure all curry ingredients before heating the skillet.
+  - Prepare the microwave-ready basmati rice according to its package directions and keep warm.
+  - Heat the avocado oil in a large skillet over medium-high heat. Cook the diced onion, garlic, and ginger for 2 to 3 minutes until fragrant.
+  - Add the curry powder and cook for 30 seconds. Add the chicken and salt; brown for 3 to 4 minutes.
+  - Add the coconut milk and chicken stock. Simmer for 12 to 15 minutes, until the chicken reaches 165 F and the sauce thickens slightly.
+  - Stir in the peas and baby spinach. Cook for 2 to 3 minutes, until hot and wilted.
+  - Fold in the cilantro and serve over the rice.
+nutrition_estimate_per_serving:
+  calories: 560
+  protein_grams: 42
+  carbohydrates_grams: 38
+  fat_grams: 27
+tags:
+  - chicken
+  - curry
+  - skillet
+  - repeat-with-flavor-boost
+future_iteration:
+  goal: Add more kick while preserving the mild coconut-curry base.
+  status: choose-on-next-repeat
+  note: Offer one deliberate compatible finishing boost for approval rather than changing the validated base silently.
+validation:
+  validated_at: 2026-09-18T00:00:00-04:00
+  run_id: run-2026-09-12-two-meal-order
+  outcome_id: outcome-2026-09-18-everyday-coconut-chicken-curry
+  evidence: user-feedback
+source:
+  type: adapted-published-recipe
+  title: Chicken Curry
+  publisher: RecipeTin Eats
+  url: https://www.recipetineats.com/chicken-curry/
+  created_at: 2026-09-12T00:00:00-04:00

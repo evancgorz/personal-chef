@@ -1,0 +1,29 @@
+version: 1
+id: session-2026-09-18-meal-feedback
+started_at: 2026-09-18T00:00:00-04:00
+closed_at: 2026-09-18T00:00:00-04:00
+status: closed
+request_summary: Record cooked-meal feedback for the coconut chicken curry and roasted red pepper feta grilled chicken, and save both successful recipes.
+result_summary: Saved both meals as validated, repeat-eligible recipes. The curry retains an unresolved next-repeat goal of adding more kick without changing its successful base silently.
+run_ids:
+  - run-2026-09-12-two-meal-order
+issue_ids: []
+change_ids: []
+outcome_ids:
+  - outcome-2026-09-18-everyday-coconut-chicken-curry
+  - outcome-2026-09-18-roasted-red-pepper-feta-grilled-chicken
+artifact_paths:
+  - recipes/everyday-coconut-chicken-curry.yaml
+  - recipes/roasted-red-pepper-feta-grilled-chicken.yaml
+timeline:
+  - timestamp: 2026-09-18T00:00:00-04:00
+    event: User reported both meals were successful and requested that the curry be saved with a future flavor-intensity improvement.
+  - timestamp: 2026-09-18T00:00:00-04:00
+    event: Recorded cooked outcomes and saved both recipes as validated.
+lessons:
+  - Preserve the curry's proven mild coconut base while offering one explicit finishing-boost choice on its next repeat.
+  - The grilled chicken, vegetables, and roasted pepper feta sauce are repeat-eligible as a complete meal.
+follow_up:
+  - On the next curry repeat, select and test one compatible source-grounded flavor boost.
+  - The ordered run still has an unresolved authoritative-receipt blocker independent of this cooking feedback.
+privacy_reviewed: true

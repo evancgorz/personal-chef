@@ -22,7 +22,8 @@ change_ids:
   - change-2026-09-18-pickup-vehicle-correction
   - change-2026-09-18-deterministic-run-gates
   - change-2026-09-18-session-ledger
-outcome_ids: []
+outcome_ids:
+  - outcome-2026-09-18-kid-friendly-cheeseburger-casserole
 artifact_paths:
   - output/pdf/magic-crispy-chicken.pdf
   - output/pdf/cheeseburger-casserole.pdf
@@ -36,6 +37,9 @@ timeline:
   - timestamp: 2026-09-18T18:17:46-04:00
     event: Deterministic selection, reconciliation, approval, and printing gates added after retrospective.
     linked_id: change-2026-09-18-deterministic-run-gates
+  - timestamp: 2026-09-18T19:11:10-04:00
+    event: User reported that the cheeseburger casserole was a winner and should be treated as repeat-worthy.
+    linked_id: outcome-2026-09-18-kid-friendly-cheeseburger-casserole
 lessons:
   - Keep one revisioned canonical meal selection and invalidate stale downstream work.
   - Reconcile selected meals, ingredients, pantry evidence, cart units, recipe cards, and print targets bidirectionally.
@@ -44,5 +48,6 @@ lessons:
   - Diagnose printer scaling before modifying a validated PDF.
 follow_up:
   - Retrieve and reconcile the authoritative itemized Food Lion receipt.
-  - Collect cooked-meal feedback before validating either recipe for reuse.
+  - Clarify the exact casserole variation that was cooked, including how vegetables were handled, before saving the canonical reusable recipe.
+  - Collect cooked-meal feedback for Magic Crispy Chicken before considering it for reuse.
 privacy_reviewed: true

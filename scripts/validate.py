@@ -286,11 +286,18 @@ def validate() -> list[str]:
 
     outcomes = documents.get(ROOT / "registers/outcomes.yaml") or {}
     outcome_by_id = {}
+    candidate_ids_by_run = {
+        (documents.get(path) or {}).get("id"): set((((documents.get(path) or {}).get("menu") or {}).get("candidate_recipe_ids") or []))
+        for path in sorted((ROOT / "runs").glob("*.yaml"))
+    }
     for outcome in outcomes.get("outcomes", []):
         if outcome.get("id"):
             outcome_by_id[outcome["id"]] = outcome
-        require(outcome.get("recipe_id") in recipe_ids, f"unknown recipe in outcome {outcome.get('id')}", errors)
-        require(outcome.get("run_id") in run_ids, f"unknown run in outcome {outcome.get('id')}", errors)
+        outcome_run_id = outcome.get("run_id")
+        outcome_recipe_id = outcome.get("recipe_id")
+        require(outcome_run_id in run_ids, f"unknown run in outcome {outcome.get('id')}", errors)
+        known_recipe_or_candidate = outcome_recipe_id in recipe_ids or outcome_recipe_id in candidate_ids_by_run.get(outcome_run_id, set())
+        require(known_recipe_or_candidate, f"unknown recipe or run candidate in outcome {outcome.get('id')}", errors)
 
     for recipe_id, recipe in recipe_documents.items():
         validation = recipe.get("validation") or {}

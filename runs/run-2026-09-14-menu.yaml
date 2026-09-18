@@ -863,9 +863,9 @@ phase_history:
     at: 2026-09-18T09:31:36-04:00
     note: User confirmed the revised cart. Food Lion accepted the order for Friday, September 18, 3:00 PM-4:00 PM under confirmation m786363675; the confirmation page reports 15 items and an estimated total of $48.16.
 post_order_feedback:
-  reported_at: null
+  reported_at: 2026-09-18T19:11:10-04:00
   product_form_feedback: []
-  general_feedback: null
+  general_feedback: User reported that the cheeseburger casserole was a winner. The exact cooked variation remains unknown, so the reusable recipe is not yet canonicalized.
 closeout:
   blocker: null
   notes: Cheeseburger casserole selected and the Food Lion pickup order was placed for Friday, September 18, 3:00 PM-4:00 PM under confirmation m786363675 with an estimated total of $48.16. The order confirmation page did not expose a full itemized receipt; the three removed recipe inputs remain pantry-unconfirmed.

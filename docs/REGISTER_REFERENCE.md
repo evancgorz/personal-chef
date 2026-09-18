@@ -46,7 +46,7 @@ Registers are deliberately separated by volatility and evidence type.
 | `pantry.yaml` | Quantity is explicitly reported or verified | Quantity is assumed from a prior order |
 | `availability.yaml` | Product, price, package, and channel are directly observed | A product is merely suggested or remembered |
 | `substitutions.yaml` | A substitution is approved, rejected, or evaluated | The agent only considers an alternative |
-| `outcomes.yaml` | The meal is cooked or the user supplies feedback | A cart is built but the meal is not evaluated |
+| `outcomes.yaml` | The meal is cooked or the user supplies feedback; an unresolved final form may reference the candidate ID from its run | A cart is built but the meal is not evaluated |
 | `issues.yaml` | A workflow failure or recurring friction is observed | A normal approval gate is reached |
 | `change-log.yaml` | Any durable tracked policy or design change occurs | Only a volatile run file changes |
 | `sessions/*.yaml` | A new practical chat request begins; update it at meaningful milestones and close it with a concise retrospective | Raw chat text, private fields, or duplicated cart and receipt details |

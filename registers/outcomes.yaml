@@ -1,5 +1,5 @@
 version: 1
-updated_at: 2026-09-08T18:35:40-04:00
+updated_at: 2026-09-18T19:11:10-04:00
 outcomes:
   - id: outcome-2026-09-08-instant-pot-lemon-chicken-stew
     run_id: run-2026-09-07-hearty-cooker-meal
@@ -9,3 +9,34 @@ outcomes:
     overall_rating: good
     repeat: true
     notes: User reported that the finished stew was a good recipe and asked that good recipes be saved for future recommendations.
+  - id: outcome-2026-09-18-everyday-coconut-chicken-curry
+    run_id: run-2026-09-12-two-meal-order
+    recipe_id: everyday-coconut-chicken-curry
+    stage: cooked
+    cooked: true
+    overall_rating: basic-win
+    repeat: true
+    notes: User wants to make it again, but felt the mild curry needed an additional ingredient or finishing element to give it more kick. Preserve the successful base and test one deliberate flavor boost on the next repeat.
+    improvement_target:
+      dimension: flavor-intensity
+      status: unresolved
+      guidance: Present a concise choice of compatible finishing boosts when the recipe is repeated; do not silently alter the validated base.
+  - id: outcome-2026-09-18-roasted-red-pepper-feta-grilled-chicken
+    run_id: run-2026-09-12-two-meal-order
+    recipe_id: roasted-red-pepper-feta-grilled-chicken
+    stage: cooked
+    cooked: true
+    overall_rating: good
+    repeat: true
+    notes: User reported that the grilled chicken and vegetables recipe was good.
+  - id: outcome-2026-09-18-kid-friendly-cheeseburger-casserole
+    run_id: run-2026-09-14-menu
+    recipe_id: kid-friendly-cheeseburger-casserole
+    stage: cooked
+    cooked: true
+    overall_rating: winner
+    repeat: true
+    notes: User reported that the cheeseburger casserole was a winner. This evidence applies to the casserole itself, not the disconnected broccoli side previously criticized in the workflow.
+    final_form:
+      status: needs-user-detail
+      blocker: The exact cooked variation, including whether any vegetable was integrated or omitted, has not yet been reported; do not save a canonical recipe by guessing.

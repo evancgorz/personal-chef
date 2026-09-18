@@ -113,6 +113,7 @@ Before export, build an internal ingredient-use matrix with one row per final in
 - Outcomes are written only after cooking or explicit user feedback.
 - A single outcome does not silently become a durable preference.
 - A new recipe enters `recipes/` only after positive cooking feedback and links back to its validating run and outcome.
+- When positive feedback does not identify the exact cooked variation, record the outcome against the run candidate with a final-form blocker; do not invent and save a canonical recipe until the missing preparation details are reported.
 - Every practical new-chat request has one session record, including maintenance and retrospective requests that create no meal run.
 - The session links rather than duplicates authoritative run and register facts, contains a concise result and lessons, identifies open follow-up, and contains no raw transcript or private fields.
 - Every version 2 run links to exactly one existing session, and that session links back to the run.

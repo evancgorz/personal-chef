@@ -1,0 +1,112 @@
+version: 1
+id: roasted-red-pepper-feta-grilled-chicken
+name: Roasted Red Pepper Feta Grilled Chicken and Vegetables
+status: validated
+canonical_yield: 6
+time:
+  prep_minutes: 15
+  cook_minutes: 25
+  total_minutes: 45
+effort:
+  level: low-moderate
+  cleanup: grill-plus-blender
+equipment:
+  - outdoor grill
+  - blender or food processor
+ingredients:
+  - id: boneless-skinless-chicken-thighs
+    name: boneless skinless chicken thighs
+    quantity: 3
+    unit: lb
+    preferred_brand: Nature's Promise
+  - id: roasted-red-peppers
+    name: jarred roasted red peppers
+    quantity: 16
+    unit: oz
+    preparation: drained
+  - id: greek-yogurt
+    name: plain Greek yogurt
+    quantity: 0.75
+    unit: cup
+  - id: feta-cheese
+    name: feta cheese
+    quantity: 6
+    unit: oz
+  - id: minced-garlic
+    name: minced garlic
+    quantity: 5
+    unit: cloves-equivalent
+    preferred_form: jarred
+  - id: tomato-paste
+    name: tomato paste
+    quantity: 2
+    unit: tbsp
+  - id: fresh-dill
+    name: fresh dill
+    quantity: 2
+    unit: tbsp
+    preparation: chopped
+  - id: olive-oil
+    name: extra-virgin olive oil
+    quantity: 7
+    unit: tbsp
+    future_adaptation: Use avocado oil for the 3 tbsp exposed to grill heat and reserve 4 tbsp olive oil for the uncooked sauce.
+  - id: smoked-paprika
+    name: smoked paprika
+    quantity: 2
+    unit: tsp
+  - id: dried-oregano
+    name: dried oregano
+    quantity: 1
+    unit: tsp
+  - id: red-pepper-flakes
+    name: red pepper flakes
+    quantity: 1
+    unit: tsp
+  - id: zucchini
+    name: zucchini
+    quantity: 3
+    unit: medium
+    preparation: sliced-lengthwise
+  - id: sweet-onions
+    name: sweet onions
+    quantity: 2
+    unit: large
+    preparation: cut-into-wedges
+  - id: kosher-salt
+    name: kosher salt
+    quantity: 2
+    unit: tsp
+  - id: black-pepper
+    name: black pepper
+    quantity: 1
+    unit: tsp
+instructions:
+  - Complete mise en place: slice the zucchini lengthwise, cut the onions into wedges, drain the peppers, chop the dill, and measure the seasonings and sauce ingredients.
+  - Heat the grill to medium-high, about 400 to 450 F.
+  - Toss the zucchini and onions with 2 tbsp oil, 1/2 tsp salt, and 1/4 tsp black pepper.
+  - Season the chicken with smoked paprika, oregano, red pepper flakes, 1 tsp salt, 1/2 tsp black pepper, and 1 tbsp oil.
+  - Grill the chicken for 5 to 7 minutes per side until it reaches 165 F. Grill the zucchini and onions for 3 to 5 minutes per side until tender and charred.
+  - Blend the roasted peppers, yogurt, feta, garlic, tomato paste, 4 tbsp olive oil, dill, remaining 1/2 tsp salt, and remaining 1/4 tsp black pepper until smooth.
+  - Rest the chicken for 5 minutes, then slice and serve with the sauce and grilled vegetables.
+nutrition_estimate_per_serving:
+  calories: 610
+  protein_grams: 49
+  carbohydrates_grams: 20
+  fat_grams: 36
+tags:
+  - chicken
+  - grill
+  - vegetables
+  - roasted-red-pepper-sauce
+validation:
+  validated_at: 2026-09-18T00:00:00-04:00
+  run_id: run-2026-09-12-two-meal-order
+  outcome_id: outcome-2026-09-18-roasted-red-pepper-feta-grilled-chicken
+  evidence: user-feedback
+source:
+  type: adapted-published-recipe
+  title: For juicier Turkish grilled chicken skewers, think strips not chunks
+  publisher: Associated Press, adapted from Christopher Kimball's Milk Street
+  url: https://apnews.com/article/fc243d61d4d3968120e68004db80f1e7
+  created_at: 2026-09-10T08:10:20-04:00
