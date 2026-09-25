@@ -2,13 +2,13 @@ version: 3
 id: run-2026-09-25-grocery-list-chili
 session_id: session-2026-09-25-grocery-list-chili
 created_at: 2026-09-25T08:54:00-04:00
-updated_at: 2026-09-25T08:58:55-04:00
+updated_at: 2026-09-25T11:17:28-04:00
 status: comparison-ready
 handoff:
   owner: user
   next_action: choose-fulfillment
   waiting_for: pickup-or-delivery-choice
-  updated_at: 2026-09-25T08:58:55-04:00
+  updated_at: 2026-09-25T11:17:28-04:00
 request:
   meal_count: 1
   servings: 8
@@ -17,6 +17,7 @@ request:
   run_overrides:
     - Screenshot grocery list supplied instead of a live iCloud list.
     - The listed black beans, kidney beans, and tomatoes were used for a creamy chicken chili. User may still request a true white chili instead.
+    - For this cart, replace YoBaby yogurt with whole milk Greek yogurt and use KIND granola.
 context_snapshot:
   preference_version: 1
   pantry_checked_at: null
@@ -79,30 +80,33 @@ ingredient_plan:
   - {recipe_id: creamy-chicken-chili, ingredient: taco seasoning, recipe_quantity: 2 oz, pantry_quantity: null, coverage_status: covered-by-cart, sku: '224963', package_count: 2, net_quantity_per_package: 1 oz, purchase_quantity: 2 oz, allocation: 2 oz to creamy-chicken-chili, expected_remainder: 0 oz}
   - {recipe_id: creamy-chicken-chili, ingredient: Mexican blend shredded cheese, recipe_quantity: 8 oz topping, pantry_quantity: null, coverage_status: covered-by-cart, sku: '296660', package_count: 1, net_quantity_per_package: 8 oz, purchase_quantity: 8 oz, allocation: 8 oz to creamy-chicken-chili, expected_remainder: 0 oz}
 carts:
-  - cart_snapshot_id: food-lion-pickup-draft-2026-09-25t0855
+  - cart_snapshot_id: food-lion-pickup-draft-2026-09-25t1117
     selection_revision: 1
     retailer: Food Lion
     retailer_id: food-lion-avent-ferry
     channel_id: food-lion-direct
     fulfillment: pickup
     location_label: Avent Ferry store
-    observed_at: 2026-09-25T08:55:00-04:00
+    observed_at: 2026-09-25T11:17:28-04:00
     selected_window: null
     available_windows_observed: '2026-09-25 10:00-11:00 through 16:00-17:00; no slot reserved'
     reservation_status: draft
     substitutions: best-comparable-enabled
     currency: USD
-    merchandise_subtotal: 84.76
-    promotions: 1.83
+    merchandise_subtotal: 85.26
+    promotions: 3.13
     fees: 1.99
     fee_details: {pickup_fee: 1.99}
     estimated_tax: 0.82
     tip: 0.00
-    estimated_total: 87.57
+    estimated_total: 88.07
     item_count: 24
     total_package_units: 29
     recipe_merchandise_subtotal: 30.40
-    additional_grocery_subtotal: 54.36
+    additional_grocery_subtotal: 54.86
+    revision_history:
+      - {observed_at: 2026-09-25T08:55:00-04:00, cart_snapshot_id: food-lion-pickup-draft-2026-09-25t0855, merchandise_subtotal: 84.76, estimated_total: 87.57, change: Initial draft included YoBaby yogurt cups and Nature's Promise blueberry flax granola.}
+      - {observed_at: 2026-09-25T11:17:28-04:00, change: User replaced YoBaby yogurt with whole milk Greek yogurt and Nature's Promise granola with KIND; both changes verified in cart.}
     line_items:
       - {product: Nature's Promise Organic Taco Seasoning Mix Packet, sku: '224963', package_count: 2, net_quantity_per_package: 1 oz, unit_price: 1.39, allocation: creamy-chicken-chili}
       - {product: Food Lion Yellow Onions Diced, sku: '310230', package_count: 1, net_quantity_per_package: 5 oz, unit_price: 1.99, allocation: creamy-chicken-chili}
@@ -117,7 +121,7 @@ carts:
       - {product: Food Lion Natural Fancy Shredded Mexican Style 4 Cheese Blend, sku: '296660', package_count: 1, net_quantity_per_package: 8 oz, unit_price: 1.66, allocation: creamy-chicken-chili}
       - {product: Food Lion Original Cream Cheese Bar, sku: '296603', package_count: 1, net_quantity_per_package: 8 oz, unit_price: 1.59, allocation: creamy-chicken-chili}
       - {product: Nature's Promise Cage Free Large Brown Eggs, sku: '290722', package_count: 1, net_quantity_per_package: 12 eggs, unit_price: 3.49, allocation: additional-grocery}
-      - {product: Stonyfield Organic YoBaby Whole Milk Apple & Blueberry Yogurt Cups, sku: '126780', package_count: 1, net_quantity_per_package: 6 cups, unit_price: 4.99, allocation: additional-grocery}
+      - {product: Cabot Creamery Whole Milk Plain Greek Yogurt, sku: '163751', package_count: 1, net_quantity_per_package: 32 oz, unit_price: 3.99, allocation: additional-grocery}
       - {product: Food Lion Low Sodium Chunk Chicken Breast in Water, sku: '319753', package_count: 2, net_quantity_per_package: 12.5 oz, unit_price: 2.99, allocation: creamy-chicken-chili}
       - {product: Food Lion No Salt Added Dark Red Kidney Beans, sku: '334536', package_count: 2, net_quantity_per_package: 15.5 oz, unit_price: 0.98, allocation: creamy-chicken-chili}
       - {product: Nature's Promise Organic No Salt Added Black Beans, sku: '215727', package_count: 2, net_quantity_per_package: 15.5 oz, unit_price: 1.19, allocation: creamy-chicken-chili}
@@ -126,7 +130,7 @@ carts:
       - {product: Pacific Foods Organic Unsalted Chicken Bone Broth, sku: '218137', package_count: 1, net_quantity_per_package: 32 fl oz, unit_price: 6.99, allocation: creamy-chicken-chili}
       - {product: Native Moisturizing Coconut & Vanilla Shampoo, sku: '338282', package_count: 1, net_quantity_per_package: 16.5 oz, unit_price: 10.99, allocation: additional-grocery}
       - {product: Plum Organics Stage 1 Just Prunes, sku: '255057', package_count: 1, net_quantity_per_package: 3.5 oz, unit_price: 1.59, allocation: additional-grocery}
-      - {product: Nature's Promise Organic Blueberry Flax Granola, sku: '322800', package_count: 1, net_quantity_per_package: 12 oz, unit_price: 4.49, allocation: additional-grocery}
+      - {product: KIND Healthy Grains Oats & Honey Granola with Toasted Coconut, sku: '186788', package_count: 1, net_quantity_per_package: 11 oz, unit_price: 5.99, allocation: additional-grocery}
       - {product: Nature's Promise San Francisco Style Sourdough Bread Sliced, sku: '405052', package_count: 1, net_quantity_per_package: 24 oz, unit_price: 4.99, allocation: additional-grocery}
 approval:
   selection_revision: null
@@ -164,7 +168,7 @@ post_order_feedback:
   general_feedback: null
 closeout:
   blocker: null
-  notes: Draft Food Lion pickup cart is reconciled but has no selected fulfillment window and is not an order. Switching to delivery would remove the selected eggs and require a replacement.
+  notes: Corrected Food Lion pickup cart is reconciled but has no selected fulfillment window and is not an order. Switching to delivery would remove the selected eggs and require a replacement.
   follow_up_needed: true
 phase_history:
   - {phase: draft, at: 2026-09-25T08:54:00-04:00, note: Screenshot grocery-list intake and recipe source research.}
@@ -174,3 +178,4 @@ phase_history:
   - {phase: shopping-list-confirmed, at: 2026-09-25T08:54:00-04:00, note: User explicitly requested cart construction from the screenshots.}
   - {phase: cart-building, at: 2026-09-25T08:54:00-04:00, note: User authorized adding screenshot items and recipe ingredients to a draft cart; recipe identity remains to be confirmed before approval.}
   - {phase: comparison-ready, at: 2026-09-25T08:58:55-04:00, note: Pickup cart reconciled at $84.76 merchandise; delivery switch would remove one egg item, so pickup cart was retained.}
+  - {phase: comparison-ready, at: 2026-09-25T11:17:28-04:00, note: User corrected yogurt and granola choices; new cart subtotal is $85.26 and estimated pickup total is $88.07.}

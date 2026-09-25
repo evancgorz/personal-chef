@@ -7,9 +7,9 @@ handoff:
   owner: user
   next_action: choose-fulfillment
   waiting_for: pickup-or-delivery-choice
-  updated_at: 2026-09-25T08:58:55-04:00
+  updated_at: 2026-09-25T11:17:28-04:00
 request_summary: Use supplied grocery-list screenshots to build a white chicken chili recipe and draft grocery cart, applying bread, peanut-butter, and jam brand preferences.
-result_summary: Reconciled Food Lion pickup draft cart for creamy chicken chili from the listed ingredients plus other groceries; pickup estimate is $87.57 before selecting a time, while delivery requires an egg replacement.
+result_summary: Reconciled Food Lion pickup draft cart for creamy chicken chili from the listed ingredients plus other groceries; corrected yogurt and granola choices bring the pickup estimate to $88.07 before selecting a time, while delivery requires an egg replacement.
 run_ids: [run-2026-09-25-grocery-list-chili]
 issue_ids: []
 change_ids: [change-2026-09-25-bread-pb-jam-preferences]
@@ -18,6 +18,7 @@ artifact_paths: []
 timeline:
   - {timestamp: 2026-09-25T08:54:00-04:00, event: Screenshot grocery list received and draft cart started, linked_id: run-2026-09-25-grocery-list-chili}
   - {timestamp: 2026-09-25T08:58:55-04:00, event: Draft pickup cart reconciled and pickup versus delivery checked, linked_id: run-2026-09-25-grocery-list-chili}
+  - {timestamp: 2026-09-25T11:17:28-04:00, event: Replaced YoBaby cups with whole milk Greek yogurt and switched granola to KIND, linked_id: run-2026-09-25-grocery-list-chili}
 lessons: []
 follow_up: [Choose pickup or delivery; a delivery switch requires replacement eggs.]
 privacy_reviewed: false
