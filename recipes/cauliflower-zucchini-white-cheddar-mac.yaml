@@ -1,0 +1,103 @@
+version: 1
+id: cauliflower-zucchini-white-cheddar-mac
+name: Cauliflower-Zucchini White Cheddar Mac & Cheese with Grilled Sirloin
+status: validated
+canonical_yield: 6
+time:
+  prep_minutes: 15
+  cook_minutes: 30
+  total_minutes: 45
+effort:
+  level: low-moderate
+  cleanup: grill-plus-pot-saucepan-and-blender
+equipment:
+  - grill
+  - large pot
+  - steamer or microwave
+  - blender
+  - medium saucepan
+ingredients:
+  - id: grass-fed-top-sirloin-steaks
+    name: grass-fed top sirloin steaks
+    quantity: 6
+    unit: 6-oz-steaks
+  - id: avocado-oil
+    name: avocado oil
+    quantity: 1
+    unit: tbsp
+  - id: kosher-salt
+    name: kosher salt
+    quantity: 2
+    unit: tsp
+    note: Plus additional salt for the pasta water.
+  - id: black-pepper
+    name: black pepper
+    quantity: 1
+    unit: tsp
+  - id: elbow-macaroni
+    name: elbow macaroni
+    quantity: 9
+    unit: oz
+    preparation: dry
+  - id: frozen-cauliflower
+    name: frozen cauliflower florets
+    quantity: 12
+    unit: oz
+    preferred_form: one-12-oz-bag
+    adaptation: User-directed repeat quantity; the successful cooked version used about 14 oz, and the user judged the 2 oz difference culinarily immaterial.
+  - id: zucchini
+    name: zucchini
+    quantity: 2
+    unit: medium
+    preparation: peeled-and-roughly-chopped
+  - id: butter
+    name: butter
+    quantity: 2
+    unit: tbsp
+  - id: all-purpose-flour
+    name: all-purpose flour
+    quantity: 2
+    unit: tbsp
+  - id: two-percent-milk
+    name: 2% milk
+    quantity: 1
+    unit: cup
+    preferred_brand: Food Lion
+  - id: white-cheddar
+    name: white cheddar
+    quantity: 4.5
+    unit: oz
+    preparation: shredded
+instructions:
+  - Heat the grill for direct high heat. Peel and roughly chop the zucchini; measure all remaining ingredients. Bring a large pot of salted water to a boil.
+  - Steam or microwave the cauliflower and zucchini until very tender, about 8 to 10 minutes. Blend until completely smooth, adding a small splash from the measured milk only if needed.
+  - Pat the steaks dry. Rub with the avocado oil, 1 tsp kosher salt, and black pepper. Grill over direct high heat, turning once, until they reach the preferred doneness; for medium-rare, remove at 130 to 135 F. Rest for 5 to 10 minutes.
+  - Cook the macaroni in the salted boiling water until just al dente. Reserve 1/2 cup pasta water, then drain.
+  - Melt the butter in a medium saucepan over medium-low heat. Stir in the flour and cook for 2 minutes without browning.
+  - Gradually whisk in the remaining milk. Simmer gently until smooth and thickened, 3 to 4 minutes. Remove from heat and stir in the white cheddar and remaining 1 tsp kosher salt until melted.
+  - Whisk the blended cauliflower and zucchini into the cheese sauce until completely smooth. Fold in the macaroni, loosening with reserved pasta water as needed. Serve beside the rested sirloin steaks.
+nutrition_estimate_per_serving:
+  calories: 250
+  protein_grams: 11
+  carbohydrates_grams: 33
+  fat_grams: 9
+  note: Planning estimate for the macaroni-and-cheese side only; steak is excluded.
+tags:
+  - favorite
+  - epic
+  - repeat-eligible
+  - hidden-vegetables
+  - steak-side
+  - white-cheddar
+validation:
+  validated_at: 2026-09-22T18:37:07-04:00
+  revised_at: 2026-09-22T18:58:20-04:00
+  run_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  outcome_id: outcome-2026-09-22-cauliflower-zucchini-white-cheddar-mac
+  evidence: User reported the cooked recipe was epic and requested it as a favorite, then explicitly removed onion from the repeat version.
+source:
+  type: adapted-published-recipe
+  title: Healthy Mac and Cheese with Veggies
+  publisher: My Kids Lick The Bowl
+  url: https://mykidslickthebowl.com/healthy-macaroni-cheese-with-vegetables/
+  created_at: 2026-09-22T06:24:00-04:00

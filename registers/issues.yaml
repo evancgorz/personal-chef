@@ -1,5 +1,5 @@
 version: 1
-updated_at: 2026-09-18T09:31:36-04:00
+updated_at: 2026-09-23T20:41:21-04:00
 issues:
   - id: issue-2026-09-07-browser-surface-unavailable
     opened_at: 2026-09-07T00:00:00-04:00
@@ -288,3 +288,25 @@ issues:
     recoverability: The historical order and cards remain evidence of the failed run; future runs use the version 2 template and deterministic gates without rewriting history.
     resolved_at: 2026-09-18T18:17:46-04:00
     resolution: Updated design, workflow, quality criteria, the run template, and executable template validation to enforce revision-bound state and artifact reconciliation.
+  - id: issue-2026-09-22-cauliflower-package-rounding
+    opened_at: 2026-09-22T18:06:34-04:00
+    status: resolved
+    severity: medium
+    category: quantity-reconciliation
+    summary: A recipe called for about 14 oz of cauliflower, so two 12 oz bags were purchased even though adapting the flexible ingredient quantity to one 12 oz bag would have been culinarily immaterial.
+    impact: The user paid for and received a second bag solely to cover a 2 oz shortfall, leaving about 10 oz that the user did not want treated as a planned remainder.
+    mitigation: Before buying an additional package for a small shortfall, evaluate and document whether the recipe can be adapted to the largest practical one-package amount without a material culinary effect.
+    recoverability: The historical order remains unchanged; for this recipe, use one 12 oz bag of cauliflower rather than the originally planned 14 oz unless the user requests otherwise.
+    resolved_at: 2026-09-22T18:06:34-04:00
+    resolution: Added a narrowly scoped one-package adaptation rule to the design, workflow, and quality criteria and recorded the run-specific preference.
+  - id: issue-2026-09-23-duplicate-recipe-card-source
+    opened_at: 2026-09-23T20:26:01-04:00
+    status: resolved
+    severity: medium
+    category: recipe-artifact
+    summary: The saved favorite is structured in recipes/ while its printable card content is separately hard-coded in scripts/build_recipe_cards.py.
+    impact: A recipe correction such as removing onion or changing cauliflower quantity can update one source while leaving the other stale, requiring error-prone duplicate edits.
+    mitigation: Generate recipe-card content from the structured saved recipe or a single shared structured source, and validate that a current card has no ingredient or quantity differences from that source.
+    recoverability: The original PDF remains historical and superseded; the revised card is generated from structured YAML and uses a new v2 filename.
+    resolved_at: 2026-09-23T20:41:21-04:00
+    resolution: Removed all recipe content from the renderer, migrated the three embedded cards to structured YAML, added saved-recipe ingredient and quantity reconciliation, embedded source hashes in PDFs, and validated the revised cauliflower card visually.

@@ -1,0 +1,166 @@
+version: 3
+id: run-2026-09-25-eight-dinners
+session_id: session-2026-09-25-eight-dinners
+created_at: 2026-09-25T06:28:03-04:00
+updated_at: 2026-09-25T06:34:36-04:00
+status: review-ready
+handoff:
+  owner: user
+  next_action: answer-shopping-review
+  waiting_for: pantry-and-additional-items-response
+  updated_at: 2026-09-25T06:34:36-04:00
+request:
+  meal_count: 8
+  servings: 6
+  budget: null
+  fulfillment_preference: compare
+  run_overrides:
+    - User narrowed the eight proposed recipes to chicken sausage and white beans and added a white chicken chili, for two active meals.
+context_snapshot:
+  preference_version: 1
+  pantry_checked_at: 2026-09-13T00:00:00-04:00
+  pantry_note: Existing chicken-thigh package has unknown weight and storage state; verify before applying it to this run.
+  interface_constraints:
+    primary_interface: mobile_app
+    desktop_browser_visible_to_user: false
+    chat_updates_required: true
+menu:
+  candidate_recipe_ids:
+    - ground-turkey-taco-skillet
+    - smoky-chicken-sausage-white-bean-skillet
+    - garlic-salmon-green-beans-tomatoes
+    - sheet-pan-chicken-shawarma
+    - ground-beef-broccoli-stir-fry
+    - shrimp-tomato-spinach-orzo
+    - creamy-mushroom-spinach-pork-chops
+    - maple-dijon-chicken-vegetables
+    - white-chicken-chili
+  sources:
+    - recipe_id: ground-turkey-taco-skillet
+      title: Ground Turkey Taco Skillet
+      publisher: Skinnytaste
+      url: https://www.skinnytaste.com/turkey-taco-skillet/
+      accessed_at: 2026-09-25T06:28:03-04:00
+      adaptation: Scale the source's four servings to six; use prepared onion and mild salsa for convenience. No material method change.
+    - recipe_id: smoky-chicken-sausage-white-bean-skillet
+      title: Chicken Sausage White Bean Skillet
+      publisher: Budget Bytes
+      url: https://www.budgetbytes.com/chicken-sausage-white-bean-skillet/
+      accessed_at: 2026-09-25T06:28:03-04:00
+      adaptation: Scale from four to six and use prewashed spinach and pre-diced onion. Protein is below the user's target in the source recipe.
+    - recipe_id: garlic-salmon-green-beans-tomatoes
+      title: Garlic Salmon Recipe
+      publisher: Well Plated
+      url: https://www.wellplated.com/garlic-salmon/
+      accessed_at: 2026-09-25T06:28:03-04:00
+      adaptation: Scale from four to six, using trimmed green beans. Lemon is only a small accent in this candidate.
+    - recipe_id: sheet-pan-chicken-shawarma
+      title: Chicken Shawarma
+      publisher: The Mediterranean Dish
+      url: https://www.themediterraneandish.com/chicken-shawarma-recipe/
+      accessed_at: 2026-09-25T06:28:03-04:00
+      adaptation: Scale to six and serve with ready-to-eat salad components. The prior chicken-thigh pantry entry must be verified before shopping subtraction.
+    - recipe_id: ground-beef-broccoli-stir-fry
+      title: Ground Beef and Broccoli Stir Fry
+      publisher: Skinnytaste
+      url: https://www.skinnytaste.com/ground-beef-and-broccoli-stir-fry/
+      accessed_at: 2026-09-25T06:28:03-04:00
+      adaptation: Scale from four to six, use ready-to-cook broccoli florets and ground ginger, and serve without rice by default. These changes may shift estimated nutrition.
+    - recipe_id: shrimp-tomato-spinach-orzo
+      title: Shrimp and Orzo in a Garlic Tomato Sauce
+      publisher: The Mediterranean Dish
+      url: https://www.themediterraneandish.com/garlic-tomato-shrimp-recipe-with-orzo/
+      accessed_at: 2026-09-25T06:28:03-04:00
+      adaptation: Scale from four to six using peeled, deveined shrimp and prewashed spinach; omit wine in favor of broth if desired. Orzo makes this an occasional carb-heavy meal.
+    - recipe_id: creamy-mushroom-spinach-pork-chops
+      title: Creamy Pork Chops
+      publisher: Budget Bytes
+      url: https://www.budgetbytes.com/creamy-pork-chops/
+      accessed_at: 2026-09-25T06:28:03-04:00
+      adaptation: Scale from four to six, use sliced mushrooms and prewashed spinach, and use avocado oil for searing. Protein is below the preferred target in the source recipe.
+    - recipe_id: maple-dijon-chicken-vegetables
+      title: Maple Dijon Chicken and Vegetables
+      publisher: Well Plated
+      url: https://www.wellplated.com/maple-dijon-chicken/
+      accessed_at: 2026-09-25T06:28:03-04:00
+      adaptation: Scale from four to six using trimmed broccoli and cut carrots. Use avocado oil on the hot sheet pan; no material method change.
+    - recipe_id: white-chicken-chili
+      title: White Chicken Chili
+      publisher: Skinnytaste
+      url: https://www.skinnytaste.com/white-chicken-chili/
+      accessed_at: 2026-09-25T06:34:36-04:00
+      adaptation: Scale the five-serving source to six; use ready-to-cook chicken and prepared pepper/onion if suitable products are available. Replace homemade tortilla strips with ready-made tortilla chips to reduce prep. This is a 65-minute time exception.
+  macro_estimates:
+    - {recipe_id: ground-turkey-taco-skillet, basis: planning-estimate-per-serving, calories_kcal: 503, protein_g: 37, carbohydrates_g: 43.5, fat_g: 23.5}
+    - {recipe_id: smoky-chicken-sausage-white-bean-skillet, basis: planning-estimate-per-serving, calories_kcal: 254, protein_g: 14, carbohydrates_g: 8, fat_g: 19}
+    - {recipe_id: garlic-salmon-green-beans-tomatoes, basis: planning-estimate-per-serving, calories_kcal: 457, protein_g: 39, carbohydrates_g: 19, fat_g: 26}
+    - {recipe_id: sheet-pan-chicken-shawarma, basis: planning-estimate-per-serving, calories_kcal: 467, protein_g: 35, carbohydrates_g: 37, fat_g: 20}
+    - {recipe_id: ground-beef-broccoli-stir-fry, basis: planning-estimate-per-serving, calories_kcal: 327, protein_g: 29, carbohydrates_g: 26, fat_g: 11}
+    - {recipe_id: shrimp-tomato-spinach-orzo, basis: planning-estimate-per-serving, calories_kcal: 491, protein_g: 33, carbohydrates_g: 56, fat_g: 13}
+    - {recipe_id: creamy-mushroom-spinach-pork-chops, basis: planning-estimate-per-serving, calories_kcal: 354, protein_g: 31, carbohydrates_g: 4, fat_g: 23}
+    - {recipe_id: maple-dijon-chicken-vegetables, basis: planning-estimate-per-serving, calories_kcal: 427, protein_g: 44, carbohydrates_g: 25, fat_g: 16}
+    - {recipe_id: white-chicken-chili, basis: planning-estimate-per-serving, calories_kcal: 372, protein_g: 41, carbohydrates_g: 40.5, fat_g: 5.5}
+  scores:
+    - {recipe_id: ground-turkey-taco-skillet, score: 85, dimensions: {preference_and_dietary_fit: 23, protein_quality_and_amount: 17, vegetable_quantity_and_variety: 10, total_time: 15, preparation_effort: 9, prior_outcome: 2, ingredient_overlap_and_waste: 5, availability_confidence: 4}, availability_confidence: common-ingredients-not-live-verified, reason: Quick familiar Tex-Mex skillet with a different flavor from recent meals.}
+    - {recipe_id: smoky-chicken-sausage-white-bean-skillet, score: 75, dimensions: {preference_and_dietary_fit: 22, protein_quality_and_amount: 9, vegetable_quantity_and_variety: 10, total_time: 15, preparation_effort: 10, prior_outcome: 2, ingredient_overlap_and_waste: 4, availability_confidence: 3}, availability_confidence: common-ingredients-not-live-verified, reason: Very low-prep smoky bean skillet; source protein is below target.}
+    - {recipe_id: garlic-salmon-green-beans-tomatoes, score: 88, dimensions: {preference_and_dietary_fit: 23, protein_quality_and_amount: 19, vegetable_quantity_and_variety: 13, total_time: 15, preparation_effort: 9, prior_outcome: 2, ingredient_overlap_and_waste: 4, availability_confidence: 3}, availability_confidence: fresh-fish-not-live-verified, reason: One-pan fish meal with substantial vegetables and strong protein.}
+    - {recipe_id: sheet-pan-chicken-shawarma, score: 84, dimensions: {preference_and_dietary_fit: 23, protein_quality_and_amount: 17, vegetable_quantity_and_variety: 10, total_time: 15, preparation_effort: 8, prior_outcome: 2, ingredient_overlap_and_waste: 5, availability_confidence: 4}, availability_confidence: pantry-chicken-unverified, reason: Warm-spice profile may use reported chicken thighs after verification.}
+    - {recipe_id: ground-beef-broccoli-stir-fry, score: 82, dimensions: {preference_and_dietary_fit: 23, protein_quality_and_amount: 14, vegetable_quantity_and_variety: 12, total_time: 15, preparation_effort: 9, prior_outcome: 2, ingredient_overlap_and_waste: 4, availability_confidence: 3}, availability_confidence: common-ingredients-not-live-verified, reason: Fast savory ginger-soy meal with substantial broccoli.}
+    - {recipe_id: shrimp-tomato-spinach-orzo, score: 80, dimensions: {preference_and_dietary_fit: 21, protein_quality_and_amount: 16, vegetable_quantity_and_variety: 10, total_time: 15, preparation_effort: 8, prior_outcome: 2, ingredient_overlap_and_waste: 5, availability_confidence: 3}, availability_confidence: shrimp-not-live-verified, reason: Bright Mediterranean seafood dinner with spinach; occasional pasta meal.}
+    - {recipe_id: creamy-mushroom-spinach-pork-chops, score: 79, dimensions: {preference_and_dietary_fit: 22, protein_quality_and_amount: 15, vegetable_quantity_and_variety: 9, total_time: 15, preparation_effort: 9, prior_outcome: 2, ingredient_overlap_and_waste: 4, availability_confidence: 3}, availability_confidence: pork-not-live-verified, reason: Comforting skillet meal with mushrooms and spinach; source protein is modest.}
+    - {recipe_id: maple-dijon-chicken-vegetables, score: 90, dimensions: {preference_and_dietary_fit: 24, protein_quality_and_amount: 20, vegetable_quantity_and_variety: 14, total_time: 15, preparation_effort: 9, prior_outcome: 2, ingredient_overlap_and_waste: 4, availability_confidence: 2}, availability_confidence: fresh-chicken-not-live-verified, reason: One-pan sweet-tangy meal with high protein and two vegetables.}
+    - {recipe_id: white-chicken-chili, score: 79, dimensions: {preference_and_dietary_fit: 24, protein_quality_and_amount: 19, vegetable_quantity_and_variety: 12, total_time: 8, preparation_effort: 7, prior_outcome: 2, ingredient_overlap_and_waste: 4, availability_confidence: 3}, availability_confidence: ingredients-not-live-verified, total_time_exception: About 65 minutes, reason: High-protein white chili with poblano and corn; exceeds the usual 45-minute target.}
+selection:
+  revision: 1
+  status: confirmed
+  active_meal_ids:
+    - smoky-chicken-sausage-white-bean-skillet
+    - white-chicken-chili
+  updated_at: 2026-09-25T06:34:36-04:00
+  history:
+    - revision: 1
+      timestamp: 2026-09-25T06:34:36-04:00
+      user_language: Lets do #2. Can we also find a white chicken chilli recipe?
+      operation: add
+      before: []
+      after: [smoky-chicken-sausage-white-bean-skillet, white-chicken-chili]
+requirements: []
+shopping_review: {selection_revision: 1, presented_at: 2026-09-25T06:34:36-04:00, response_received_at: null, cart_build_authorized: false, pantry_exclusions: [], additional_items: [], confirmed_at: null}
+ingredient_plan_revision: 1
+ingredient_plan_selection_revision: 1
+ingredient_plan:
+  - {recipe_id: smoky-chicken-sausage-white-bean-skillet, ingredient: fully cooked chicken sausage, recipe_quantity: 18 oz, preparation_form: ready-to-cook links, coverage_status: unresolved}
+  - {recipe_id: smoky-chicken-sausage-white-bean-skillet, ingredient: avocado oil, recipe_quantity: 3 tbsp, preparation_form: bottled, coverage_status: unresolved}
+  - {recipe_id: smoky-chicken-sausage-white-bean-skillet, ingredient: yellow onion, recipe_quantity: 1.5 small onions, preparation_form: pre-diced preferred, coverage_status: unresolved}
+  - {recipe_id: smoky-chicken-sausage-white-bean-skillet, ingredient: garlic, recipe_quantity: 3 cloves, preparation_form: jarred minced preferred, coverage_status: unresolved}
+  - {recipe_id: smoky-chicken-sausage-white-bean-skillet, ingredient: cannellini beans, recipe_quantity: 3 cans of 15 oz each, preparation_form: canned and drained, coverage_status: unresolved}
+  - {recipe_id: smoky-chicken-sausage-white-bean-skillet, ingredient: chicken broth, recipe_quantity: 1.5 cups, preparation_form: ready-to-use, coverage_status: unresolved}
+  - {recipe_id: smoky-chicken-sausage-white-bean-skillet, ingredient: baby spinach, recipe_quantity: 3 cups, preparation_form: prewashed, coverage_status: unresolved}
+  - {recipe_id: smoky-chicken-sausage-white-bean-skillet, ingredient: dried oregano, recipe_quantity: 0.75 tsp, preparation_form: dried, coverage_status: unresolved}
+  - {recipe_id: smoky-chicken-sausage-white-bean-skillet, ingredient: smoked paprika, recipe_quantity: 0.375 tsp, preparation_form: ground, coverage_status: unresolved}
+  - {recipe_id: smoky-chicken-sausage-white-bean-skillet, ingredient: kosher salt, recipe_quantity: 0.75 tsp, preparation_form: fine or coarse, coverage_status: unresolved}
+  - {recipe_id: smoky-chicken-sausage-white-bean-skillet, ingredient: black pepper, recipe_quantity: 0.375 tsp, preparation_form: ground, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: boneless skinless chicken, recipe_quantity: 1.8 lb, preparation_form: ready-to-cook breasts or thighs, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: poblano peppers, recipe_quantity: 2.4 small peppers, preparation_form: pre-diced preferred, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: sweet onion, recipe_quantity: 1.2 onions, preparation_form: pre-diced preferred, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: ground cumin, recipe_quantity: 1.8 tbsp, preparation_form: ground, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: white northern beans, recipe_quantity: 18 oz including liquid, preparation_form: canned, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: low sodium chicken broth, recipe_quantity: 4.8 cups, preparation_form: ready-to-use, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: bay leaf, recipe_quantity: 1 leaf, preparation_form: dried, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: sweet corn, recipe_quantity: 1.2 cups, preparation_form: frozen preferred, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: tortilla chips, recipe_quantity: equivalent of 5 small corn tortillas, preparation_form: ready-to-eat, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: kosher salt, recipe_quantity: 0.6 tsp, preparation_form: fine or coarse, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: cilantro, recipe_quantity: to taste, preparation_form: fresh optional topping, coverage_status: unresolved}
+  - {recipe_id: white-chicken-chili, ingredient: lime wedges, recipe_quantity: to taste, preparation_form: fresh optional topping, coverage_status: unresolved}
+carts: []
+approval: {selection_revision: null, cart_snapshot_id: null, requested_at: null, approved_at: null, approved_total: null}
+artifacts: {recipe_cards: []}
+order: {placed: false, placed_at: null, confirmation_reference: null}
+receipt: {status: not-applicable, captured_at: null, source: null, private_artifact: null, line_items: [], totals: {merchandise: null, promotions: null, fees: null, tax: null, tip: null, charged_total: null, currency: USD}, reconciled_against_approved_cart: false, discrepancies: [], retrieval_attempts: [], blocker: null}
+post_order_feedback: {reported_at: null, product_form_feedback: [], general_feedback: null}
+closeout: {blocker: null, notes: null, follow_up_needed: true}
+phase_history:
+  - {phase: draft, at: 2026-09-25T06:28:03-04:00, note: Fresh eight-dinner planning run created.}
+  - {phase: menu-presented, at: 2026-09-25T06:28:03-04:00, note: Eight source-backed candidates prepared; awaiting meal selection.}
+  - {phase: meals-selected, at: 2026-09-25T06:34:36-04:00, note: User chose candidate two and requested a white chicken chili as an additional meal; researched and selected source-backed chili for the two-meal set.}
+  - {phase: review-ready, at: 2026-09-25T06:34:36-04:00, note: Six-serving ingredient quantities for both meals prepared; awaiting on-hand ingredients and additional grocery requests.}

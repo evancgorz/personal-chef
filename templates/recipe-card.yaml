@@ -1,0 +1,36 @@
+version: 1
+card_format: 2
+id: recipe-id-card-revision
+status: draft
+output_filename: recipe-id-revision.pdf
+source:
+  kind: run-ingredient-plan # Or saved-recipe after positive cooked feedback.
+  path: runs/run-yyyy-mm-dd-slug.yaml
+  recipe_id: recipe-id
+reconciliation:
+  status: pending
+  note: null
+title: Recipe title
+meta: |-
+  SERVES 6
+  45 MINUTES
+deck: One-sentence description.
+equipment: "Equipment: list; required; equipment"
+source_photo:
+  path: artifacts/recipe-cards/images/recipe-id.jpg
+  page_url: https://example.com/original-recipe
+  image_url: https://example.com/original-recipe-photo.jpg
+  credit: Recipe publisher / photographer
+  captured_at: 2026-09-25T00:00:00-04:00
+layout: {}
+ingredients:
+  - section: MAIN
+    items:
+      - display: "Ingredient - <b>quantity</b>"
+        source_ingredient_id: ingredient-id
+        source_quantity: {quantity: 1, unit: each}
+steps:
+  - Prepare and measure ingredients before heating equipment.
+  - Cook in the most efficient safe sequence, combining simultaneous tasks where practical.
+tip: "TIP: Add one useful execution note."
+footer: Scaled for six servings. Source hash is printed below.

@@ -1,0 +1,639 @@
+version: 2
+id: run-2026-09-22-hidden-veggie-mac-and-cheese
+session_id: session-2026-09-22-hidden-veggie-mac-and-cheese
+created_at: 2026-09-22T06:22:07-04:00
+updated_at: 2026-09-23T20:26:01-04:00
+status: ordered
+request:
+  meal_count: 1
+  servings: 6
+  budget: null
+  fulfillment_preference: compare
+  run_overrides:
+    - hidden vegetables blended into the macaroni-and-cheese sauce
+    - serve as a side with grilled sirloin steaks; waive the dinner protein target
+    - six individual sirloin steaks, approximately 8 oz each, with grass-fed preferred
+context_snapshot:
+  preference_version: 1
+  pantry_checked_at: 2026-09-13T00:00:00-04:00
+  interface_constraints:
+    primary_interface: mobile_app
+    desktop_browser_visible_to_user: false
+    chat_updates_required: true
+menu:
+  candidate_recipe_ids:
+    - cauliflower-zucchini-white-cheddar-mac
+    - butternut-cottage-cheese-mac
+    - three-veg-baked-mac
+  sources:
+    - recipe_id: cauliflower-zucchini-white-cheddar-mac
+      title: Healthy Mac and Cheese with Veggies
+      publisher: My Kids Lick The Bowl
+      url: https://mykidslickthebowl.com/healthy-macaroni-cheese-with-vegetables/
+      accessed_at: 2026-09-22T06:24:00-04:00
+      adaptation: Keep the source method of steaming and pureeing peeled zucchini and cauliflower into the sauce, omit the optional bacon, use white cheddar, and size it as a side for grilled sirloin. The pale vegetables remain visually concealed and the mild cheese profile will not compete with the steak.
+    - recipe_id: butternut-cottage-cheese-mac
+      title: Butternut Squash Mac and Cheese
+      publisher: Skinnytaste
+      url: https://www.skinnytaste.com/butternut-squash-mac-and-cheese/
+      accessed_at: 2026-09-22T06:24:00-04:00
+      adaptation: Use pre-cut squash, retain the source's fully blended squash sauce, and add a modest amount of smoked gouda and sage for a sweet-smoky steakhouse profile. Size it as a side; no protein boost is needed alongside sirloin.
+    - recipe_id: three-veg-baked-mac
+      title: Vegetable macaroni cheese with three hidden veg
+      publisher: Sneaky Veg
+      url: https://www.sneakyveg.com/hidden-vegetable-macaroni-cheese/
+      accessed_at: 2026-09-22T06:24:00-04:00
+      adaptation: Scale to six side servings; use frozen cauliflower and pre-cut sweet potato and squash where available, preserve the source's smooth blended sauce, use sharp cheddar so the cheese flavor stands up to the higher vegetable load, and keep the optional breadcrumb bake.
+  macro_estimates:
+    - recipe_id: cauliflower-zucchini-white-cheddar-mac
+      basis: planning-estimate-per-serving
+      calories_kcal: 250
+      protein_g: 11
+      carbohydrates_g: 33
+      fat_g: 9
+    - recipe_id: butternut-cottage-cheese-mac
+      basis: planning-estimate-per-serving
+      calories_kcal: 275
+      protein_g: 13
+      carbohydrates_g: 43
+      fat_g: 7
+    - recipe_id: three-veg-baked-mac
+      basis: planning-estimate-per-serving
+      calories_kcal: 250
+      protein_g: 10
+      carbohydrates_g: 41
+      fat_g: 6
+  scores:
+    - recipe_id: cauliflower-zucchini-white-cheddar-mac
+      score: 89
+      dimensions:
+        preference_and_dietary_fit: 24
+        protein_quality_and_amount: 20
+        vegetable_quantity_and_variety: 14
+        total_time: 14
+        preparation_effort: 8
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 4
+        availability_confidence: 3
+      availability_confidence: unknown-until-cart-stage
+      reason: "Best steak-side fit: its mild white-cheddar sauce keeps cauliflower and peeled zucchini visually hidden and complements grilled beef without making the plate overly sweet or heavy."
+    - recipe_id: butternut-cottage-cheese-mac
+      score: 87
+      dimensions:
+        preference_and_dietary_fit: 24
+        protein_quality_and_amount: 20
+        vegetable_quantity_and_variety: 13
+        total_time: 12
+        preparation_effort: 8
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 4
+        availability_confidence: 4
+      availability_confidence: shelf-stable-puree-or-common-produce-not-live-verified
+      total_time_exception: About 50 minutes with pre-cut squash; the source version is about 75 minutes.
+      reason: Smooth squash disappears naturally into an orange smoked-gouda sauce; sage gives it a steakhouse-style flavor that works especially well with grilled beef.
+    - recipe_id: three-veg-baked-mac
+      score: 83
+      dimensions:
+        preference_and_dietary_fit: 23
+        protein_quality_and_amount: 20
+        vegetable_quantity_and_variety: 15
+        total_time: 10
+        preparation_effort: 7
+        prior_outcome: 2
+        ingredient_overlap_and_waste: 3
+        availability_confidence: 3
+      availability_confidence: common-ingredients-not-live-verified
+      total_time_exception: About 65 minutes including the optional breadcrumb bake; serving it directly after mixing saves about 20 minutes.
+      reason: Highest vegetable variety, with cauliflower, sweet potato, and squash blended completely smooth beneath a familiar sharp-cheddar flavor.
+selection:
+  revision: 1
+  status: confirmed
+  active_meal_ids:
+    - cauliflower-zucchini-white-cheddar-mac
+  updated_at: 2026-09-22T06:49:13-04:00
+  history:
+    - revision: 1
+      timestamp: 2026-09-22T06:49:13-04:00
+      user_language: I like the cauliflower zucchini white cheddar option. Let's proceed with that. Also pick me out six sirloin steaks. If they have grass fed options I prefer those.
+      operation: replace
+      before: []
+      after:
+        - cauliflower-zucchini-white-cheddar-mac
+requirements:
+  - Vegetables must be integrated into and visually concealed by the cheese sauce rather than served as a disconnected side.
+  - Default to six servings and a low-prep method.
+  - Treat the dish as a side for grilled sirloin steaks rather than a complete meal.
+  - Prefer grass-fed sirloin and choose six individual steaks near 8 oz each when practical.
+shopping_review:
+  selection_revision: 1
+  presented_at: 2026-09-22T06:49:13-04:00
+  response_received_at: 2026-09-22T07:03:45-04:00
+  cart_build_authorized: true
+  pantry_exclusions:
+    - kosher salt
+    - black pepper
+    - all-purpose flour
+    - butter
+    - avocado oil
+    - white cheddar cheese
+  additional_items:
+    - item: yellow bananas
+      requested_quantity: some
+      selected_quantity: 1 lb
+    - item: blueberries
+      requested_quantity: some
+      selected_quantity: 1 dry pint
+  confirmed_at: 2026-09-22T07:03:45-04:00
+ingredient_plan_revision: 1
+ingredient_plan_selection_revision: 1
+ingredient_plan:
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: sirloin steaks
+    recipe_quantity: 6 steaks, 6 oz each (36 oz total)
+    preparation_form: individual top sirloin steaks, grass-fed preferred
+    pantry_quantity: null
+    coverage_status: covered-by-cart
+    sku: "404469"
+    brand: Steakhouse Naturals
+    preferred_brand_check: Grass-fed preference governs this protein selection; the available Steakhouse Naturals grass-fed sirloin was selected.
+    package_count: 6
+    net_quantity_per_package: 6 oz
+    purchase_quantity: 6 steaks (36 oz total)
+    allocation: 6 steaks to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: 0 steaks
+    observed_unit_price: 5.49
+    quantity_review: The available grass-fed individual steaks are 6 oz each rather than the planning assumption of approximately 8 oz; the requested count of six is preserved.
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: dry macaroni or short pasta
+    recipe_quantity: 250 g (about 9 oz)
+    preparation_form: dry short pasta
+    pantry_quantity: null
+    coverage_status: covered-by-cart
+    sku: "239256"
+    brand: Nature's Promise
+    preferred_brand_check: Nature's Promise selected after an active pickup-channel search.
+    package_count: 1
+    net_quantity_per_package: 16 oz
+    purchase_quantity: 16 oz
+    allocation: 9 oz to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: 7 oz
+    full_package_excess: true
+    quantity_review: One 16 oz box is the smallest observed package covering the 9 oz recipe use; expected remainder is 7 oz.
+    observed_unit_price: 1.69
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: cauliflower florets
+    recipe_quantity: 400 g (about 14 oz)
+    preparation_form: washed florets, fresh or frozen
+    pantry_quantity: null
+    coverage_status: covered-by-cart
+    sku: "390111"
+    brand: Food Lion
+    preferred_brand_check: No suitable Nature's Promise cauliflower was returned in the active delivery-channel search; Food Lion frozen cauliflower was selected as the lowest-effort plain option.
+    package_count: 2
+    net_quantity_per_package: 12 oz
+    purchase_quantity: 24 oz
+    allocation: 14 oz to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: 10 oz
+    full_package_excess: true
+    quantity_review: Two 12 oz bags are required to cover the 14 oz recipe use; expected remainder is 10 oz.
+    observed_unit_price: 1.79
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: zucchini
+    recipe_quantity: 250 g (about 9 oz)
+    preparation_form: peeled and roughly chopped; approximately 2 medium
+    pantry_quantity: null
+    coverage_status: covered-by-cart
+    sku: "376315"
+    brand: Pero Family Farms
+    preferred_brand_check: No suitable Nature's Promise zucchini was visible; the two-count organic Pero package matches the requested count.
+    package_count: 1
+    net_quantity_per_package: 2 zucchini
+    purchase_quantity: 2 zucchini
+    allocation: 2 zucchini to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: 0 zucchini
+    observed_unit_price: 3.29
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: yellow onion
+    recipe_quantity: 5 oz diced
+    preparation_form: pre-diced preferred
+    pantry_quantity: null
+    coverage_status: covered-by-cart
+    sku: "310230"
+    brand: Food Lion
+    preferred_brand_check: No suitable Nature's Promise pre-diced onion was returned in the active delivery-channel search; Food Lion pre-diced yellow onion was selected for the user's low-prep preference.
+    package_count: 1
+    net_quantity_per_package: 5 oz
+    purchase_quantity: 5 oz
+    allocation: 5 oz to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: 0 oz
+    observed_unit_price: 1.99
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: white cheddar cheese
+    recipe_quantity: 125 g (about 4.5 oz or 1 cup shredded)
+    preparation_form: shredded
+    coverage_status: covered-by-pantry
+    pantry_quantity: user-reported on hand for this run; exact quantity unknown
+    sku: pantry
+    brand: pantry
+    preferred_brand_check: Not applicable; user reported this ingredient on hand.
+    package_count: 0
+    net_quantity_per_package: null
+    purchase_quantity: none
+    allocation: 4.5 oz to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: null
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: 2% milk
+    recipe_quantity: 250 ml (about 1 cup)
+    preparation_form: regular Food Lion milk per durable brand preference
+    pantry_quantity: null
+    coverage_status: covered-by-cart
+    sku: "296835"
+    brand: Food Lion
+    preferred_brand_check: Food Lion 2% milk selected under the durable milk-specific brand rule; Nature's Promise milk is intentionally not used unless explicitly requested.
+    package_count: 1
+    net_quantity_per_package: 1/2 gallon (64 fl oz)
+    purchase_quantity: 64 fl oz
+    allocation: 1 cup (8 fl oz) to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: 56 fl oz
+    observed_unit_price: 1.59
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: butter
+    recipe_quantity: 30 g (2 tbsp)
+    preparation_form: unsalted or salted butter
+    coverage_status: covered-by-pantry
+    pantry_quantity: user-reported on hand for this run; exact quantity unknown
+    sku: pantry
+    brand: pantry
+    preferred_brand_check: Not applicable; user reported this ingredient on hand.
+    package_count: 0
+    net_quantity_per_package: null
+    purchase_quantity: none
+    allocation: 2 tbsp to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: null
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: all-purpose flour
+    recipe_quantity: 2 tbsp
+    preparation_form: all-purpose flour
+    coverage_status: covered-by-pantry
+    pantry_quantity: user-reported on hand for this run; exact quantity unknown
+    sku: pantry
+    brand: pantry
+    preferred_brand_check: Not applicable; user reported this ingredient on hand.
+    package_count: 0
+    net_quantity_per_package: null
+    purchase_quantity: none
+    allocation: 2 tbsp to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: null
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: avocado oil
+    recipe_quantity: 1 tbsp
+    preparation_form: high-heat cooking oil for steaks
+    coverage_status: covered-by-pantry
+    pantry_quantity: user-reported on hand for this run; exact quantity unknown
+    sku: pantry
+    brand: pantry
+    preferred_brand_check: Not applicable; user reported this ingredient on hand.
+    package_count: 0
+    net_quantity_per_package: null
+    purchase_quantity: none
+    allocation: 1 tbsp to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: null
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: kosher salt
+    recipe_quantity: 2 tsp, plus pasta water to taste
+    preparation_form: coarse kosher salt
+    coverage_status: covered-by-pantry
+    pantry_quantity: user-reported on hand for this run; exact quantity unknown
+    sku: pantry
+    brand: pantry
+    preferred_brand_check: Not applicable; user reported this ingredient on hand.
+    package_count: 0
+    net_quantity_per_package: null
+    purchase_quantity: none
+    allocation: 2 tsp plus pasta water seasoning to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: null
+  - recipe_id: cauliflower-zucchini-white-cheddar-mac
+    ingredient: black pepper
+    recipe_quantity: 1 tsp
+    preparation_form: ground black pepper
+    coverage_status: covered-by-pantry
+    pantry_quantity: user-reported on hand for this run; exact quantity unknown
+    sku: pantry
+    brand: pantry
+    preferred_brand_check: Not applicable; user reported this ingredient on hand.
+    package_count: 0
+    net_quantity_per_package: null
+    purchase_quantity: none
+    allocation: 1 tsp to cauliflower-zucchini-white-cheddar-mac
+    expected_remainder: null
+carts:
+  - cart_snapshot_id: food-lion-draft-2026-09-22t071000
+    selection_revision: 1
+    retailer: Food Lion
+    retailer_id: food-lion-saved-location
+    channel_id: food-lion-direct
+    fulfillment: unresolved
+    inherited_browser_context: delivery
+    location_label: saved Food Lion location
+    observed_at: 2026-09-22T07:10:00-04:00
+    selected_window: null
+    reservation_status: draft
+    substitutions: best-comparable-enabled
+    currency: USD
+    merchandise_subtotal: 44.98
+    promotions: 0.20
+    fees: null
+    estimated_tax: null
+    tip: null
+    estimated_total: null
+    item_count: 6
+    total_package_units: 12
+    recipe_merchandise_subtotal: 44.98
+    additional_grocery_subtotal: 0.00
+    line_items:
+      - product: Steakhouse Naturals Grass-fed Top Sirloin Angus Beef Steak
+        sku: "404469"
+        package_count: 6
+        net_quantity_per_package: 6 oz
+        unit_price: 5.49
+      - product: Nature's Promise Organic Elbows Macaroni Pasta
+        sku: "239256"
+        package_count: 1
+        net_quantity_per_package: 16 oz
+        unit_price: 1.59
+      - product: Food Lion Cauliflower Frozen
+        sku: "390111"
+        package_count: 2
+        net_quantity_per_package: 12 oz
+        unit_price: 1.79
+      - product: Pero Family Farms Organic Zucchini
+        sku: "376315"
+        package_count: 1
+        net_quantity_per_package: 2 count
+        unit_price: 3.29
+      - product: Food Lion Yellow Onions Diced
+        sku: "310230"
+        package_count: 1
+        net_quantity_per_package: 5 oz
+        unit_price: 1.99
+      - product: Food Lion 2% Reduced Fat Milk
+        sku: "296835"
+        package_count: 1
+        net_quantity_per_package: 1/2 gallon
+        unit_price: 1.59
+    notes: The cart opened in an inherited delivery context. Fulfillment method, fees, tip, window, and final total remain unselected and unapproved.
+  - cart_snapshot_id: food-lion-pickup-2026-09-22t071417
+    selection_revision: 1
+    retailer: Food Lion
+    retailer_id: food-lion-avent-ferry
+    channel_id: food-lion-direct
+    fulfillment: pickup
+    location_label: saved Avent Ferry Food Lion pickup location
+    observed_at: 2026-09-22T07:14:17-04:00
+    selected_window: 2026-09-22T10:00:00-04:00/2026-09-22T11:00:00-04:00
+    reservation_status: selected-not-reserved-until-checkout
+    substitutions: best-comparable-enabled
+    currency: USD
+    merchandise_subtotal: 45.08
+    promotions: 0.20
+    fees: 1.99
+    estimated_tax: 0.00
+    tip: 0.00
+    estimated_total: 47.07
+    item_count: 6
+    total_package_units: 12
+    recipe_merchandise_subtotal: 45.08
+    additional_grocery_subtotal: 0.00
+    cost_per_serving: 7.51
+    line_items:
+      - product: Steakhouse Naturals Grass-fed Top Sirloin Angus Beef Steak
+        sku: "404469"
+        package_count: 6
+        net_quantity_per_package: 6 oz
+        unit_price: 5.49
+      - product: Nature's Promise Organic Elbows Macaroni Pasta
+        sku: "239256"
+        package_count: 1
+        net_quantity_per_package: 16 oz
+        unit_price: 1.59
+      - product: Food Lion Cauliflower Frozen
+        sku: "390111"
+        package_count: 2
+        net_quantity_per_package: 12 oz
+        unit_price: 1.79
+      - product: Pero Family Farms Organic Zucchini
+        sku: "376315"
+        package_count: 1
+        net_quantity_per_package: 2 count
+        unit_price: 3.29
+      - product: Food Lion Yellow Onions Diced
+        sku: "310230"
+        package_count: 1
+        net_quantity_per_package: 5 oz
+        unit_price: 1.99
+      - product: Food Lion 2% Reduced Fat Milk
+        sku: "296835"
+        package_count: 1
+        net_quantity_per_package: 1/2 gallon
+        unit_price: 1.69
+    notes: Pickup and the earliest available window were selected and independently verified on the order-summary page. Place Order remains unused pending explicit chat approval.
+  - cart_snapshot_id: food-lion-pickup-2026-09-22t071841
+    selection_revision: 1
+    retailer: Food Lion
+    retailer_id: food-lion-avent-ferry
+    channel_id: food-lion-direct
+    fulfillment: pickup
+    location_label: saved Avent Ferry Food Lion pickup location
+    observed_at: 2026-09-22T07:18:41-04:00
+    selected_window: 2026-09-22T15:00:00-04:00/2026-09-22T16:00:00-04:00
+    reservation_status: selected-not-reserved-until-order-placement
+    substitutions: best-comparable-enabled
+    currency: USD
+    merchandise_subtotal: 49.57
+    promotions: 0.20
+    fees: 1.99
+    estimated_tax: 0.00
+    tip: 0.00
+    estimated_total: 51.56
+    item_count: 8
+    total_package_units: 15
+    recipe_merchandise_subtotal: 45.08
+    additional_grocery_subtotal: 4.49
+    cost_per_serving: 7.51
+    line_items:
+      - product: Steakhouse Naturals Grass-fed Top Sirloin Angus Beef Steak
+        sku: "404469"
+        package_count: 6
+        net_quantity_per_package: 6 oz
+        unit_price: 5.49
+        allocation: cauliflower-zucchini-white-cheddar-mac
+      - product: Nature's Promise Organic Elbows Macaroni Pasta
+        sku: "239256"
+        package_count: 1
+        net_quantity_per_package: 16 oz
+        unit_price: 1.59
+        allocation: cauliflower-zucchini-white-cheddar-mac
+      - product: Food Lion Cauliflower Frozen
+        sku: "390111"
+        package_count: 2
+        net_quantity_per_package: 12 oz
+        unit_price: 1.79
+        allocation: cauliflower-zucchini-white-cheddar-mac
+      - product: Pero Family Farms Organic Zucchini
+        sku: "376315"
+        package_count: 1
+        net_quantity_per_package: 2 count
+        unit_price: 3.29
+        allocation: cauliflower-zucchini-white-cheddar-mac
+      - product: Food Lion Yellow Onions Diced
+        sku: "310230"
+        package_count: 1
+        net_quantity_per_package: 5 oz
+        unit_price: 1.99
+        allocation: cauliflower-zucchini-white-cheddar-mac
+      - product: Food Lion 2% Reduced Fat Milk
+        sku: "296835"
+        package_count: 1
+        net_quantity_per_package: 1/2 gallon
+        unit_price: 1.69
+        allocation: cauliflower-zucchini-white-cheddar-mac
+      - product: Yellow Bananas
+        sku: "340212"
+        package_count: 2
+        net_quantity_per_package: approximately 0.5 lb
+        purchase_quantity: 1 lb
+        unit_price: 0.50 per lb
+        estimated_line_price: 0.50
+        allocation: additional grocery
+      - product: Blueberries
+        sku: "124493"
+        package_count: 1
+        net_quantity_per_package: 1 dry pint
+        unit_price: 3.99
+        allocation: additional grocery
+    notes: User changed pickup to 3:00 PM-4:00 PM and added bananas and blueberries. The updated order summary was re-read at 15 items; Place Order remains unused pending approval of the revised exact total.
+approval:
+  selection_revision: 1
+  cart_snapshot_id: food-lion-pickup-2026-09-22t071841
+  requested_at: 2026-09-22T07:18:41-04:00
+  approved_at: 2026-09-22T07:20:00-04:00
+  approved_total: 51.56
+artifacts:
+  recipe_cards:
+    - meal_id: cauliflower-zucchini-white-cheddar-mac
+      title: Cauliflower-Zucchini White Cheddar Mac & Cheese
+      path: output/pdf/cauliflower-zucchini-white-cheddar-mac.pdf
+      selection_revision: 1
+      ingredient_plan_revision: 1
+      coverage_status: reconciled
+      generated_at: 2026-09-22T17:43:00-04:00
+      printed_at: 2026-09-22T17:44:35-04:00
+      copies: 1
+      printer: HP (HP OfficeJet 3830 series)
+      scaling_mode: fit-to-page
+      print_status: printing-retained-in-windows-queue
+      current_status: superseded-for-repeat
+      superseded_at: 2026-09-22T18:58:20-04:00
+      supersession_reason: Future repeats use one 12 oz cauliflower bag and omit onion; this PDF retains the originally printed 14 oz cauliflower and 5 oz onion instructions as historical evidence.
+order:
+  placed: true
+  placed_at: 2026-09-22T07:20:30-04:00
+  confirmation_reference: m786642390
+receipt:
+  status: unavailable
+  captured_at: null
+  source: Food Lion order confirmation page
+  private_artifact: null
+  line_items: []
+  totals:
+    merchandise: null
+    promotions: null
+    fees: null
+    tax: null
+    tip: null
+    charged_total: null
+    currency: USD
+  reconciled_against_approved_cart: false
+  discrepancies: []
+  retrieval_attempts:
+    - source: Food Lion order confirmation page
+      checked_at: 2026-09-22T07:21:00-04:00
+      result: Confirmation reference, pickup window, 15-item count, payment-method label, and estimated total were visible; authoritative fulfilled quantities and final itemized charges were not available.
+    - source: authorized confirmation email
+      checked_at: 2026-09-22T07:21:00-04:00
+      result: No authorized email connector is available in this session, so the retailer confirmation email could not be checked.
+  blocker: The order is newly placed and the confirmation page does not expose a final itemized receipt; receipt reconciliation remains pending.
+post_order_feedback:
+  reported_at: 2026-09-22T18:06:34-04:00
+  product_form_feedback:
+    - ingredient: cauliflower florets
+      ordered_quantity: 2 x 12 oz bags
+      planned_recipe_quantity: 14 oz
+      user_preferred_recipe_quantity: 12 oz
+      preference: Use one 12 oz bag and adapt the recipe rather than buying a second bag solely for the 2 oz shortfall.
+      rationale: The user considers the 2 oz difference culinarily immaterial and does not want the second bag justified as a planned leftover.
+      historical_record_note: Preserve the approved cart and printed recipe as placed and printed; apply this correction to future planning or a future recipe-card revision.
+    - ingredient: yellow onion
+      ordered_quantity: 5 oz pre-diced
+      planned_recipe_quantity: 5 oz
+      user_preferred_recipe_quantity: 0 oz
+      preference: Omit onion from all future versions of this recipe.
+      rationale: User revised the favorite after tasting and explicitly requested removal.
+      historical_record_note: Preserve the approved cart and original printed recipe as historical records; future recipe cards and shopping plans must omit onion.
+  general_feedback: The user reported that the cooked recipe was epic and requested it as a favorite, prefers a one-package cauliflower adaptation, and subsequently removed onion from the repeat version.
+closeout:
+  blocker: Post-order faster-pickup preferences require submission of the pickup person's mobile number; vehicle type Pickup and color White are selected, but Update was not submitted because no authorized private phone configuration was available.
+  notes: Food Lion accepted the 15-item pickup order for Tuesday, September 22, 3:00 PM-4:00 PM under confirmation m786642390 at an estimated total of $51.56.
+  follow_up_needed: true
+phase_history:
+  - phase: draft
+    at: 2026-09-22T06:22:07-04:00
+    note: Fresh meal-planning run created for hidden-vegetable macaroni-and-cheese recipes.
+  - phase: menu-presented
+    at: 2026-09-22T06:27:00-04:00
+    note: Three source-backed candidates prepared with blended vegetables and disclosed protein-oriented adaptations; awaiting selection.
+  - phase: menu-refined
+    at: 2026-09-22T06:34:00-04:00
+    note: User clarified that the macaroni and cheese will accompany grilled sirloin; candidates were resized and rescored as sides, and protein-boosting adaptations were removed.
+  - phase: meals-selected
+    at: 2026-09-22T06:49:13-04:00
+    note: User selected the cauliflower-zucchini white-cheddar option and added six sirloin steaks, preferring grass-fed.
+  - phase: review-ready
+    at: 2026-09-22T06:49:13-04:00
+    note: Six-serving ingredient plan prepared for grilled sirloin with hidden-vegetable white-cheddar macaroni and cheese; awaiting pantry exclusions and additional grocery requests.
+  - phase: shopping-list-confirmed
+    at: 2026-09-22T07:03:45-04:00
+    note: User reported salt, black pepper, flour, butter, avocado oil, and cheddar on hand; no additional groceries were requested.
+  - phase: cart-building
+    at: 2026-09-22T07:03:45-04:00
+    note: Cart construction authorized for the remaining macaroni-and-cheese ingredients and six sirloin steaks, with grass-fed preferred.
+  - phase: comparison-ready
+    at: 2026-09-22T07:10:00-04:00
+    note: Draft Food Lion cart reconciled at six line items and twelve package units. Merchandise subtotal is $44.98; fulfillment method, fees, tip, window, and total remain pending.
+  - phase: awaiting-approval
+    at: 2026-09-22T07:14:17-04:00
+    note: Pickup selected at the saved Avent Ferry Food Lion for Tuesday, September 22, 10:00 AM-11:00 AM. Order summary verified at $45.08 merchandise, $1.99 fee, $0.00 estimated tax, $0.00 tip, and $47.07 estimated total; Place Order remains unused.
+  - phase: cart-updated
+    at: 2026-09-22T07:18:41-04:00
+    note: Pickup changed to 3:00 PM-4:00 PM; 1 lb yellow bananas and 1 dry pint blueberries were added as additional groceries.
+  - phase: awaiting-approval
+    at: 2026-09-22T07:18:41-04:00
+    note: Revised order summary verified at $49.57 merchandise, $1.99 fee, $0.00 estimated tax, $0.00 tip, and $51.56 estimated total. Place Order remains unused pending approval of the revised cart.
+  - phase: order-placed
+    at: 2026-09-22T07:20:30-04:00
+    note: User confirmed the unchanged revised cart. Food Lion accepted the pickup order for 3:00 PM-4:00 PM under confirmation m786642390 at an estimated total of $51.56.
+  - phase: pickup-preferences-pending
+    at: 2026-09-22T07:21:37-04:00
+    note: The post-order pickup form has Pickup and White selected, but submitting the required mobile number remains a protected user handoff.
+  - phase: recipe-card-printed
+    at: 2026-09-22T17:44:35-04:00
+    note: Generated and visually verified the one-page Cauliflower-Zucchini White Cheddar Mac & Cheese card, then submitted one copy to HP (HP OfficeJet 3830 series) using Fit to page. Windows reports the job as Printing, Retained.
+  - phase: cooked-feedback-recorded
+    at: 2026-09-22T18:37:07-04:00
+    note: User reported that the recipe was epic and asked to add it to favorites; saved the validated recipe with the user-directed one-bag cauliflower quantity for repeats.
+  - phase: cooked-feedback-refined
+    at: 2026-09-22T18:58:20-04:00
+    note: User removed onion from the saved favorite; updated the canonical repeat recipe and future recipe-card source without rewriting the historical order or printed artifact.
+  - phase: retrospective-audited
+    at: 2026-09-23T20:26:01-04:00
+    note: Revised the outcome from unqualified epic to favorite-with-required-adjustment, marked the original PDF superseded for repeats, and recorded the duplicate recipe/card source as an open drift risk.

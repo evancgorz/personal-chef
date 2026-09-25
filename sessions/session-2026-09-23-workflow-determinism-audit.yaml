@@ -1,0 +1,35 @@
+version: 2
+id: session-2026-09-23-workflow-determinism-audit
+started_at: 2026-09-23T20:26:01-04:00
+closed_at: 2026-09-23T20:26:01-04:00
+status: closed
+handoff:
+  owner: none
+  next_action: none
+  waiting_for: no-immediate-action
+  updated_at: 2026-09-23T20:26:01-04:00
+request_summary: Audit the emerging meal-planning workflow, make the instructions and process more deterministic where useful, and add a single-session process chart to the README.
+result_summary: Audited the recurring interaction pattern, formalized explicit handoff ownership and short-response semantics, upgraded future run and session templates with deterministic checkpoints, extended validation, and documented the end-to-end flow and a concrete example in the README.
+run_ids: []
+issue_ids:
+  - issue-2026-09-23-duplicate-recipe-card-source
+change_ids:
+  - change-2026-09-23-deterministic-handoff-protocol
+outcome_ids: []
+artifact_paths:
+  - docs/AUDIT-2026-09-23.md
+timeline:
+  - timestamp: 2026-09-23T20:26:01-04:00
+    event: Audited prior sessions, run state, templates, validation, and recipe-artifact drift for common deterministic patterns.
+  - timestamp: 2026-09-23T20:26:01-04:00
+    event: Added explicit handoff contracts, standardized short-response interpretation, upgraded templates and validation, and documented the process chart and example session.
+    linked_id: change-2026-09-23-deterministic-handoff-protocol
+lessons:
+  - The overall meal-to-order sequence is stable; most remaining ambiguity comes from implicit next-action ownership and context-dependent short replies.
+  - A run status describes what happened, while a handoff must separately state who acts next and what event advances the process.
+  - Deterministic conversational flow should reduce user prompts, not add approval gates for reversible work.
+  - Recipe and printable-card content still need a single structured source to eliminate drift.
+follow_up:
+  - Exercise the version 3 run and version 2 session handoff schema in the next meal-order cycle and refine only from observed friction.
+  - Completed in session-2026-09-23-recipe-card-source-refactor: structured card sources now feed a generic renderer and stale PDFs fail source-hash validation.
+privacy_reviewed: true

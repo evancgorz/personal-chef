@@ -1,0 +1,38 @@
+version: 2
+id: session-2026-09-23-recipe-card-source-refactor
+started_at: 2026-09-23T20:31:00-04:00
+closed_at: 2026-09-23T20:41:21-04:00
+status: closed
+handoff:
+  owner: none
+  next_action: none
+  waiting_for: no-immediate-action
+  updated_at: 2026-09-23T20:41:21-04:00
+request_summary: Implement the proposed structured recipe-card source pipeline and remove recipe content from the PDF renderer.
+result_summary: Migrated all three hard-coded cards to structured YAML, refactored the renderer to accept YAML inputs, added saved-recipe reconciliation and PDF source-hash validation, preserved historical PDFs, and generated a visually verified revised cauliflower card.
+run_ids: []
+issue_ids:
+  - issue-2026-09-23-duplicate-recipe-card-source
+change_ids:
+  - change-2026-09-23-structured-recipe-card-sources
+outcome_ids: []
+artifact_paths:
+  - artifacts/recipe-cards/run-2026-09-22-hidden-veggie-mac-and-cheese/cauliflower-zucchini-white-cheddar-mac.yaml
+  - artifacts/recipe-cards/legacy/magic-crispy-chicken.yaml
+  - artifacts/recipe-cards/legacy/cheeseburger-casserole.yaml
+  - output/pdf/cauliflower-zucchini-white-cheddar-mac-v2.pdf
+timeline:
+  - timestamp: 2026-09-23T20:31:00-04:00
+    event: Began refactoring the recipe-card builder from embedded content to structured YAML inputs.
+  - timestamp: 2026-09-23T20:38:00-04:00
+    event: Migrated the cauliflower favorite and two legacy cards, removed embedded recipe data, and added source reconciliation and hash checks.
+  - timestamp: 2026-09-23T20:41:21-04:00
+    event: Rendered and visually verified the revised one-page cauliflower card and resolved the duplicate-source issue.
+    linked_id: issue-2026-09-23-duplicate-recipe-card-source
+lessons:
+  - Rendering code should own typography and layout only; recipe content belongs in revisioned structured artifacts.
+  - A source hash in PDF metadata and the visible footer makes stale output detectable without overwriting historical artifacts.
+  - Legacy unselected cards can be migrated without pretending they reconciled to a final shopped plan.
+follow_up:
+  - Use the structured recipe-card template for every new printable card and generate new filenames for revisions.
+privacy_reviewed: true

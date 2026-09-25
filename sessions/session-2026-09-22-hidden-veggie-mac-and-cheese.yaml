@@ -1,0 +1,75 @@
+version: 1
+id: session-2026-09-22-hidden-veggie-mac-and-cheese
+started_at: 2026-09-22T06:22:07-04:00
+closed_at: 2026-09-22T18:37:07-04:00
+status: closed
+request_summary: Find hidden-vegetable macaroni-and-cheese recipes.
+result_summary: Planned and ordered grilled grass-fed sirloin with hidden-vegetable white-cheddar macaroni and cheese, printed the recipe, recorded the cauliflower package-rounding correction, and saved the cooked recipe as an epic favorite.
+run_ids:
+  - run-2026-09-22-hidden-veggie-mac-and-cheese
+issue_ids:
+  - issue-2026-09-22-cauliflower-package-rounding
+  - issue-2026-09-23-duplicate-recipe-card-source
+change_ids:
+  - change-2026-09-22-small-package-shortfall-adaptation
+  - change-2026-09-23-revisionable-cooking-feedback
+outcome_ids:
+  - outcome-2026-09-22-cauliflower-zucchini-white-cheddar-mac
+artifact_paths:
+  - output/pdf/cauliflower-zucchini-white-cheddar-mac.pdf
+timeline:
+  - timestamp: 2026-09-22T06:22:07-04:00
+    event: Started a fresh meal-planning run for hidden-vegetable macaroni-and-cheese candidates.
+    linked_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  - timestamp: 2026-09-22T06:27:00-04:00
+    event: Prepared three source-backed menu candidates with fully blended vegetables.
+    linked_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  - timestamp: 2026-09-22T06:34:00-04:00
+    event: Refined the candidates as hidden-vegetable side dishes for grilled sirloin steaks.
+    linked_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  - timestamp: 2026-09-22T06:49:13-04:00
+    event: Selected grilled sirloin with cauliflower-zucchini white-cheddar macaroni and cheese and prepared the shopping review.
+    linked_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  - timestamp: 2026-09-22T07:03:45-04:00
+    event: Recorded pantry exclusions and began cart construction.
+    linked_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  - timestamp: 2026-09-22T07:10:00-04:00
+    event: Built and reconciled a Food Lion draft cart with six grass-fed sirloin steaks and the remaining side-dish ingredients.
+    linked_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  - timestamp: 2026-09-22T07:14:17-04:00
+    event: Selected and verified the earliest Food Lion pickup window and prepared the exact order summary for approval.
+    linked_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  - timestamp: 2026-09-22T07:18:41-04:00
+    event: Changed pickup to 3:00 PM-4:00 PM, added bananas and blueberries, and prepared the revised exact order for approval.
+    linked_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  - timestamp: 2026-09-22T07:20:30-04:00
+    event: Placed the confirmed Food Lion pickup order for 3:00 PM-4:00 PM under confirmation m786642390.
+    linked_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  - timestamp: 2026-09-22T07:21:37-04:00
+    event: Left the protected faster-pickup mobile-number submission for user completion and recorded the unavailable final-receipt blocker.
+    linked_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  - timestamp: 2026-09-22T17:44:35-04:00
+    event: Generated, visually verified, and submitted one recipe-card copy to the HP OfficeJet using Fit to page.
+    linked_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+  - timestamp: 2026-09-22T18:06:34-04:00
+    event: Recorded that the 14 oz cauliflower plan should have been adapted to one 12 oz bag instead of buying a second bag for a 2 oz shortfall, and updated the durable package-rounding policy.
+    linked_id: issue-2026-09-22-cauliflower-package-rounding
+  - timestamp: 2026-09-22T18:37:07-04:00
+    event: Recorded the cooked recipe as epic, added it to favorites, and saved the validated repeat version with one 12 oz bag of cauliflower.
+    linked_id: outcome-2026-09-22-cauliflower-zucchini-white-cheddar-mac
+  - timestamp: 2026-09-22T18:58:20-04:00
+    event: Applied the user's post-tasting correction to omit onion from the saved favorite and future recipe-card source while preserving the historical order and print record.
+    linked_id: outcome-2026-09-22-cauliflower-zucchini-white-cheddar-mac
+  - timestamp: 2026-09-23T20:26:01-04:00
+    event: Audited the session, made the corrected favorite rating authoritative, marked the old PDF superseded for repeats, and recorded the duplicate recipe-card source as an open drift risk.
+    linked_id: issue-2026-09-23-duplicate-recipe-card-source
+lessons:
+  - For flexible ingredients, evaluate a documented one-package quantity adjustment before buying an additional package solely to cover a small, culinarily immaterial shortfall.
+  - The cauliflower-zucchini white-cheddar macaroni and cheese with grilled sirloin is a proven favorite and should receive strong repeat consideration without dominating menu variety.
+  - Future repeats of this favorite use one 12 oz cauliflower bag and no onion.
+  - Cooking praise can be revised by later tasting feedback; preserve the chronology, but make the latest assessment and required corrections authoritative.
+  - A post-cooking recipe correction must explicitly supersede older printable artifacts, and duplicated recipe/card sources should be consolidated.
+follow_up:
+  - Retrieve and reconcile the final itemized Food Lion receipt if it becomes available; this remains separate from the successful cooking outcome.
+  - Consolidate saved recipe data and printable-card content into one structured source to eliminate manual synchronization risk.
+privacy_reviewed: true

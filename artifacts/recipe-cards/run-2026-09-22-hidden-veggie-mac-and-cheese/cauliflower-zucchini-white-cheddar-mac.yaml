@@ -1,0 +1,72 @@
+version: 1
+id: cauliflower-zucchini-white-cheddar-mac-v2
+status: current
+output_filename: cauliflower-zucchini-white-cheddar-mac-v2.pdf
+source:
+  kind: saved-recipe
+  path: recipes/cauliflower-zucchini-white-cheddar-mac.yaml
+  recipe_id: cauliflower-zucchini-white-cheddar-mac
+  revised_at: 2026-09-22T18:58:20-04:00
+reconciliation:
+  status: reconciled
+  note: Every saved-recipe ingredient is represented; repeated salt lines share the canonical total and divide it between steak and macaroni.
+title: Cauliflower-Zucchini White Cheddar Mac & Cheese
+meta: |-
+  SERVES 6
+  45 MINUTES
+deck: Grilled grass-fed sirloin with creamy white cheddar macaroni and two vegetables blended invisibly into the sauce.
+equipment: "Equipment: grill; large pot; steamer or microwave; blender; medium saucepan"
+layout:
+  title_font_size: 16
+  title_leading: 19
+ingredients:
+  - section: GRILLED SIRLOIN
+    items:
+      - display: "Grass-fed top sirloin steaks, 6 oz each - <b>6</b>"
+        source_ingredient_id: grass-fed-top-sirloin-steaks
+        source_quantity: {quantity: 6, unit: 6-oz-steaks}
+      - display: "Avocado oil - <b>1 tbsp</b>"
+        source_ingredient_id: avocado-oil
+        source_quantity: {quantity: 1, unit: tbsp}
+      - display: "Kosher salt - <b>1 tsp</b>"
+        source_ingredient_id: kosher-salt
+        source_quantity: {quantity: 2, unit: tsp}
+      - display: "Black pepper - <b>1 tsp</b>"
+        source_ingredient_id: black-pepper
+        source_quantity: {quantity: 1, unit: tsp}
+  - section: HIDDEN-VEGGIE MAC
+    items:
+      - display: "Elbow macaroni, dry - <b>9 oz</b>"
+        source_ingredient_id: elbow-macaroni
+        source_quantity: {quantity: 9, unit: oz}
+      - display: "Frozen cauliflower - <b>12 oz (1 bag)</b>"
+        source_ingredient_id: frozen-cauliflower
+        source_quantity: {quantity: 12, unit: oz}
+      - display: "Zucchini, peeled and roughly chopped - <b>2 medium</b>"
+        source_ingredient_id: zucchini
+        source_quantity: {quantity: 2, unit: medium}
+      - display: "Butter - <b>2 tbsp</b>"
+        source_ingredient_id: butter
+        source_quantity: {quantity: 2, unit: tbsp}
+      - display: "All-purpose flour - <b>2 tbsp</b>"
+        source_ingredient_id: all-purpose-flour
+        source_quantity: {quantity: 2, unit: tbsp}
+      - display: "2% milk - <b>1 cup</b>"
+        source_ingredient_id: two-percent-milk
+        source_quantity: {quantity: 1, unit: cup}
+      - display: "White cheddar, shredded - <b>4 1/2 oz (about 1 cup)</b>"
+        source_ingredient_id: white-cheddar
+        source_quantity: {quantity: 4.5, unit: oz}
+      - display: "Kosher salt - <b>1 tsp, plus pasta water</b>"
+        source_ingredient_id: kosher-salt
+        source_quantity: {quantity: 2, unit: tsp}
+steps:
+  - Heat the grill for direct high heat. Peel and roughly chop zucchini (<b>2 medium</b>); measure frozen cauliflower (<b>12 oz</b>), butter (<b>2 tbsp</b>), all-purpose flour (<b>2 tbsp</b>), 2% milk (<b>1 cup</b>), and shredded white cheddar (<b>4 1/2 oz</b>). Bring a large pot of salted water to a boil.
+  - Steam or microwave the frozen cauliflower (<b>12 oz</b>) and peeled, chopped zucchini (<b>2 medium</b>) until very tender, about 8-10 minutes. Blend until completely smooth, adding a small splash from the measured 2% milk (<b>1 cup total</b>) only if needed.
+  - Pat the grass-fed top sirloin steaks (<b>6 steaks, 6 oz each</b>) dry. Rub with avocado oil (<b>1 tbsp</b>), kosher salt (<b>1 tsp</b>), and black pepper (<b>1 tsp</b>). Grill over direct high heat, turning once, until they reach your preferred doneness; for medium-rare, remove at 130-135 F. Rest 5-10 minutes.
+  - Cook elbow macaroni (<b>9 oz dry</b>) in the salted boiling water until just al dente. Reserve 1/2 cup pasta water, then drain.
+  - Melt butter (<b>2 tbsp</b>) in a medium saucepan over medium-low heat. Stir in all-purpose flour (<b>2 tbsp</b>) and cook for 2 minutes without browning.
+  - Gradually whisk in the remaining 2% milk (<b>from 1 cup total</b>). Simmer gently until smooth and thickened, 3-4 minutes. Remove from heat and stir in shredded white cheddar (<b>4 1/2 oz</b>) and kosher salt (<b>1 tsp</b>) until melted.
+  - Whisk the blended frozen cauliflower (<b>12 oz</b>) and zucchini (<b>2 medium</b>) into the white cheddar sauce until completely smooth. Fold in the cooked elbow macaroni (<b>9 oz dry before cooking</b>), loosening with reserved pasta water as needed. Serve beside the rested grass-fed top sirloin steaks (<b>6 steaks</b>).
+tip: "SMOOTH SAUCE: Blend the vegetables while hot and add the cheddar off heat to keep the sauce silky."
+footer: Revised favorite - one 12 oz cauliflower bag and no onion. Source hash is printed below.

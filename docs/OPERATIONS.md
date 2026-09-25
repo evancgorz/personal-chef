@@ -2,13 +2,13 @@
 
 ## Starting a run
 
-Copy the current `templates/run.yaml` to `runs/YYYY-MM-DD-short-description.yaml`, create a unique run ID, set `status: draft`, and add the user's request under `request`. Do not copy selection or approval fields from an older run. The version 2 `selection` object is canonical; increment its revision for every actual selection change and bind shopping review, ingredient planning, approval, and recipe cards to that revision.
+Copy the current `templates/run.yaml` to `runs/YYYY-MM-DD-short-description.yaml`, create a unique run ID, set `status: draft`, and add the user's request under `request`. Do not copy selection or approval fields from an older run. The version 3 run keeps the `selection` object canonical and adds an explicit `handoff`; increment selection revision for every actual selection change, bind downstream projections to that revision, and update the handoff before every user-facing checkpoint.
 
 ## Starting and closing a chat session
 
-For each practical new-chat request, copy `templates/session.yaml` to `sessions/YYYY-MM-DD-short-description.yaml`. Create the session before or alongside any workflow run, then set the run's `session_id` and add the run ID to the session. A session may legitimately have no run when the request is maintenance, explanation, or retrospective work.
+For each practical request boundary, copy `templates/session.yaml` to `sessions/YYYY-MM-DD-short-description.yaml`. Create the session before or alongside any workflow run, then set the run's `session_id` and add the run ID to the session. A session may legitimately have no run when the request is maintenance, explanation, or retrospective work. Direct corrections and outcome feedback remain linked to their originating session; a distinct audit or maintenance request gets a new session even when it occurs in the same chat.
 
-Update the session only at meaningful milestones. At closeout, summarize the result, add links to issues, changes, outcomes, and artifacts, record lessons and open follow-up, perform a privacy review, and set the session status to `closed`. Do not paste chat transcripts or duplicate itemized transaction data.
+Update the session only at meaningful milestones. Keep its handoff synchronized with the active run or maintenance task. At closeout, summarize the result, add links to issues, changes, outcomes, and artifacts, record lessons and open follow-up, set the handoff to `none / none`, perform a privacy review, and set the session status to `closed`. Do not paste chat transcripts or duplicate itemized transaction data.
 
 An open-ended menu request in a new chat starts a fresh run by default. Do not answer it by replaying the latest historical menu or order; snapshot current preferences and fresh pantry evidence, use recent runs only for outcome and variety context, and construct a new candidate menu before waiting for meal selection.
 

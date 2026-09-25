@@ -1,5 +1,5 @@
 version: 1
-updated_at: 2026-09-18T19:11:10-04:00
+updated_at: 2026-09-23T20:26:01-04:00
 outcomes:
   - id: outcome-2026-09-08-instant-pot-lemon-chicken-stew
     run_id: run-2026-09-07-hearty-cooker-meal
@@ -40,3 +40,26 @@ outcomes:
     final_form:
       status: needs-user-detail
       blocker: The exact cooked variation, including whether any vegetable was integrated or omitted, has not yet been reported; do not save a canonical recipe by guessing.
+  - id: outcome-2026-09-22-cauliflower-zucchini-white-cheddar-mac
+    run_id: run-2026-09-22-hidden-veggie-mac-and-cheese
+    recipe_id: cauliflower-zucchini-white-cheddar-mac
+    stage: cooked
+    cooked: true
+    overall_rating: favorite-with-required-adjustment
+    repeat: true
+    favorite: true
+    notes: User initially called the recipe epic and requested it as a favorite, then said that assessment was premature and required onion to be removed. It remains a favorite for repeat with that correction.
+    feedback_history:
+      - reported_at: 2026-09-22T18:37:07-04:00
+        assessment: epic
+        repeat: true
+        favorite: true
+      - reported_at: 2026-09-22T18:58:20-04:00
+        assessment: favorite-with-required-adjustment
+        correction: Omit onion from future repeats.
+    final_form:
+      status: validated-with-user-directed-repeat-adjustments
+      cooked_cauliflower_quantity: about 14 oz
+      repeat_cauliflower_quantity: 12 oz
+      onion: omitted
+      guidance: Use one 12 oz bag of cauliflower and no onion on repeats; the user judged the cauliflower reduction immaterial and explicitly removed the onion after tasting.

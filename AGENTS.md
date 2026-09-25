@@ -28,9 +28,11 @@ Read only the context needed for the active phase, in this order:
 - Treat an open-ended menu request in a new chat (for example, "What's on the menu?" or a close equivalent) as the start of a new meal-planning run by default. Create a fresh run and propose a fresh set of recipes using current preferences, pantry evidence, and recent outcomes; do not summarize or resume an older run unless the user explicitly refers to it.
 - Create or resume one run record for each meal-to-order cycle and record phase transitions.
 - Create one concise session record for each practical new-chat request and link any runs, issues, changes, outcomes, and artifacts produced by it; do not store raw transcripts or private fields.
+- Keep the run and session `handoff` current: one owner, one next action, and one awaited event. Interpret short replies only against that recorded checkpoint.
 - Follow the phases and decision rules in [`docs/WORKFLOW.md`](docs/WORKFLOW.md).
 - Satisfy the stage-specific acceptance criteria in [`docs/QUALITY.md`](docs/QUALITY.md) before presenting menus, carts, checkout summaries, or printable recipes.
 - Run `python scripts/validate.py` after tracked changes and before committing.
+- Commit and push completed repository changes before ending the request. Keep private files and credentials out of commits. A routine completion message does not need to mention the commit or push.
 - If authentication, CAPTCHA, or payment entry requires the user, hand off cleanly and resume after completion.
 
 ## Learning and maintenance

@@ -1,0 +1,48 @@
+version: 1
+id: cheeseburger-casserole-legacy
+status: migrated-legacy
+output_filename: cheeseburger-casserole-v2.pdf
+source:
+  kind: legacy-run
+  path: runs/run-2026-09-14-menu.yaml
+  recipe_id: kid-friendly-cheeseburger-casserole
+reconciliation:
+  status: historical-migration
+  note: Migrated verbatim from the former hard-coded renderer; historical broccoli-side concerns remain in the originating run and outcome.
+title: Cheeseburger Casserole
+meta: |-
+  SERVES 6
+  35 MINUTES
+deck: A scoopable cheeseburger pasta bake with beef, tomatoes, cheddar, and pickles served your way.
+equipment: "Equipment: large pot; large skillet; 9 x 13-inch baking dish"
+layout:
+  title_font_size: 18
+  title_leading: 21
+ingredients:
+  - section: BEEF + PASTA
+    items:
+      - {display: "Lean ground beef - <b>1 1/4 lb</b>"}
+      - {display: "Rotini pasta, dry - <b>8 oz</b>"}
+  - section: SAUCE
+    items:
+      - {display: "Pre-diced onion - <b>1 1/2 cups</b>"}
+      - {display: "Jarred minced garlic - <b>1 tsp</b>"}
+      - {display: "No-salt-added diced tomatoes - <b>28 oz</b>"}
+      - {display: "Tomato paste - <b>1 1/2 tbsp</b>"}
+      - {display: "Dijon mustard - <b>3 tbsp</b>"}
+      - {display: "Avocado oil - <b>2 tsp</b>"}
+      - {display: "Kosher salt - <b>1 tsp</b>"}
+      - {display: "Black pepper - <b>1/2 tsp</b>"}
+  - section: TOPPING + SIDE
+    items:
+      - {display: "Reduced-fat cheddar cheese, shredded - <b>2 1/2 cups</b>"}
+      - {display: "Dill pickles, chopped - <b>1/3 cup</b>"}
+      - {display: "Broccoli florets - <b>12 oz</b>"}
+steps:
+  - Heat the oven to 350 F. Lightly coat a 9 x 13-inch baking dish and set it aside.
+  - Cook rotini pasta (<b>8 oz dry</b>) in salted water until just al dente; drain well.
+  - Heat avocado oil (<b>2 tsp</b>) in a large skillet over medium-low heat. Add pre-diced onion (<b>1 1/2 cups</b>) and cook until soft, then stir in jarred minced garlic (<b>1 tsp</b>) for 30 seconds.
+  - Add lean ground beef (<b>1 1/4 lb</b>) and cook until browned. Season with kosher salt (<b>1 tsp</b>) and black pepper (<b>1/2 tsp</b>).
+  - Stir in tomato paste (<b>1 1/2 tbsp</b>), no-salt-added diced tomatoes (<b>28 oz</b>), and Dijon mustard (<b>3 tbsp</b>). Simmer for about 2 minutes, until slightly thickened.
+  - Toss the beef mixture with the rotini and spread it in the baking dish. Top with reduced-fat cheddar cheese (<b>2 1/2 cups</b>) and bake for about 15 minutes, until melted. Steam or roast broccoli florets (<b>12 oz</b>) during the bake, then offer chopped dill pickles (<b>1/3 cup</b>) on top or on the side.
+tip: "KIDDO CONTROL: Keep pickles separate for dipping or let the kiddo sprinkle them on top."

@@ -1,7 +1,7 @@
 # End-to-end workflow
 
 - Status: active
-- Last verified: 2026-09-18
+- Last verified: 2026-09-23
 - Governing design: `docs/DESIGN.md`
 - Acceptance criteria: `docs/QUALITY.md`
 
@@ -27,6 +27,45 @@ The following gates are authoritative. Do not advance because the conversation m
 | `ordered -> completed` | Receipt requirement in section 9 is satisfied |
 
 If a predicate becomes false, move back to the earliest affected phase and mark downstream projections stale. Never repair a contradiction by silently changing the active selection.
+
+## Deterministic interaction protocol
+
+At every meaningful transition, update the run and session `handoff` before responding. Use one owner and one action from this standard vocabulary:
+
+| Owner | `next_action` | Trigger or completion event |
+| --- | --- | --- |
+| agent | `research-and-present-menu` | Menu is recorded and shown. |
+| user | `choose-meals` | User identifies the desired meal set. |
+| agent | `prepare-shopping-review` | Scaled review is recorded and shown. |
+| user | `answer-shopping-review` | User states on-hand ingredients and additional items. |
+| agent | `build-and-reconcile-cart` | Draft cart has terminal ingredient coverage. |
+| user | `choose-fulfillment` | Pickup or delivery is selected when unresolved. |
+| agent | `prepare-exact-approval-snapshot` | Exact cart, window, fees, tip, and total are shown. |
+| user | `confirm-exact-cart` | User explicitly confirms the unchanged snapshot. |
+| agent | `place-and-verify-order` | Retailer reports an accepted order. |
+| user | `complete-protected-handoff` | Authentication, payment, CAPTCHA, or private pickup data is completed outside chat. |
+| agent | `produce-cooking-artifact` | Requested artifact passes reconciliation and visual checks. |
+| user | `provide-cooking-feedback` | Cooked outcome is reported. |
+| agent | `record-closeout` | Run/session records, issues, and follow-up are current. |
+| none | `none` | No immediate action remains. |
+
+Interpret common short responses only within that checkpoint:
+
+- A named meal during `choose-meals` confirms or changes the canonical selection according to the add/replace language rules.
+- A pantry list during `answer-shopping-review` both confirms the shopping list and authorizes cart construction; do not ask again.
+- `Pickup`, `delivery`, or a window during `choose-fulfillment` changes fulfillment only, then the agent prepares a fresh approval snapshot.
+- Additional groceries or a window change before purchase mutate the draft cart, invalidate prior approval, and require a new snapshot.
+- `Confirm`, `place it`, or equivalent during `confirm-exact-cart` authorizes only the recorded unchanged snapshot. At every other checkpoint it is insufficient purchase authority.
+- `Print the recipe` targets only current selected cards unless the user names another recipe; printing never implies order or recipe changes.
+- Cooking praise, criticism, or corrections update outcomes and the saved repeat version, not the historical cart or order.
+
+Each user-facing response has a stable shape:
+
+1. Lead with the resulting state or decision.
+2. Include only the evidence needed at that checkpoint.
+3. Name material changes and invalidated approvals.
+4. End with at most one user action, matching the recorded handoff.
+5. If the owner remains `agent`, continue instead of asking a ceremonial confirmation.
 
 ## 1. Intake
 
@@ -92,7 +131,7 @@ For each ingredient, retain:
 - `allocation`: the amount assigned to each selected recipe.
 - `expected_remainder`: purchased plus pantry quantity minus allocated use.
 
-Keep each recipe's ingredient lines separate through product selection and cart review. Assign every purchased package unit to one recipe before adding it to the cart. Combine a package across recipes only when the user explicitly accepts that shared purchase and the allocation and expected remainder are recorded unambiguously. Round each recipe's purchases up to real package sizes without changing recipe-use quantities. Subtract pantry stock only when its `checked_at` evidence meets the freshness rules in `docs/REGISTER_REFERENCE.md`.
+Keep each recipe's ingredient lines separate through product selection and cart review. Assign every purchased package unit to one recipe before adding it to the cart. Combine a package across recipes only when the user explicitly accepts that shared purchase and the allocation and expected remainder are recorded unambiguously. Before rounding up to an additional package, test whether using the largest practical one-package amount would be a culinarily immaterial adaptation. Prefer that adaptation for flexible ingredients and record the original quantity, adjusted quantity, package size, and rationale. Otherwise round up without silently changing recipe use; never reduce a safety-critical, structurally important, medically necessary, or identity-defining quantity. Subtract pantry stock only when its `checked_at` evidence meets the freshness rules in `docs/REGISTER_REFERENCE.md`.
 
 Before cart approval, reconcile each recipe ingredient against the actual cart line: recipe ID, SKU, unit count, net quantity per unit, total purchased quantity, recipe allocation, and expected remainder. Treat the retailer quantity selector as a package count, not an ingredient amount. The cart's SKU quantity must equal the sum of package units allocated to named recipes or additional groceries. Investigate any unallocated unit, line with more than one unit, or expected remainder of at least one full package; disclose intentional bulk purchases and correct accidental duplicates before presenting the cart.
 
@@ -158,13 +197,21 @@ Food Lion may request pickup-identification details only after the order is subm
 
 Generate cooking instructions from the final scaled ingredient plan, not from the original canonical recipe or shopping history. Express substitutions as the final ingredient names.
 
+Create a structured source from `templates/recipe-card.yaml` under `artifacts/recipe-cards/<run-id>/`. Link it to the run ingredient plan for an unvalidated meal or to the saved recipe for a post-cooking revision. `scripts/build_recipe_cards.py` renders that source; it must not contain recipe-specific card data. A revised card receives a new output filename rather than overwriting a historical PDF.
+
+For each new card, inspect the original recipe page for its recipe photo. When reuse is appropriate, save a copy under `artifacts/recipe-cards/images/`, enter the local path, source page URL, direct image URL, credit, and capture time in `source_photo`, and confirm the photo depicts the source dish rather than an unrelated image. If the source has no suitable reusable photo, set `source_photo_unavailable_reason` and proceed without a photo. Do not pull a substitute from search results. Check that the final card photo and credit remain readable in the one-page preview.
+
 Front-load mise en place into the first one or two steps: cut proteins and vegetables, open cans, and measure ingredients before heat begins. After cooking starts, do not send the cook back to preparation tasks unless a genuinely long unattended cooking interval makes that sequencing easier. Use avocado oil for high-temperature sauteing, searing, and grilling; reserve olive oil for lower-temperature or uncooked flavor uses when appropriate.
+
+Condense the method to no more than six actionable steps. Sequence equipment heating, active cooking, parallel work during unattended intervals, doneness checks, and serving so the cook avoids needless waiting or returning to prep. Combine related actions only when the resulting step remains clear, complete, and safe.
 
 Run the printable-recipe acceptance checks in `docs/QUALITY.md`, including ingredient-to-method reconciliation, quantity consistency, cautious full-package labels, and full-page visual inspection.
 
 Before generating or printing, state the exact card titles in chat and compare their IDs with the requested card set. By default that set is the canonical active selection. A stale card, an old output-directory file, or a previously selected meal is never an implicit print target. Record the selection revision and ingredient-plan revision used for each card.
 
 Perform a bidirectional coverage check before export: every card ingredient must appear in the final ingredient plan, and every planned ingredient for that meal must appear on the card or be explicitly identified as non-recipe. If the meal was not shopped, show its missing ingredients in chat before generating or printing it.
+
+After rendering, require a one-page PDF whose embedded source hash matches the complete current YAML source. Render the page to an image and inspect it visually before delivery or printing.
 
 For physical printing, first verify that the PDF itself passes full-page visual inspection, then use printer scaling `Fit to page`. A print-size complaint does not authorize regenerating or rescaling the PDF until printer scaling has been checked. After printing, report the exact titles, copy count, printer, and scaling mode in chat.
 
@@ -175,5 +222,7 @@ Save the final run record even if no order was placed. An ordered run is not `co
 After cooking, ask only for feedback that improves future decisions: overall rating, effort accuracy, time accuracy, portion adequacy, leftovers, ingredient quality, substitutions, and whether to repeat. Add outcomes only from cooking or user feedback. Propose durable preference changes from repeated evidence rather than silently promoting a single result.
 
 When the user positively evaluates a new recipe, save the final cooked version under `recipes/`, mark it `validated`, and link it to the run and outcome. Do not retain untested candidate recipe files.
+
+Treat cooking feedback as revisionable. If later feedback in the same evaluation changes the rating or requires an ingredient or method correction, preserve the feedback chronology, make the latest assessment authoritative, update the saved repeat version, and mark older recipe cards as superseded for future use. Historical carts, orders, and printed artifacts remain unchanged evidence of what occurred.
 
 Close the session separately from the run. Summarize the delivered result, link all affected run, issue, change, outcome, and artifact IDs or paths, record concise lessons and unresolved follow-up, and set `privacy_reviewed: true`. A chat ending does not imply that an ordered run is complete; preserve its receipt or cooking follow-up independently.

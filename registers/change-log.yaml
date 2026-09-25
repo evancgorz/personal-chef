@@ -244,3 +244,58 @@ changes:
       - continuous-improvement
     summary: Keep one concise repository session record for each practical new-chat request, linking runs, issues, changes, outcomes, artifacts, lessons, and follow-up without storing raw transcripts or private data.
     source: user-request
+  - id: change-2026-09-22-small-package-shortfall-adaptation
+    changed_at: 2026-09-22T18:06:34-04:00
+    actor: user
+    scope:
+      - quantity-reconciliation
+      - package-rounding
+      - recipe-adaptation
+    summary: Before buying a second package solely to cover a small shortfall, prefer adjusting a flexible ingredient to the largest practical one-package amount when the culinary difference is immaterial; document the adjustment and retain stricter quantities when safety, structure, medical needs, or recipe identity make the difference material.
+    source: post-order-user-feedback
+  - id: change-2026-09-23-revisionable-cooking-feedback
+    changed_at: 2026-09-23T20:26:01-04:00
+    actor: agent
+    scope:
+      - cooked-outcome-history
+      - saved-recipe-revisions
+      - recipe-card-supersession
+    summary: Later cooking feedback now supersedes earlier rating language while preserving its chronology, updates the saved repeat recipe, and explicitly marks older recipe-card artifacts as superseded rather than leaving them apparently current.
+    source: session-retrospective
+  - id: change-2026-09-23-deterministic-handoff-protocol
+    changed_at: 2026-09-23T20:26:01-04:00
+    actor: user
+    scope:
+      - run-state-machine
+      - session-lifecycle
+      - conversational-handoffs
+      - short-response-interpretation
+      - repository-documentation
+    summary: Future runs and sessions explicitly record who acts next, the single next action, and the awaited event; short replies are interpreted only at that checkpoint, reversible agent work proceeds without ceremonial confirmation, and the README documents the full single-session flow.
+    source: user-requested-workflow-audit
+  - id: change-2026-09-23-structured-recipe-card-sources
+    changed_at: 2026-09-23T20:41:21-04:00
+    actor: user
+    scope:
+      - recipe-card-authoring
+      - pdf-rendering
+      - artifact-reconciliation
+      - stale-artifact-detection
+    summary: Recipe-card content now lives in revisioned YAML sources, the Python renderer owns layout only, current saved-recipe cards reconcile ingredient IDs and quantities, and generated PDFs embed the complete source hash so stale artifacts fail validation.
+    source: user-authorized-implementation
+  - id: change-2026-09-25-source-photo-six-step-cards
+    changed_at: 2026-09-25T06:30:44-04:00
+    actor: user
+    scope:
+      - recipe-card-authoring
+      - pdf-rendering
+      - card-quality
+    summary: New recipe cards use the original recipe's attributed photo when suitable, and present the cooking method in no more than six efficiently ordered steps.
+    source: user-request
+  - id: change-2026-09-25-commit-push-completed-work
+    changed_at: 2026-09-25T06:35:59-04:00
+    actor: user
+    scope:
+      - repository-execution
+    summary: Completed repository changes are committed and pushed before ending a request; routine replies need not mention the commit or push.
+    source: user-request

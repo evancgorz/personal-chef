@@ -2,7 +2,7 @@
 
 - Status: active
 - Owner: user
-- Last verified: 2026-09-18
+- Last verified: 2026-09-23
 - Scope: product behavior and authority model
 
 ## Product intent
@@ -56,6 +56,7 @@ Availability, prices, package sizes, pantry quantities, order status, and fulfil
 - Data ownership and freshness: `docs/REGISTER_REFERENCE.md`.
 - User preferences and policies: `registers/`.
 - Validated, repeat-eligible recipes: `recipes/`.
+- Revisioned printable-card sources: `artifacts/recipe-cards/`.
 - Run-specific facts and decisions: `runs/`.
 - Chat-level intent, chronology, linked work, and retrospective: `sessions/`.
 - Private account and delivery details: untracked `local/private.yaml`.
@@ -79,6 +80,12 @@ Phase changes are predicates over recorded state, not conversational impressions
 
 Before checkout, every active meal ingredient must resolve to exactly one coverage source: a verified pantry quantity, an allocated cart quantity, or an explicitly approved omission/substitution. Before recipe-card generation or printing, the card set must exactly match the requested active meals and each card must be reconciled to the same final ingredient plan. A card for a meal not covered by the order may be produced only when the user explicitly requests it and the missing-ingredient list is shown in chat.
 
+### Explicit handoffs
+
+Every active run and session records a `handoff` with exactly one owner (`agent`, `user`, `external`, or `none`), one concrete `next_action`, and the event it is waiting for. This is the resumability contract: after interruption, the agent reads the checkpoint instead of reconstructing intent from chat. Reversible agent work should not be mislabeled as waiting for the user. User ownership is reserved for a real decision, exact purchase confirmation, protected handoff, or requested feedback.
+
+Short replies are interpreted only against the recorded handoff. For example, `Confirm` authorizes purchase only when the current handoff is `user / confirm-exact-cart` and the referenced cart snapshot is unchanged. A short reply never supplies missing authority for a different checkpoint.
+
 ### Progressive disclosure
 
 The root `AGENTS.md` is a short map. Detailed guidance lives in focused documents that an agent reads only when relevant. This preserves attention for the current task and reduces conflicts and stale instructions.
@@ -96,6 +103,8 @@ The core flow is:
 Each run is the transaction boundary. It snapshots relevant context, records decisions and observed retailer facts, and preserves the exact approved and final order state. Durable registers change only when their evidence threshold is met.
 
 A session is the encounter boundary. One session may contain no run, one run, or multiple related runs. Runs remain authoritative for transaction state; sessions point to runs and registers rather than copying their detailed cart, receipt, pantry, or preference data. This separation makes chat history discoverable without creating competing sources of truth.
+
+A session boundary follows the practical request, not every message and not necessarily the lifetime of the chat window. Direct corrections and outcome feedback remain linked to the originating session, even after its initial deliverable is complete; a distinct maintenance or audit request receives its own session. Closing a session records the current result and explicit follow-up, but does not freeze historical correction events.
 
 The final itemized receipt is durable historical evidence, not transient retailer state. Preserve a sanitized structured copy in the run with product name, SKU when available, package size, unit count, fulfilled quantity or weight, substitutions, refunds, item price, discounts, fees, tax, tip, and charged total. If the original contains an address, contact data, payment details, or other private fields, keep the original only under ignored `local/receipts/` and link it from the run without copying private values into tracked files.
 
@@ -126,7 +135,15 @@ Track these separately for every ingredient:
 
 Keep recipe allocations separate through product selection and checkout. By default, every carted package unit belongs to exactly one recipe, even when two recipes use the same ingredient. Do not pool package counts into a shared cart quantity unless the user explicitly accepts a shared package and its allocation and remainder are unambiguous.
 
+Before buying an additional package solely to cover a small shortfall, evaluate whether the recipe can use the largest practical one-package amount without a material culinary change. For flexible ingredients, prefer the one-package adaptation and record the original quantity, adjusted quantity, package size, and culinary rationale. Do not make this adjustment when the quantity is safety-critical, structurally important, medically necessary, central to the recipe's identity, or otherwise material; retain the recipe quantity or ask the user instead.
+
 An instruction such as `use entire package` is valid only when the active run proves that the complete purchased package is allocated to that one recipe. Shared ingredients and uncertain package data must show the recipe-use amount instead.
+
+## Recipe-card source design
+
+Printable recipe content never lives inside rendering code. Each card is a structured, revisioned YAML projection under `artifacts/recipe-cards/`, linked either to a run ingredient plan before cooking or to a validated saved recipe afterward. The renderer owns layout only. Current card sources reconcile their ingredient IDs and canonical quantities to the linked source, and the generated PDF embeds the complete YAML SHA-256 hash so validation can detect a stale artifact. Historical card sources and PDFs remain immutable evidence and use new filenames for revisions.
+
+New cards include a photo of the actual source recipe from its publisher's page when one is available for the intended personal card. Keep a local image copy with the card artifacts, record the source page, direct image URL, credit, and capture time, and print a small credit on the card. Do not substitute a generic food image or imply that a substantially adapted dish will look identical. If the source photo is unavailable or cannot be reused, record the reason and present the card without one. The method uses at most six useful steps, ordered to minimize backtracking and idle time while preserving food safety.
 
 ## Recipe library lifecycle
 

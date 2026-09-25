@@ -1,0 +1,23 @@
+version: 2
+id: session-2026-09-25-recipe-card-photo-steps
+started_at: 2026-09-25T06:30:44-04:00
+closed_at: 2026-09-25T06:35:59-04:00
+status: closed
+handoff:
+  owner: none
+  next_action: none
+  waiting_for: none
+  updated_at: 2026-09-25T06:35:59-04:00
+request_summary: Add original recipe photos to meal cards and limit cards to six efficiently ordered cooking steps.
+result_summary: Updated card authoring and rendering for future cards, then added a standing commit-and-push rule.
+run_ids: []
+issue_ids: []
+change_ids: [change-2026-09-25-source-photo-six-step-cards, change-2026-09-25-commit-push-completed-work]
+outcome_ids: []
+artifact_paths: []
+timeline:
+  - {timestamp: 2026-09-25T06:30:44-04:00, event: Card photo and six-step feature implemented, linked_id: change-2026-09-25-source-photo-six-step-cards}
+  - {timestamp: 2026-09-25T06:35:59-04:00, event: Standing commit-and-push rule added, linked_id: change-2026-09-25-commit-push-completed-work}
+lessons: []
+follow_up: []
+privacy_reviewed: true

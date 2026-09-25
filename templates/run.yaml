@@ -1,9 +1,14 @@
-version: 2
+version: 3
 id: run-yyyy-mm-dd-slug
 session_id: session-yyyy-mm-dd-slug
 created_at: null
 updated_at: null
 status: draft
+handoff:
+  owner: agent
+  next_action: research-and-present-menu
+  waiting_for: menu-presented
+  updated_at: null
 request:
   meal_count: 1
   servings: 6
@@ -47,7 +52,7 @@ approval:
   approved_at: null
   approved_total: null
 artifacts:
-  recipe_cards: [] # Each card records meal_id, title, selection_revision, ingredient_plan_revision, coverage_status, generated_at, printed_at, copies, printer, and scaling_mode.
+  recipe_cards: [] # Each card records meal_id, title, selection_revision, ingredient_plan_revision, coverage_status, generated_at, printed_at, copies, printer, scaling_mode, current_status, and supersession details when later cooking feedback changes the repeat recipe.
 order:
   placed: false
   placed_at: null

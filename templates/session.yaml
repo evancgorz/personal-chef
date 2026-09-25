@@ -1,8 +1,13 @@
-version: 1
+version: 2
 id: session-yyyy-mm-dd-slug
 started_at: null
 closed_at: null
 status: active
+handoff:
+  owner: agent
+  next_action: record-closeout
+  waiting_for: session-record-current
+  updated_at: null
 request_summary: null
 result_summary: null
 run_ids: []

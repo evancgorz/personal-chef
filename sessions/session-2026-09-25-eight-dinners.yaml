@@ -1,0 +1,24 @@
+version: 2
+id: session-2026-09-25-eight-dinners
+started_at: 2026-09-25T06:28:03-04:00
+closed_at: null
+status: active
+handoff:
+  owner: user
+  next_action: answer-shopping-review
+  waiting_for: pantry-and-additional-items-response
+  updated_at: 2026-09-25T06:34:36-04:00
+request_summary: Requested eight recipes for a new meal-planning cycle.
+result_summary: Two selected six-serving meals have a shopping review ready; awaiting the user's pantry and additional-grocery response.
+run_ids: [run-2026-09-25-eight-dinners]
+issue_ids: []
+change_ids: []
+outcome_ids: []
+artifact_paths: []
+timeline:
+  - {timestamp: 2026-09-25T06:28:03-04:00, event: Fresh eight-dinner run created and menu prepared, linked_id: run-2026-09-25-eight-dinners}
+  - {timestamp: 2026-09-25T06:34:36-04:00, event: Two-meal selection recorded, linked_id: run-2026-09-25-eight-dinners}
+  - {timestamp: 2026-09-25T06:34:36-04:00, event: Six-serving shopping review prepared, linked_id: run-2026-09-25-eight-dinners}
+lessons: []
+follow_up: [Ask which listed ingredients are already on hand and what additional groceries to add.]
+privacy_reviewed: false

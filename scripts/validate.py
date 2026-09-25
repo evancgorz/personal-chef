@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import hashlib
 import re
 import sys
 from pathlib import Path
 
 import yaml
+from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,6 +38,7 @@ ORDERED_RUN_STATES = [
     "completed",
 ]
 TERMINAL_COVERAGE = {"covered-by-pantry", "covered-by-cart", "approved-substitution", "approved-omission"}
+HANDOFF_OWNERS = {"agent", "user", "external", "none"}
 
 
 def load_yaml(path: Path):
@@ -46,6 +49,18 @@ def load_yaml(path: Path):
 def require(condition: bool, message: str, errors: list[str]) -> None:
     if not condition:
         errors.append(message)
+
+
+def validate_handoff(data: dict, record_name: str, errors: list[str]) -> None:
+    handoff = data.get("handoff") or {}
+    owner = handoff.get("owner")
+    next_action = handoff.get("next_action")
+    require(owner in HANDOFF_OWNERS, f"{record_name} has invalid handoff owner", errors)
+    require(isinstance(next_action, str) and bool(next_action), f"{record_name} lacks handoff next_action", errors)
+    require(isinstance(handoff.get("waiting_for"), str) and bool(handoff.get("waiting_for")), f"{record_name} lacks handoff waiting_for", errors)
+    require(bool(handoff.get("updated_at")), f"{record_name} lacks handoff updated_at", errors)
+    if owner == "none":
+        require(next_action == "none", f"{record_name} with no handoff owner must use next_action none", errors)
 
 
 def validate() -> list[str]:
@@ -113,6 +128,85 @@ def validate() -> list[str]:
         require(bool(data.get("ingredients")), f"recipe has no ingredients: {path.name}", errors)
         require(bool(data.get("instructions")), f"recipe has no instructions: {path.name}", errors)
 
+    card_ids: set[str] = set()
+    card_outputs: set[str] = set()
+    for path in sorted((ROOT / "artifacts" / "recipe-cards").glob("**/*.yaml")):
+        try:
+            card = load_yaml(path) or {}
+        except Exception as exc:
+            errors.append(f"invalid recipe-card YAML in {path.relative_to(ROOT)}: {exc}")
+            continue
+        card_id = card.get("id")
+        output_filename = card.get("output_filename")
+        require(card.get("version") == 1, f"unsupported recipe-card version in {path.relative_to(ROOT)}", errors)
+        require(isinstance(card_id, str) and bool(KEBAB.fullmatch(card_id)), f"invalid recipe-card id in {path.relative_to(ROOT)}", errors)
+        require(card_id not in card_ids, f"duplicate recipe-card id: {card_id}", errors)
+        card_ids.add(card_id)
+        require(isinstance(output_filename, str) and output_filename.endswith(".pdf"), f"invalid recipe-card output in {path.relative_to(ROOT)}", errors)
+        require(output_filename not in card_outputs, f"duplicate recipe-card output: {output_filename}", errors)
+        card_outputs.add(output_filename)
+        for field in ("status", "source", "reconciliation", "title", "meta", "deck", "equipment", "ingredients", "steps", "tip"):
+            require(bool(card.get(field)), f"recipe-card {card_id} lacks {field}", errors)
+        steps = card.get("steps") or []
+        if card.get("card_format") == 2:
+            require(isinstance(steps, list) and 1 <= len(steps) <= 6, f"recipe-card {card_id} must have 1 to 6 steps", errors)
+            require(bool(card.get("source_photo") or card.get("source_photo_unavailable_reason")), f"recipe-card {card_id} needs a source photo or an unavailable reason", errors)
+        photo = card.get("source_photo")
+        if photo:
+            for field in ("path", "page_url", "image_url", "credit", "captured_at"):
+                require(bool(photo.get(field)), f"recipe-card {card_id} source photo lacks {field}", errors)
+            photo_path_text = photo.get("path")
+            if isinstance(photo_path_text, str):
+                photo_path = (ROOT / photo_path_text).resolve()
+                require(photo_path.is_relative_to(ROOT) and photo_path.is_file(), f"recipe-card {card_id} source photo does not exist in repository", errors)
+        elif card.get("source_photo_unavailable_reason"):
+            require(isinstance(card["source_photo_unavailable_reason"], str), f"recipe-card {card_id} has invalid photo reason", errors)
+        for section in card.get("ingredients") or []:
+            require(bool(section.get("section")), f"recipe-card {card_id} has untitled ingredient section", errors)
+            require(bool(section.get("items")), f"recipe-card {card_id} has empty ingredient section", errors)
+            for item in section.get("items") or []:
+                require(bool(item.get("display")), f"recipe-card {card_id} has ingredient without display text", errors)
+
+        source = card.get("source") or {}
+        source_path_text = source.get("path")
+        if source_path_text:
+            source_path = (ROOT / source_path_text).resolve()
+            require(source_path.is_relative_to(ROOT), f"recipe-card {card_id} source escapes repository", errors)
+            require(source_path.exists(), f"recipe-card {card_id} source does not exist: {source_path_text}", errors)
+        if source.get("kind") == "saved-recipe":
+            recipe_id = source.get("recipe_id")
+            recipe = recipe_documents.get(recipe_id) or {}
+            require(bool(recipe), f"recipe-card {card_id} references unknown saved recipe {recipe_id}", errors)
+            canonical = {item.get("id"): item for item in recipe.get("ingredients") or []}
+            represented: set[str] = set()
+            for section in card.get("ingredients") or []:
+                for item in section.get("items") or []:
+                    ingredient_id = item.get("source_ingredient_id")
+                    represented.add(ingredient_id)
+                    require(ingredient_id in canonical, f"recipe-card {card_id} references unknown ingredient {ingredient_id}", errors)
+                    if ingredient_id in canonical:
+                        expected = {"quantity": canonical[ingredient_id].get("quantity"), "unit": canonical[ingredient_id].get("unit")}
+                        require(item.get("source_quantity") == expected, f"recipe-card {card_id} quantity drift for {ingredient_id}", errors)
+            require(represented == set(canonical), f"recipe-card {card_id} ingredient set differs from saved recipe {recipe_id}", errors)
+        if card.get("status") == "current" and isinstance(output_filename, str):
+            require((card.get("reconciliation") or {}).get("status") == "reconciled", f"current recipe-card {card_id} is not reconciled", errors)
+            output_path = ROOT / "output" / "pdf" / output_filename
+            require(output_path.exists(), f"current recipe-card {card_id} lacks rendered PDF {output_filename}", errors)
+            if output_path.exists():
+                source_hash = hashlib.sha256(path.read_bytes()).hexdigest()
+                try:
+                    metadata = PdfReader(output_path).metadata or {}
+                    require(metadata.get("/Subject") == f"Source SHA256: {source_hash}", f"recipe-card PDF {output_filename} was not rendered from its current YAML source", errors)
+                    require(len(PdfReader(output_path).pages) == 1, f"recipe-card PDF {output_filename} is not one page", errors)
+                except Exception as exc:
+                    errors.append(f"cannot inspect recipe-card PDF {output_filename}: {exc}")
+
+    renderer_path = ROOT / "scripts" / "build_recipe_cards.py"
+    if renderer_path.exists():
+        renderer_text = renderer_path.read_text(encoding="utf-8")
+        require("CARDS =" not in renderer_text, "recipe-card renderer must not contain hard-coded card data", errors)
+        require("artifacts" in renderer_text and "recipe-cards" in renderer_text, "recipe-card renderer must load structured card sources", errors)
+
     retailer_data = documents.get(ROOT / "registers/retailers.yaml") or {}
     retailer_ids = {item.get("id") for item in retailer_data.get("retailers", []) if item.get("id")}
     for retailer_id in retailer_ids:
@@ -128,6 +222,8 @@ def validate() -> list[str]:
             session_documents[session_id] = data
         require(data.get("status") in {"active", "closed"}, f"invalid session status in {path.name}", errors)
         require(bool(data.get("request_summary")), f"session lacks request summary in {path.name}", errors)
+        if data.get("version", 1) >= 2:
+            validate_handoff(data, f"session {session_id}", errors)
         if data.get("status") == "closed":
             require(bool(data.get("closed_at")), f"closed session lacks closed_at in {path.name}", errors)
             require(bool(data.get("result_summary")), f"closed session lacks result summary in {path.name}", errors)
@@ -142,6 +238,11 @@ def validate() -> list[str]:
             require(run_id not in run_ids, f"duplicate run id: {run_id}", errors)
             run_ids.add(run_id)
         require(data.get("status") in VALID_RUN_STATES, f"invalid run status in {path.name}", errors)
+        if data.get("version", 1) >= 3:
+            validate_handoff(data, f"run {run_id}", errors)
+            if data.get("status") == "awaiting-approval":
+                handoff = data.get("handoff") or {}
+                require(handoff.get("owner") == "user" and handoff.get("next_action") == "confirm-exact-cart", f"awaiting-approval run {run_id} must wait for exact-cart confirmation", errors)
         if data.get("version", 1) >= 2:
             require(data.get("session_id") in session_documents, f"version 2 run lacks a valid session link in {path.name}", errors)
             selection = data.get("selection") or {}
@@ -245,8 +346,9 @@ def validate() -> list[str]:
                 require(receipt_status == "captured", f"completed order lacks preserved receipt in {path.name}", errors)
 
     run_template = documents.get(ROOT / "templates/run.yaml") or {}
-    require(run_template.get("version") == 2, "run template must use deterministic state schema version 2", errors)
+    require(run_template.get("version") == 3, "run template must use deterministic state schema version 3", errors)
     require("session_id" in run_template, "run template must link to a chat session", errors)
+    require("handoff" in run_template, "run template must include an explicit handoff", errors)
     selection_template = run_template.get("selection") or {}
     for field in ("revision", "status", "active_meal_ids", "updated_at", "history"):
         require(field in selection_template, f"run template selection lacks {field}", errors)
@@ -277,8 +379,13 @@ def validate() -> list[str]:
         require(field in interface_constraints, f"run template interface constraints lack {field}", errors)
 
     session_template = documents.get(ROOT / "templates/session.yaml") or {}
+    require(session_template.get("version") == 2, "session template must use deterministic handoff schema version 2", errors)
+    require("handoff" in session_template, "session template must include an explicit handoff", errors)
     for field in ("id", "started_at", "closed_at", "status", "request_summary", "result_summary", "run_ids", "issue_ids", "change_ids", "outcome_ids", "artifact_paths", "timeline", "lessons", "follow_up", "privacy_reviewed"):
         require(field in session_template, f"session template lacks {field}", errors)
+
+    card_template = ROOT / "templates" / "recipe-card.yaml"
+    require(card_template.exists(), "missing structured recipe-card template", errors)
 
     availability = documents.get(ROOT / "registers/availability.yaml") or {}
     for observation in availability.get("observations", []):

@@ -1,10 +1,19 @@
 # Quality contract
 
 - Status: active
-- Last verified: 2026-09-18
+- Last verified: 2026-09-23
 - Purpose: observable acceptance criteria for agent outputs
 
 An output is complete only when the relevant criteria below are satisfied. Validation should remain quiet unless it finds a problem that requires user input.
+
+## Handoff and response acceptance
+
+- Every active version 3 run and version 2 session records exactly one handoff owner, next action, awaited event, and update time.
+- The handoff owner is `user` only for a material choice, exact purchase confirmation, protected action, or requested cooked feedback.
+- A response ends with no more than one requested user action, and that action matches the recorded handoff.
+- Short confirmation language authorizes purchase only at `confirm-exact-cart` and only for the unchanged recorded cart snapshot.
+- Reversible agent work continues without a redundant confirmation question.
+- Material cart or fulfillment changes invalidate earlier approval and create a fresh exact snapshot before confirmation.
 
 ## Menu acceptance
 
@@ -33,6 +42,8 @@ An output is complete only when the relevant criteria below are satisfied. Valid
 - Pantry subtraction uses sufficiently recent evidence.
 - Recipe use, purchased quantity, allocation by recipe, and expected remainder remain separate.
 - Package rounding never silently changes the recipe-use quantity.
+- Before a second package is selected solely for a small shortfall, the run evaluates a one-package recipe adjustment; any adjustment records the original and adjusted quantities, package size, and why the culinary effect is immaterial.
+- One-package adjustments are not used for safety-critical, structurally important, medically necessary, or identity-defining quantities.
 - Every carted recipe ingredient records SKU, package count, net quantity per package, total purchased quantity, recipe allocation, and expected remainder.
 - Package count multiplied by net package quantity is reconciled against the unmet recipe quantity before approval; duplicate units and full-package excess are either corrected or explicitly justified.
 - Every cart package unit is allocated to exactly one named recipe or additional-grocery request; the cart SKU count equals the sum of those allocations, with no unallocated units.
@@ -92,6 +103,8 @@ Before export, build an internal ingredient-use matrix with one row per final in
 - Each method occurrence includes the recipe-use quantity in parentheses and matches the ingredient list.
 - Ingredient preparation requirements needed to execute the method are explicit in both the ingredient list and the relevant step, including cut size for meat and vegetables.
 - The first one or two steps complete practical mise en place before active cooking; later steps do not alternate back to cutting, opening, or measuring unless a long unattended cook justifies it.
+- The card has at most six actionable steps in an efficient sequence; simultaneous work is used only when practical, and time, temperature, doneness, and food safety remain explicit.
+- A new card includes a suitable photo from its original recipe page with a local copy, page URL, direct image URL, credit, and capture time, or records why that photo could not be used. The photo and credit are legible in the rendered card.
 - High-temperature sauteing, searing, and grilling use avocado oil by default; olive oil at high heat requires a documented culinary reason or user override.
 - Substitutions are expressed as the final ingredient, not as shopping-history commentary.
 - `Use entire package` appears only when a single-recipe allocation and matching purchased quantity are verified.
@@ -100,7 +113,10 @@ Before export, build an internal ingredient-use matrix with one row per final in
 - The visual inspection finds no overlap, clipping, illegible text, awkward wrapping, or weak hierarchy.
 - The exact requested card titles and IDs were stated in chat before generation or printing and match the active selection unless the user explicitly requested an out-of-selection card.
 - Each card records the selection and ingredient-plan revisions used to generate it.
+- Each card has a structured YAML source under `artifacts/recipe-cards/`; rendering code contains no embedded recipe content.
 - Card ingredients and that meal's final ingredient-plan rows reconcile in both directions; any unpurchased or unresolved ingredient is disclosed in chat before output.
+- A current card sourced from a saved recipe has exactly the saved ingredient IDs and canonical quantities.
+- The rendered PDF embeds the complete YAML source hash, validation confirms that it matches, and revisions use new filenames rather than overwriting historical PDFs.
 - Physical printing uses `Fit to page` after PDF visual validation; printer scaling is checked before the PDF is modified in response to a size complaint.
 - The post-print chat update names the printed titles, copy count, printer, and scaling mode.
 
@@ -114,6 +130,8 @@ Before export, build an internal ingredient-use matrix with one row per final in
 - A single outcome does not silently become a durable preference.
 - A new recipe enters `recipes/` only after positive cooking feedback and links back to its validating run and outcome.
 - When positive feedback does not identify the exact cooked variation, record the outcome against the run candidate with a final-form blocker; do not invent and save a canonical recipe until the missing preparation details are reported.
+- Later feedback supersedes earlier rating language without erasing it; the outcome preserves feedback chronology and identifies the current authoritative assessment.
+- A post-cooking recipe revision marks every older recipe-card artifact as superseded for future use while retaining it as historical evidence.
 - Every practical new-chat request has one session record, including maintenance and retrospective requests that create no meal run.
 - The session links rather than duplicates authoritative run and register facts, contains a concise result and lessons, identifies open follow-up, and contains no raw transcript or private fields.
 - Every version 2 run links to exactly one existing session, and that session links back to the run.
