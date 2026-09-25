@@ -2,18 +2,18 @@ version: 3
 id: run-2026-09-25-grocery-list-chili
 session_id: session-2026-09-25-grocery-list-chili
 created_at: 2026-09-25T08:54:00-04:00
-updated_at: 2026-09-25T11:17:28-04:00
-status: comparison-ready
+updated_at: 2026-09-25T11:21:00-04:00
+status: awaiting-approval
 handoff:
   owner: user
-  next_action: choose-fulfillment
-  waiting_for: pickup-or-delivery-choice
-  updated_at: 2026-09-25T11:17:28-04:00
+  next_action: confirm-exact-cart
+  waiting_for: explicit-purchase-confirmation
+  updated_at: 2026-09-25T11:21:00-04:00
 request:
   meal_count: 1
   servings: 8
   budget: null
-  fulfillment_preference: compare
+  fulfillment_preference: pickup
   run_overrides:
     - Screenshot grocery list supplied instead of a live iCloud list.
     - The listed black beans, kidney beans, and tomatoes were used for a creamy chicken chili. User may still request a true white chili instead.
@@ -68,29 +68,29 @@ shopping_review:
 ingredient_plan_revision: 1
 ingredient_plan_selection_revision: 1
 ingredient_plan:
-  - {recipe_id: creamy-chicken-chili, ingredient: canned chicken breast, recipe_quantity: 2 drained 12.5 oz cans, pantry_quantity: null, coverage_status: covered-by-cart, sku: '319753', package_count: 2, net_quantity_per_package: 12.5 oz, purchase_quantity: 25 oz net canned weight, allocation: 2 cans to creamy-chicken-chili, expected_remainder: 0 cans}
-  - {recipe_id: creamy-chicken-chili, ingredient: no-salt-added black beans, recipe_quantity: 2 drained 15.5 oz cans, pantry_quantity: null, coverage_status: covered-by-cart, sku: '215727', package_count: 2, net_quantity_per_package: 15.5 oz, purchase_quantity: 31 oz net canned weight, allocation: 2 cans to creamy-chicken-chili, expected_remainder: 0 cans}
-  - {recipe_id: creamy-chicken-chili, ingredient: no-salt-added kidney beans, recipe_quantity: 2 drained 15.5 oz cans, pantry_quantity: null, coverage_status: covered-by-cart, sku: '334536', package_count: 2, net_quantity_per_package: 15.5 oz, purchase_quantity: 31 oz net canned weight, allocation: 2 cans to creamy-chicken-chili, expected_remainder: 0 cans}
-  - {recipe_id: creamy-chicken-chili, ingredient: no-salt-added diced tomatoes, recipe_quantity: 14.5 oz with juices, pantry_quantity: null, coverage_status: covered-by-cart, sku: '222397', package_count: 1, net_quantity_per_package: 14.5 oz, purchase_quantity: 14.5 oz, allocation: 14.5 oz to creamy-chicken-chili, expected_remainder: 0 oz}
-  - {recipe_id: creamy-chicken-chili, ingredient: no-salt-added corn, recipe_quantity: 1 drained 15 oz can, pantry_quantity: null, coverage_status: covered-by-cart, sku: '204686', package_count: 1, net_quantity_per_package: 15 oz, purchase_quantity: 15 oz net canned weight, allocation: 1 can to creamy-chicken-chili, expected_remainder: 0 cans}
-  - {recipe_id: creamy-chicken-chili, ingredient: mild green chiles, recipe_quantity: 4 oz, pantry_quantity: null, coverage_status: covered-by-cart, sku: '6491', package_count: 1, net_quantity_per_package: 4 oz, purchase_quantity: 4 oz, allocation: 4 oz to creamy-chicken-chili, expected_remainder: 0 oz}
-  - {recipe_id: creamy-chicken-chili, ingredient: diced yellow onion, recipe_quantity: 5 oz, pantry_quantity: null, coverage_status: covered-by-cart, sku: '310230', package_count: 1, net_quantity_per_package: 5 oz, purchase_quantity: 5 oz, allocation: 5 oz to creamy-chicken-chili, expected_remainder: 0 oz}
-  - {recipe_id: creamy-chicken-chili, ingredient: unsalted chicken bone broth, recipe_quantity: 4 cups, pantry_quantity: null, coverage_status: covered-by-cart, sku: '218137', package_count: 1, net_quantity_per_package: 32 fl oz, purchase_quantity: 4 cups, allocation: 4 cups to creamy-chicken-chili, expected_remainder: 0 cups}
-  - {recipe_id: creamy-chicken-chili, ingredient: cream cheese, recipe_quantity: 8 oz, pantry_quantity: null, coverage_status: covered-by-cart, sku: '296603', package_count: 1, net_quantity_per_package: 8 oz, purchase_quantity: 8 oz, allocation: 8 oz to creamy-chicken-chili, expected_remainder: 0 oz}
-  - {recipe_id: creamy-chicken-chili, ingredient: taco seasoning, recipe_quantity: 2 oz, pantry_quantity: null, coverage_status: covered-by-cart, sku: '224963', package_count: 2, net_quantity_per_package: 1 oz, purchase_quantity: 2 oz, allocation: 2 oz to creamy-chicken-chili, expected_remainder: 0 oz}
-  - {recipe_id: creamy-chicken-chili, ingredient: Mexican blend shredded cheese, recipe_quantity: 8 oz topping, pantry_quantity: null, coverage_status: covered-by-cart, sku: '296660', package_count: 1, net_quantity_per_package: 8 oz, purchase_quantity: 8 oz, allocation: 8 oz to creamy-chicken-chili, expected_remainder: 0 oz}
+  - {recipe_id: creamy-chicken-chili, ingredient: canned chicken breast, recipe_quantity: 2 drained 12.5 oz cans, preparation_form: canned and drained, pantry_quantity: null, coverage_status: covered-by-cart, sku: '319753', brand: Food Lion, preferred_brand_check: no stated preference, package_count: 2, net_quantity_per_package: 12.5 oz, purchase_quantity: 25 oz net canned weight, allocation: 2 cans to creamy-chicken-chili, expected_remainder: 0 cans, quantity_review: two cans explicitly requested and used in recipe}
+  - {recipe_id: creamy-chicken-chili, ingredient: no-salt-added black beans, recipe_quantity: 2 drained 15.5 oz cans, preparation_form: canned and drained, pantry_quantity: null, coverage_status: covered-by-cart, sku: '215727', brand: Nature's Promise, preferred_brand_check: no stated preference, package_count: 2, net_quantity_per_package: 15.5 oz, purchase_quantity: 31 oz net canned weight, allocation: 2 cans to creamy-chicken-chili, expected_remainder: 0 cans, quantity_review: two cans explicitly requested and used in recipe}
+  - {recipe_id: creamy-chicken-chili, ingredient: no-salt-added kidney beans, recipe_quantity: 2 drained 15.5 oz cans, preparation_form: canned and drained, pantry_quantity: null, coverage_status: covered-by-cart, sku: '334536', brand: Food Lion, preferred_brand_check: no stated preference, package_count: 2, net_quantity_per_package: 15.5 oz, purchase_quantity: 31 oz net canned weight, allocation: 2 cans to creamy-chicken-chili, expected_remainder: 0 cans, quantity_review: two cans explicitly requested and used in recipe}
+  - {recipe_id: creamy-chicken-chili, ingredient: no-salt-added diced tomatoes, recipe_quantity: 14.5 oz with juices, preparation_form: canned diced with juices, pantry_quantity: null, coverage_status: covered-by-cart, sku: '222397', brand: Nature's Promise, preferred_brand_check: no stated preference, package_count: 1, net_quantity_per_package: 14.5 oz, purchase_quantity: 14.5 oz, allocation: 14.5 oz to creamy-chicken-chili, expected_remainder: 0 oz}
+  - {recipe_id: creamy-chicken-chili, ingredient: no-salt-added corn, recipe_quantity: 1 drained 15 oz can, preparation_form: canned and drained, pantry_quantity: null, coverage_status: covered-by-cart, sku: '204686', brand: Nature's Promise, preferred_brand_check: no stated preference, package_count: 1, net_quantity_per_package: 15 oz, purchase_quantity: 15 oz net canned weight, allocation: 1 can to creamy-chicken-chili, expected_remainder: 0 cans}
+  - {recipe_id: creamy-chicken-chili, ingredient: mild green chiles, recipe_quantity: 4 oz, preparation_form: canned chopped, pantry_quantity: null, coverage_status: covered-by-cart, sku: '6491', brand: Old El Paso, preferred_brand_check: no stated preference, package_count: 1, net_quantity_per_package: 4 oz, purchase_quantity: 4 oz, allocation: 4 oz to creamy-chicken-chili, expected_remainder: 0 oz}
+  - {recipe_id: creamy-chicken-chili, ingredient: diced yellow onion, recipe_quantity: 5 oz, preparation_form: fresh pre-diced, pantry_quantity: null, coverage_status: covered-by-cart, sku: '310230', brand: Food Lion, preferred_brand_check: no stated preference, package_count: 1, net_quantity_per_package: 5 oz, purchase_quantity: 5 oz, allocation: 5 oz to creamy-chicken-chili, expected_remainder: 0 oz}
+  - {recipe_id: creamy-chicken-chili, ingredient: unsalted chicken bone broth, recipe_quantity: 4 cups, preparation_form: shelf-stable carton, pantry_quantity: null, coverage_status: covered-by-cart, sku: '218137', brand: Pacific Foods, preferred_brand_check: no stated preference, package_count: 1, net_quantity_per_package: 32 fl oz, purchase_quantity: 4 cups, allocation: 4 cups to creamy-chicken-chili, expected_remainder: 0 cups}
+  - {recipe_id: creamy-chicken-chili, ingredient: cream cheese, recipe_quantity: 8 oz, preparation_form: block, pantry_quantity: null, coverage_status: covered-by-cart, sku: '296603', brand: Food Lion, preferred_brand_check: no stated preference, package_count: 1, net_quantity_per_package: 8 oz, purchase_quantity: 8 oz, allocation: 8 oz to creamy-chicken-chili, expected_remainder: 0 oz}
+  - {recipe_id: creamy-chicken-chili, ingredient: taco seasoning, recipe_quantity: 2 oz, preparation_form: dry seasoning packets, pantry_quantity: null, coverage_status: covered-by-cart, sku: '224963', brand: Nature's Promise, preferred_brand_check: no stated preference, package_count: 2, net_quantity_per_package: 1 oz, purchase_quantity: 2 oz, allocation: 2 oz to creamy-chicken-chili, expected_remainder: 0 oz, quantity_review: two 1 oz packets supply the planned 2 oz seasoning}
+  - {recipe_id: creamy-chicken-chili, ingredient: Mexican blend shredded cheese, recipe_quantity: 8 oz topping, preparation_form: shredded, pantry_quantity: null, coverage_status: covered-by-cart, sku: '296660', brand: Food Lion, preferred_brand_check: no stated preference, package_count: 1, net_quantity_per_package: 8 oz, purchase_quantity: 8 oz, allocation: 8 oz to creamy-chicken-chili, expected_remainder: 0 oz}
 carts:
-  - cart_snapshot_id: food-lion-pickup-draft-2026-09-25t1117
+  - cart_snapshot_id: food-lion-pickup-approval-2026-09-25t1121
     selection_revision: 1
     retailer: Food Lion
     retailer_id: food-lion-avent-ferry
     channel_id: food-lion-direct
     fulfillment: pickup
     location_label: Avent Ferry store
-    observed_at: 2026-09-25T11:17:28-04:00
-    selected_window: null
-    available_windows_observed: '2026-09-25 10:00-11:00 through 16:00-17:00; no slot reserved'
-    reservation_status: draft
+    observed_at: 2026-09-25T11:21:00-04:00
+    selected_window: '2026-09-25 15:00-16:00 America/New_York'
+    available_windows_observed: '2026-09-25 14:00-15:00 through 21:00-22:00 at selection time'
+    reservation_status: selected-not-reserved-until-checkout
     substitutions: best-comparable-enabled
     currency: USD
     merchandise_subtotal: 85.26
@@ -107,6 +107,7 @@ carts:
     revision_history:
       - {observed_at: 2026-09-25T08:55:00-04:00, cart_snapshot_id: food-lion-pickup-draft-2026-09-25t0855, merchandise_subtotal: 84.76, estimated_total: 87.57, change: Initial draft included YoBaby yogurt cups and Nature's Promise blueberry flax granola.}
       - {observed_at: 2026-09-25T11:17:28-04:00, change: User replaced YoBaby yogurt with whole milk Greek yogurt and Nature's Promise granola with KIND; both changes verified in cart.}
+      - {observed_at: 2026-09-25T11:21:00-04:00, change: User chose pickup from 3 to 4 pm on September 25; selected window and $88.07 estimate verified on Food Lion order summary.}
     line_items:
       - {product: Nature's Promise Organic Taco Seasoning Mix Packet, sku: '224963', package_count: 2, net_quantity_per_package: 1 oz, unit_price: 1.39, allocation: creamy-chicken-chili}
       - {product: Food Lion Yellow Onions Diced, sku: '310230', package_count: 1, net_quantity_per_package: 5 oz, unit_price: 1.99, allocation: creamy-chicken-chili}
@@ -133,9 +134,9 @@ carts:
       - {product: KIND Healthy Grains Oats & Honey Granola with Toasted Coconut, sku: '186788', package_count: 1, net_quantity_per_package: 11 oz, unit_price: 5.99, allocation: additional-grocery}
       - {product: Nature's Promise San Francisco Style Sourdough Bread Sliced, sku: '405052', package_count: 1, net_quantity_per_package: 24 oz, unit_price: 4.99, allocation: additional-grocery}
 approval:
-  selection_revision: null
-  cart_snapshot_id: null
-  requested_at: null
+  selection_revision: 1
+  cart_snapshot_id: food-lion-pickup-approval-2026-09-25t1121
+  requested_at: 2026-09-25T11:21:00-04:00
   approved_at: null
   approved_total: null
 artifacts:
@@ -168,7 +169,7 @@ post_order_feedback:
   general_feedback: null
 closeout:
   blocker: null
-  notes: Corrected Food Lion pickup cart is reconciled but has no selected fulfillment window and is not an order. Switching to delivery would remove the selected eggs and require a replacement.
+  notes: Food Lion order summary confirms pickup today 3:00-4:00 pm at the Avent Ferry store, 29 package units, $85.26 subtotal, $1.99 pickup fee, $0.82 estimated tax, and $88.07 estimated total. Slot is not reserved until checkout. Final purchase awaits explicit chat approval.
   follow_up_needed: true
 phase_history:
   - {phase: draft, at: 2026-09-25T08:54:00-04:00, note: Screenshot grocery-list intake and recipe source research.}
@@ -179,3 +180,4 @@ phase_history:
   - {phase: cart-building, at: 2026-09-25T08:54:00-04:00, note: User authorized adding screenshot items and recipe ingredients to a draft cart; recipe identity remains to be confirmed before approval.}
   - {phase: comparison-ready, at: 2026-09-25T08:58:55-04:00, note: Pickup cart reconciled at $84.76 merchandise; delivery switch would remove one egg item, so pickup cart was retained.}
   - {phase: comparison-ready, at: 2026-09-25T11:17:28-04:00, note: User corrected yogurt and granola choices; new cart subtotal is $85.26 and estimated pickup total is $88.07.}
+  - {phase: awaiting-approval, at: 2026-09-25T11:21:00-04:00, note: User selected pickup today 3:00-4:00 pm; exact cart and final estimate verified on Food Lion order summary for chat-visible approval.}
