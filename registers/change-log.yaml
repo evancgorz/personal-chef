@@ -1,5 +1,11 @@
 version: 1
 changes:
+  - id: change-2026-09-25-eggs-milk-fruit-preferences
+    changed_at: 2026-09-25T11:25:00-04:00
+    actor: user
+    scope: [eggs, milk, fresh-fruit]
+    summary: Choose the cheapest suitable pasture-raised eggs, default to a 1-gallon milk package, and choose conventional rather than organic fresh fruit.
+    source: grocery-cart-correction
   - id: change-2026-09-25-bread-pb-jam-preferences
     changed_at: 2026-09-25T08:54:00-04:00
     actor: user

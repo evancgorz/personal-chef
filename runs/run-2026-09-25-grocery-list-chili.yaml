@@ -2,13 +2,13 @@ version: 3
 id: run-2026-09-25-grocery-list-chili
 session_id: session-2026-09-25-grocery-list-chili
 created_at: 2026-09-25T08:54:00-04:00
-updated_at: 2026-09-25T11:21:00-04:00
+updated_at: 2026-09-25T11:25:00-04:00
 status: awaiting-approval
 handoff:
   owner: user
   next_action: confirm-exact-cart
   waiting_for: explicit-purchase-confirmation
-  updated_at: 2026-09-25T11:21:00-04:00
+  updated_at: 2026-09-25T11:25:00-04:00
 request:
   meal_count: 1
   servings: 8
@@ -18,6 +18,7 @@ request:
     - Screenshot grocery list supplied instead of a live iCloud list.
     - The listed black beans, kidney beans, and tomatoes were used for a creamy chicken chili. User may still request a true white chili instead.
     - For this cart, replace YoBaby yogurt with whole milk Greek yogurt and use KIND granola.
+    - Use the cheapest pasture-raised dozen eggs, a gallon of 2% milk, and conventional fresh fruit.
 context_snapshot:
   preference_version: 1
   pantry_checked_at: null
@@ -80,48 +81,49 @@ ingredient_plan:
   - {recipe_id: creamy-chicken-chili, ingredient: taco seasoning, recipe_quantity: 2 oz, preparation_form: dry seasoning packets, pantry_quantity: null, coverage_status: covered-by-cart, sku: '224963', brand: Nature's Promise, preferred_brand_check: no stated preference, package_count: 2, net_quantity_per_package: 1 oz, purchase_quantity: 2 oz, allocation: 2 oz to creamy-chicken-chili, expected_remainder: 0 oz, quantity_review: two 1 oz packets supply the planned 2 oz seasoning}
   - {recipe_id: creamy-chicken-chili, ingredient: Mexican blend shredded cheese, recipe_quantity: 8 oz topping, preparation_form: shredded, pantry_quantity: null, coverage_status: covered-by-cart, sku: '296660', brand: Food Lion, preferred_brand_check: no stated preference, package_count: 1, net_quantity_per_package: 8 oz, purchase_quantity: 8 oz, allocation: 8 oz to creamy-chicken-chili, expected_remainder: 0 oz}
 carts:
-  - cart_snapshot_id: food-lion-pickup-approval-2026-09-25t1121
+  - cart_snapshot_id: food-lion-pickup-approval-2026-09-25t1125
     selection_revision: 1
     retailer: Food Lion
     retailer_id: food-lion-avent-ferry
     channel_id: food-lion-direct
     fulfillment: pickup
     location_label: Avent Ferry store
-    observed_at: 2026-09-25T11:21:00-04:00
+    observed_at: 2026-09-25T11:25:00-04:00
     selected_window: '2026-09-25 15:00-16:00 America/New_York'
     available_windows_observed: '2026-09-25 14:00-15:00 through 21:00-22:00 at selection time'
     reservation_status: selected-not-reserved-until-checkout
     substitutions: best-comparable-enabled
     currency: USD
-    merchandise_subtotal: 85.26
-    promotions: 3.13
+    merchandise_subtotal: 86.16
+    promotions: 4.13
     fees: 1.99
     fee_details: {pickup_fee: 1.99}
-    estimated_tax: 0.82
+    estimated_tax: 0.81
     tip: 0.00
-    estimated_total: 88.07
+    estimated_total: 88.96
     item_count: 24
     total_package_units: 29
     recipe_merchandise_subtotal: 30.40
-    additional_grocery_subtotal: 54.86
+    additional_grocery_subtotal: 55.76
     revision_history:
       - {observed_at: 2026-09-25T08:55:00-04:00, cart_snapshot_id: food-lion-pickup-draft-2026-09-25t0855, merchandise_subtotal: 84.76, estimated_total: 87.57, change: Initial draft included YoBaby yogurt cups and Nature's Promise blueberry flax granola.}
       - {observed_at: 2026-09-25T11:17:28-04:00, change: User replaced YoBaby yogurt with whole milk Greek yogurt and Nature's Promise granola with KIND; both changes verified in cart.}
       - {observed_at: 2026-09-25T11:21:00-04:00, change: User chose pickup from 3 to 4 pm on September 25; selected window and $88.07 estimate verified on Food Lion order summary.}
+      - {observed_at: 2026-09-25T11:25:00-04:00, change: Replaced cage-free eggs with sale-priced NestFresh pasture-raised eggs, half-gallon milk with one gallon, and organic strawberries with conventional strawberries; prior approval snapshot invalidated.}
     line_items:
       - {product: Nature's Promise Organic Taco Seasoning Mix Packet, sku: '224963', package_count: 2, net_quantity_per_package: 1 oz, unit_price: 1.39, allocation: creamy-chicken-chili}
       - {product: Food Lion Yellow Onions Diced, sku: '310230', package_count: 1, net_quantity_per_package: 5 oz, unit_price: 1.99, allocation: creamy-chicken-chili}
       - {product: Hass Avocados, sku: '398867', package_count: 2, net_quantity_per_package: 1 each, unit_price: 0.99, allocation: additional-grocery}
       - {product: Nature's Promise Organic Baby Spinach, sku: '124319', package_count: 1, net_quantity_per_package: 5 oz, unit_price: 2.99, allocation: additional-grocery}
-      - {product: Organic Strawberries, sku: '124320', package_count: 1, net_quantity_per_package: 16 oz, unit_price: 4.49, allocation: additional-grocery}
+      - {product: Strawberries, sku: '118795', package_count: 1, net_quantity_per_package: 16 oz, unit_price: 2.79, allocation: additional-grocery}
       - {product: Nature's Promise Organic Ranch Dressing & Dip, sku: '145287', package_count: 1, net_quantity_per_package: 12 oz, unit_price: 3.29, allocation: additional-grocery}
       - {product: Nature's Promise Organic Strawberry Fruit Spread, sku: '364163', package_count: 1, net_quantity_per_package: 15.5 oz, unit_price: 5.49, allocation: additional-grocery}
       - {product: Old El Paso Chopped Mild Peeled Green Chiles, sku: '6491', package_count: 1, net_quantity_per_package: 4 oz, unit_price: 1.89, allocation: creamy-chicken-chili}
       - {product: Teddie All Natural Smooth Peanut Butter, sku: '35015', package_count: 1, net_quantity_per_package: 16 oz, unit_price: 3.99, allocation: additional-grocery}
-      - {product: Food Lion 2% Reduced Fat Milk, sku: '296835', package_count: 1, net_quantity_per_package: 1/2 gallon, unit_price: 1.59, allocation: additional-grocery}
+      - {product: Food Lion 2% Reduced Fat Milk, sku: '296837', package_count: 1, net_quantity_per_package: 1 gallon, unit_price: 2.69, allocation: additional-grocery}
       - {product: Food Lion Natural Fancy Shredded Mexican Style 4 Cheese Blend, sku: '296660', package_count: 1, net_quantity_per_package: 8 oz, unit_price: 1.66, allocation: creamy-chicken-chili}
       - {product: Food Lion Original Cream Cheese Bar, sku: '296603', package_count: 1, net_quantity_per_package: 8 oz, unit_price: 1.59, allocation: creamy-chicken-chili}
-      - {product: Nature's Promise Cage Free Large Brown Eggs, sku: '290722', package_count: 1, net_quantity_per_package: 12 eggs, unit_price: 3.49, allocation: additional-grocery}
+      - {product: NestFresh Pasture Raised Large Brown Eggs, sku: '270989', package_count: 1, net_quantity_per_package: 12 eggs, unit_price: 4.99, allocation: additional-grocery}
       - {product: Cabot Creamery Whole Milk Plain Greek Yogurt, sku: '163751', package_count: 1, net_quantity_per_package: 32 oz, unit_price: 3.99, allocation: additional-grocery}
       - {product: Food Lion Low Sodium Chunk Chicken Breast in Water, sku: '319753', package_count: 2, net_quantity_per_package: 12.5 oz, unit_price: 2.99, allocation: creamy-chicken-chili}
       - {product: Food Lion No Salt Added Dark Red Kidney Beans, sku: '334536', package_count: 2, net_quantity_per_package: 15.5 oz, unit_price: 0.98, allocation: creamy-chicken-chili}
@@ -135,8 +137,8 @@ carts:
       - {product: Nature's Promise San Francisco Style Sourdough Bread Sliced, sku: '405052', package_count: 1, net_quantity_per_package: 24 oz, unit_price: 4.99, allocation: additional-grocery}
 approval:
   selection_revision: 1
-  cart_snapshot_id: food-lion-pickup-approval-2026-09-25t1121
-  requested_at: 2026-09-25T11:21:00-04:00
+  cart_snapshot_id: food-lion-pickup-approval-2026-09-25t1125
+  requested_at: 2026-09-25T11:25:00-04:00
   approved_at: null
   approved_total: null
 artifacts:
@@ -169,7 +171,7 @@ post_order_feedback:
   general_feedback: null
 closeout:
   blocker: null
-  notes: Food Lion order summary confirms pickup today 3:00-4:00 pm at the Avent Ferry store, 29 package units, $85.26 subtotal, $1.99 pickup fee, $0.82 estimated tax, and $88.07 estimated total. Slot is not reserved until checkout. Final purchase awaits explicit chat approval.
+  notes: Food Lion order summary confirms pickup today 3:00-4:00 pm at the Avent Ferry store, 29 package units, $86.16 subtotal, $1.99 pickup fee, $0.81 estimated tax, and $88.96 estimated total. Slot is not reserved until checkout. Revised cart awaits explicit chat approval.
   follow_up_needed: true
 phase_history:
   - {phase: draft, at: 2026-09-25T08:54:00-04:00, note: Screenshot grocery-list intake and recipe source research.}
@@ -181,3 +183,4 @@ phase_history:
   - {phase: comparison-ready, at: 2026-09-25T08:58:55-04:00, note: Pickup cart reconciled at $84.76 merchandise; delivery switch would remove one egg item, so pickup cart was retained.}
   - {phase: comparison-ready, at: 2026-09-25T11:17:28-04:00, note: User corrected yogurt and granola choices; new cart subtotal is $85.26 and estimated pickup total is $88.07.}
   - {phase: awaiting-approval, at: 2026-09-25T11:21:00-04:00, note: User selected pickup today 3:00-4:00 pm; exact cart and final estimate verified on Food Lion order summary for chat-visible approval.}
+  - {phase: awaiting-approval, at: 2026-09-25T11:25:00-04:00, note: User corrected eggs, milk size, and fruit; revised exact cart and $88.96 final estimate verified on Food Lion order summary, superseding the previous approval snapshot.}

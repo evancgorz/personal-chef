@@ -1,5 +1,5 @@
 version: 1
-updated_at: 2026-09-18T16:41:58-04:00
+updated_at: 2026-09-25T11:25:00-04:00
 servings:
   default: 6
 meal_profile:
@@ -83,9 +83,20 @@ brands:
     milk:
       default_brand: Food Lion
       default_product: regular 2% milk
+      default_package_size: 1 gallon
       avoid_unless_explicitly_requested:
         - Nature's Promise
       rule: Use regular Food Lion milk by default; do not select Nature's Promise milk unless the user explicitly specifies it.
+    eggs:
+      preferred_form: pasture-raised
+      selection_rule: Choose the lowest-priced suitable pasture-raised eggs for the active store and fulfillment channel.
+      source: user-reported
+      confirmed_at: 2026-09-25T11:25:00-04:00
+    fresh_fruit:
+      organic: avoid
+      selection_rule: Choose conventional fruit, including berries, unless the user explicitly requests organic.
+      source: user-reported
+      confirmed_at: 2026-09-25T11:25:00-04:00
     bread:
       preferred_style: sourdough
       preferred_brand: Nature's Promise
