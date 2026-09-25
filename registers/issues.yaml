@@ -1,6 +1,17 @@
 version: 1
-updated_at: 2026-09-23T20:41:21-04:00
+updated_at: 2026-09-25T11:52:00-04:00
 issues:
+  - id: issue-2026-09-25-food-lion-session-checkout-error
+    opened_at: 2026-09-25T11:50:00-04:00
+    status: resolved
+    severity: medium
+    category: checkout
+    summary: Food Lion returned a generic checkout error and then reported the account was logged in on another device.
+    impact: The first purchase attempt did not create an order and cleared the selected pickup time.
+    mitigation: Check Past Orders before retrying to avoid a duplicate order, sign in again, reselect the approved window, and reverify the unchanged cart and total.
+    recoverability: Saved cart remained intact; no September 25 order appeared after the failed attempt.
+    resolved_at: 2026-09-25T11:52:00-04:00
+    resolution: A single retry after reauthentication produced Food Lion confirmation m786832086 for the approved pickup window and $88.96 estimate.
   - id: issue-2026-09-07-browser-surface-unavailable
     opened_at: 2026-09-07T00:00:00-04:00
     status: resolved

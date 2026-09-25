@@ -2,13 +2,13 @@ version: 3
 id: run-2026-09-25-grocery-list-chili
 session_id: session-2026-09-25-grocery-list-chili
 created_at: 2026-09-25T08:54:00-04:00
-updated_at: 2026-09-25T11:25:00-04:00
-status: awaiting-approval
+updated_at: 2026-09-25T11:52:00-04:00
+status: ordered
 handoff:
-  owner: user
-  next_action: confirm-exact-cart
-  waiting_for: explicit-purchase-confirmation
-  updated_at: 2026-09-25T11:25:00-04:00
+  owner: agent
+  next_action: retrieve-final-itemized-receipt
+  waiting_for: order-fulfillment
+  updated_at: 2026-09-25T11:52:00-04:00
 request:
   meal_count: 1
   servings: 8
@@ -139,18 +139,18 @@ approval:
   selection_revision: 1
   cart_snapshot_id: food-lion-pickup-approval-2026-09-25t1125
   requested_at: 2026-09-25T11:25:00-04:00
-  approved_at: null
-  approved_total: null
+  approved_at: 2026-09-25T11:50:00-04:00
+  approved_total: 88.96
 artifacts:
   recipe_cards: [] # Each card records meal_id, title, selection_revision, ingredient_plan_revision, coverage_status, generated_at, printed_at, copies, printer, scaling_mode, current_status, and supersession details when later cooking feedback changes the repeat recipe.
 order:
-  placed: false
-  placed_at: null
-  confirmation_reference: null
+  placed: true
+  placed_at: 2026-09-25T11:52:00-04:00
+  confirmation_reference: m786832086
 receipt:
-  status: not-applicable
+  status: unavailable
   captured_at: null
-  source: null
+  source: Food Lion order confirmation page
   private_artifact: null
   line_items: []
   totals:
@@ -163,15 +163,21 @@ receipt:
     currency: USD
   reconciled_against_approved_cart: false
   discrepancies: []
-  retrieval_attempts: []
-  blocker: null
+  retrieval_attempts:
+    - source: Food Lion order confirmation page
+      checked_at: 2026-09-25T11:52:00-04:00
+      result: Confirmed order m786832086, 29 package units, September 25 pickup from 3 to 4 pm, and $88.96 estimated total; no final itemized charges are shown.
+    - source: Food Lion account Past Orders
+      checked_at: 2026-09-25T11:52:00-04:00
+      result: Only orders through September 22 were listed; the newly placed order and final receipt were not available there.
+  blocker: Newly placed order is not yet fulfilled; Food Lion has not published a final itemized receipt with charged quantities and totals.
 post_order_feedback:
   reported_at: null
   product_form_feedback: []
   general_feedback: null
 closeout:
-  blocker: null
-  notes: Food Lion order summary confirms pickup today 3:00-4:00 pm at the Avent Ferry store, 29 package units, $86.16 subtotal, $1.99 pickup fee, $0.81 estimated tax, and $88.96 estimated total. Slot is not reserved until checkout. Revised cart awaits explicit chat approval.
+  blocker: Final itemized receipt and charged total are pending fulfillment.
+  notes: Food Lion confirmed order m786832086 for September 25 pickup 3:00-4:00 pm at the Avent Ferry store, 29 package units, and $88.96 estimated total. An initial checkout attempt failed after the site expired the session; after reauthentication and confirming no order appeared in Past Orders, a single retry succeeded.
   follow_up_needed: true
 phase_history:
   - {phase: draft, at: 2026-09-25T08:54:00-04:00, note: Screenshot grocery-list intake and recipe source research.}
@@ -184,3 +190,4 @@ phase_history:
   - {phase: comparison-ready, at: 2026-09-25T11:17:28-04:00, note: User corrected yogurt and granola choices; new cart subtotal is $85.26 and estimated pickup total is $88.07.}
   - {phase: awaiting-approval, at: 2026-09-25T11:21:00-04:00, note: User selected pickup today 3:00-4:00 pm; exact cart and final estimate verified on Food Lion order summary for chat-visible approval.}
   - {phase: awaiting-approval, at: 2026-09-25T11:25:00-04:00, note: User corrected eggs, milk size, and fruit; revised exact cart and $88.96 final estimate verified on Food Lion order summary, superseding the previous approval snapshot.}
+  - {phase: ordered, at: 2026-09-25T11:52:00-04:00, note: User explicitly approved the revised cart; Food Lion confirmed pickup order m786832086 for 3:00-4:00 pm at an estimated $88.96. Final itemized receipt remains pending.}
