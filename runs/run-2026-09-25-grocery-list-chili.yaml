@@ -2,7 +2,7 @@ version: 3
 id: run-2026-09-25-grocery-list-chili
 session_id: session-2026-09-25-grocery-list-chili
 created_at: 2026-09-25T08:54:00-04:00
-updated_at: 2026-09-25T11:52:00-04:00
+updated_at: 2026-09-25T12:06:00-04:00
 status: ordered
 handoff:
   owner: agent
@@ -142,7 +142,21 @@ approval:
   approved_at: 2026-09-25T11:50:00-04:00
   approved_total: 88.96
 artifacts:
-  recipe_cards: [] # Each card records meal_id, title, selection_revision, ingredient_plan_revision, coverage_status, generated_at, printed_at, copies, printer, scaling_mode, current_status, and supersession details when later cooking feedback changes the repeat recipe.
+  recipe_cards:
+    - meal_id: creamy-chicken-chili
+      title: Creamy Chicken Chili
+      source_path: artifacts/recipe-cards/run-2026-09-25-grocery-list-chili/creamy-chicken-chili-v1.yaml
+      path: output/pdf/creamy-chicken-chili-v1.pdf
+      selection_revision: 1
+      ingredient_plan_revision: 1
+      coverage_status: reconciled
+      generated_at: 2026-09-25T12:05:00-04:00
+      printed_at: 2026-09-25T12:06:15-04:00
+      copies: 1
+      printer: HP (HP OfficeJet 3830 series)
+      scaling_mode: fit-to-page
+      print_status: printing-retained-in-windows-queue
+      current_status: current
 order:
   placed: true
   placed_at: 2026-09-25T11:52:00-04:00
@@ -177,7 +191,7 @@ post_order_feedback:
   general_feedback: null
 closeout:
   blocker: Final itemized receipt and charged total are pending fulfillment.
-  notes: Food Lion confirmed order m786832086 for September 25 pickup 3:00-4:00 pm at the Avent Ferry store, 29 package units, and $88.96 estimated total. An initial checkout attempt failed after the site expired the session; after reauthentication and confirming no order appeared in Past Orders, a single retry succeeded.
+  notes: Food Lion confirmed order m786832086 for September 25 pickup 3:00-4:00 pm at the Avent Ferry store, 29 package units, and $88.96 estimated total. An initial checkout attempt failed after the site expired the session; after reauthentication and confirming no order appeared in Past Orders, a single retry succeeded. The reconciled one-page Creamy Chicken Chili card was rendered, visually checked, and submitted as one Fit-to-page print job to the HP OfficeJet 3830 series.
   follow_up_needed: true
 phase_history:
   - {phase: draft, at: 2026-09-25T08:54:00-04:00, note: Screenshot grocery-list intake and recipe source research.}
@@ -191,3 +205,4 @@ phase_history:
   - {phase: awaiting-approval, at: 2026-09-25T11:21:00-04:00, note: User selected pickup today 3:00-4:00 pm; exact cart and final estimate verified on Food Lion order summary for chat-visible approval.}
   - {phase: awaiting-approval, at: 2026-09-25T11:25:00-04:00, note: User corrected eggs, milk size, and fruit; revised exact cart and $88.96 final estimate verified on Food Lion order summary, superseding the previous approval snapshot.}
   - {phase: ordered, at: 2026-09-25T11:52:00-04:00, note: User explicitly approved the revised cart; Food Lion confirmed pickup order m786832086 for 3:00-4:00 pm at an estimated $88.96. Final itemized receipt remains pending.}
+  - {phase: ordered, at: 2026-09-25T12:06:15-04:00, note: Printed one visually verified Creamy Chicken Chili recipe card via the HP OfficeJet 3830 series with Fit-to-page scaling; the Windows queue showed Printing, Retained.}

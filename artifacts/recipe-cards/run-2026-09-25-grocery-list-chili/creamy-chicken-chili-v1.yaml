@@ -1,0 +1,67 @@
+version: 1
+card_format: 2
+id: creamy-chicken-chili-v1
+status: current
+output_filename: creamy-chicken-chili-v1.pdf
+source:
+  kind: run-ingredient-plan
+  path: runs/run-2026-09-25-grocery-list-chili.yaml
+  recipe_id: creamy-chicken-chili
+  selection_revision: 1
+  ingredient_plan_revision: 1
+reconciliation:
+  status: reconciled
+  note: All eleven planned chili ingredients are on this card at the quantities allocated to the ordered recipe; no additional groceries are used.
+title: Creamy Chicken Chili
+meta: |-
+  SERVES 8
+  35 MINUTES
+deck: A creamy one-pot chili made with the canned chicken, beans, tomatoes, and green chiles from this grocery order.
+equipment: "Equipment: large pot with lid; can opener; colander; spoon; whisk"
+source_photo_unavailable_reason: The Budget Bytes source photo depicts its different chicken taco soup with toppings and fresh ingredients absent from this adapted chili; using it would misrepresent the finished dish.
+layout: {}
+ingredients:
+  - section: CHILI BASE
+    items:
+      - display: "Cooked canned chicken breast, drained - <b>2 x 12.5 oz cans</b>"
+        source_ingredient_id: canned chicken breast
+        source_quantity: {quantity: 2, unit: 12.5-oz-cans}
+      - display: "No-salt-added black beans, drained and rinsed - <b>2 x 15.5 oz cans</b>"
+        source_ingredient_id: no-salt-added black beans
+        source_quantity: {quantity: 2, unit: 15.5-oz-cans}
+      - display: "No-salt-added kidney beans, drained and rinsed - <b>2 x 15.5 oz cans</b>"
+        source_ingredient_id: no-salt-added kidney beans
+        source_quantity: {quantity: 2, unit: 15.5-oz-cans}
+      - display: "Diced tomatoes with juices - <b>1 x 14.5 oz can</b>"
+        source_ingredient_id: no-salt-added diced tomatoes
+        source_quantity: {quantity: 1, unit: 14.5-oz-can}
+      - display: "Whole-kernel corn, drained and rinsed - <b>1 x 15 oz can</b>"
+        source_ingredient_id: no-salt-added corn
+        source_quantity: {quantity: 1, unit: 15-oz-can}
+      - display: "Mild chopped green chiles - <b>1 x 4 oz can</b>"
+        source_ingredient_id: mild green chiles
+        source_quantity: {quantity: 1, unit: 4-oz-can}
+      - display: "Fresh pre-diced yellow onion - <b>5 oz</b>"
+        source_ingredient_id: diced yellow onion
+        source_quantity: {quantity: 5, unit: oz}
+      - display: "Unsalted chicken bone broth - <b>4 cups (32 fl oz)</b>"
+        source_ingredient_id: unsalted chicken bone broth
+        source_quantity: {quantity: 4, unit: cups}
+      - display: "Taco seasoning - <b>2 x 1 oz packets</b>"
+        source_ingredient_id: taco seasoning
+        source_quantity: {quantity: 2, unit: 1-oz-packets}
+  - section: CREAMY FINISH
+    items:
+      - display: "Cream cheese, cubed - <b>8 oz</b>"
+        source_ingredient_id: cream cheese
+        source_quantity: {quantity: 8, unit: oz}
+      - display: "Mexican-blend shredded cheese, for topping - <b>8 oz</b>"
+        source_ingredient_id: Mexican blend shredded cheese
+        source_quantity: {quantity: 8, unit: oz}
+steps:
+  - Open and drain the cooked canned chicken breast (<b>2 x 12.5 oz cans</b>). Drain and rinse the no-salt-added black beans (<b>2 x 15.5 oz cans</b>), no-salt-added kidney beans (<b>2 x 15.5 oz cans</b>), and whole-kernel corn (<b>1 x 15 oz can</b>). Open the diced tomatoes (<b>1 x 14.5 oz can, keep juices</b>) and mild chopped green chiles (<b>1 x 4 oz can</b>). Cube the cream cheese (<b>8 oz</b>).
+  - In a large pot, combine the fresh pre-diced yellow onion (<b>5 oz</b>), unsalted chicken bone broth (<b>4 cups</b>), diced tomatoes with juices (<b>1 x 14.5 oz can</b>), mild chopped green chiles (<b>1 x 4 oz can</b>), and taco seasoning (<b>2 x 1 oz packets</b>). Bring to a boil, then cover and simmer over medium-low heat for 8 minutes to soften the onion.
+  - Stir in the drained cooked canned chicken breast (<b>2 x 12.5 oz cans</b>), rinsed no-salt-added black beans (<b>2 x 15.5 oz cans</b>), rinsed no-salt-added kidney beans (<b>2 x 15.5 oz cans</b>), and rinsed whole-kernel corn (<b>1 x 15 oz can</b>). Simmer uncovered for 12-15 minutes, stirring occasionally, until the chili is hot throughout and the chicken reaches 165 F.
+  - Reduce heat to low. Whisk in cubed cream cheese (<b>8 oz</b>) until fully melted and smooth, about 3-5 minutes. Divide among 8 bowls and top with Mexican-blend shredded cheese (<b>8 oz total</b>).
+tip: "MAKE AHEAD: Refrigerate leftovers promptly and reheat until steaming hot."
+footer: Adapted from Budget Bytes Chicken Taco Soup by Jess Rice; quantities match the ordered chili ingredients.
