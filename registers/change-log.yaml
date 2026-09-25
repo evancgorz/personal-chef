@@ -1,5 +1,11 @@
 version: 1
 changes:
+  - id: change-2026-09-25-bread-pb-jam-preferences
+    changed_at: 2026-09-25T08:54:00-04:00
+    actor: user
+    scope: [bread, peanut-butter, preserves-or-jam]
+    summary: Prefer sourdough bread, ideally Nature's Promise; Teddie or Nature's Promise peanut butter; and a similar Nature's Promise style for preserves or jam.
+    source: grocery-list-request
   - id: change-2026-09-03-initial-workflow
     changed_at: 2026-09-03T00:00:00-04:00
     actor: agent

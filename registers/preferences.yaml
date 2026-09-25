@@ -86,6 +86,21 @@ brands:
       avoid_unless_explicitly_requested:
         - Nature's Promise
       rule: Use regular Food Lion milk by default; do not select Nature's Promise milk unless the user explicitly specifies it.
+    bread:
+      preferred_style: sourdough
+      preferred_brand: Nature's Promise
+      source: user-reported
+      confirmed_at: 2026-09-25T08:54:00-04:00
+    peanut_butter:
+      preferred_brands:
+        - Teddie
+        - Nature's Promise
+      source: user-reported
+      confirmed_at: 2026-09-25T08:54:00-04:00
+    preserves_or_jam:
+      preferred_brand: Nature's Promise
+      source: user-reported
+      confirmed_at: 2026-09-25T08:54:00-04:00
 proteins:
   beef:
     grass_fed: preferred
